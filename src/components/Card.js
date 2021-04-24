@@ -5,11 +5,11 @@ import Img from 'gatsby-image'
 
 const Post = styled.li`
   position: relative;
-  border: 1px solid ${props => props.theme.colors.secondary};
+  border: 1px solid ${props => props.theme.gradients.primary};
   border-radius: 2px;
   margin: 0 0 1em 0;
   width: 100%;
-  transition: background 0.2s;
+  transition: background .5s;
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
     flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
     margin: 0 0 2vw 0;
@@ -18,14 +18,14 @@ const Post = styled.li`
     flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
   }
   &:hover {
-    background: ${props => props.theme.colors.tertiary};
+    background: ${props => props.theme.colors.secondary};
   }
   a {
     display: flex;
     flex-flow: column;
     height: 100%;
     width: 100%;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.black};
     text-decoration: none;
     .gatsby-image-wrapper {
       height: 0;
@@ -69,7 +69,7 @@ const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
     <>
       {heroImage && body && (
         <Post featured={props.featured}>
-          <Link to={`${props.basePath}/${slug}/`}>
+          <Link to={`${props.basePath}/${slug}`}>
             <StyledImg fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
             <Title>{title}</Title>
             <Date>{publishDate}</Date>

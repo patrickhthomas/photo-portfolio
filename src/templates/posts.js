@@ -7,11 +7,19 @@ import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import { startCase } from 'lodash'
+import HomeHero from '../components/HomeHero'
+import Preview from'../components/Preview'
+import HeaderText from '../components/HeaderText'
+
 
 const Posts = ({ data, pageContext }) => {
+  const about = data.contentfulPage
+  const preview = data.allContentfulPiece.edges
   const posts = data.allContentfulPost.edges
   const { humanPageNumber, basePath } = pageContext
   const isFirstPage = humanPageNumber === 1
+  const leftQuote = `&ldquo;`
+  const rightQuote = `&rdquo;`
   let featuredPost
   let ogImage
 
@@ -30,14 +38,37 @@ const Posts = ({ data, pageContext }) => {
     <Layout>
       <SEO title={startCase(basePath)} image={ogImage} />
       <Container>
+        <HomeHero />
         {isFirstPage ? (
           <CardList>
-            <Card {...featuredPost} featured basePath={basePath} />
+            
+            <HeaderText><h1>My Work</h1></HeaderText>
+            <Preview
+            basePath={basePath}
+            slug={preview[0].node.slug}
+            src={preview[0].node.heroImage.file.url}
+            excerpt={{ __html: leftQuote+preview[0].node.excerpt.childMarkdownRemark.excerpt+rightQuote }}
+            role={preview[0].node.role}
+            slug1={preview[1].node.slug}
+            src1={preview[1].node.heroImage.file.url}
+            excerpt1={{ __html: leftQuote+preview[1].node.excerpt.childMarkdownRemark.excerpt+rightQuote}}
+            role1={preview[1].node.role}
+            /*src2={preview[1].node.heroImage.file.url}
+            excerpt2={{ __html: preview[1].node.body.childMarkdownRemark.excerpt }}
+            role2={preview[2].node.role}
+            src3={preview[3].node.heroImage.file.url}
+            excerpt3={{ __html: preview[3].node.body.childMarkdownRemark.excerpt }}
+            role3={preview[3].node.role} */
+            />
+            <HeaderText><h1>Blog posts</h1></HeaderText>
+             <Card {...featuredPost} featured basePath={basePath} />
             {posts.slice(1).map(({ node: post }) => (
               <Card key={post.id} {...post} basePath={basePath} />
             ))}
           </CardList>
+          
         ) : (
+          
           <CardList>
             {posts.map(({ node: post }) => (
               <Card key={post.id} {...post} basePath={basePath} />
@@ -82,6 +113,50 @@ export const query = graphql`
         }
       }
     }
+      contentfulPage(slug: {eq: "about"}) {
+    title
+    slug
+    metaDescription {
+      internal {
+        content
+      }
+    }
+    body {
+      childMarkdownRemark {
+        html
+        excerpt(pruneLength: 320)
+      }
+    }
+  }
+  allContentfulPiece(sort: {fields: publishDate, order: DESC}) {
+    edges {
+      node {
+        title
+        id
+        slug
+        publishDate(formatString: "MMMM DD, YYYY")
+        role
+        excerpt {
+        childMarkdownRemark {
+          timeToRead
+          html
+          excerpt(pruneLength: 320)
+        }
+      }
+        body {
+          childMarkdownRemark {
+            html
+            excerpt(pruneLength: 120)
+          }
+        }
+        heroImage {
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
   }
 `
 

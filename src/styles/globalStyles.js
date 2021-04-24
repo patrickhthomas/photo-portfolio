@@ -1,3 +1,4 @@
+import { ThemeContext } from '@emotion/core'
 import { css } from '@emotion/core'
 export const globalStyles = css`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -97,8 +98,9 @@ export const globalStyles = css`
   /* Added to Fix Footer to bottom of viewport */
   html,
   body {
-    background: white;
+    background: inherit;
     height: 100%;
+    overflow-x: hidden;
   }
   .siteRoot {
     height: 100vh;
@@ -140,7 +142,7 @@ export const globalStyles = css`
   ol,
   ul,
   li {
-    list-style: none;
+    list-style: circle;
   }
 
   blockquote,
@@ -207,4 +209,16 @@ export const globalStyles = css`
   body:not(.user-is-tabbing) a:focus {
     outline: none;
   }
+
+p {
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+}
 `

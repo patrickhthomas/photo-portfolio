@@ -19,7 +19,7 @@ const Tag = styled.li`
     border-radius: 2px;
     text-transform: capitalize;
     text-decoration: none;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.black};
     border: 1px solid ${props => props.theme.colors.secondary};
     &:hover {
       background: ${props => props.theme.colors.secondary};

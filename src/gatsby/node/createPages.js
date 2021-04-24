@@ -5,9 +5,11 @@ const { paginate } = require(`gatsby-awesome-pagination`)
 
 module.exports = async ({ graphql, actions }) => {
   const { createPage } = actions
-
   const basePath = config.siteMetadata.basePath || '/'
 
+  
+
+  
   // Create a page for each "post"
   const postsQuery = await graphql(query.data.posts)
   const posts = postsQuery.data.allContentfulPost.edges
@@ -27,7 +29,30 @@ module.exports = async ({ graphql, actions }) => {
     })
   })
 
+
+  //for each piece create a page
+  const piecesQuery = await graphql(query.data.pieces)
+  const pieces = piecesQuery.data.allContentfulPiece.edges
+    pieces.forEach((piece, i) => {
+    const next = i === pieces.length - 1 ? null : pieces[i + 1].node
+    const prev = i === 0 ? null : pieces[i - 1].node
+
+    createPage({
+      path: `${basePath === '/' ? '' : basePath}/${piece.node.slug}/`,
+      component: path.resolve(`./src/templates/piece.js`),
+      context: {
+        slug: piece.node.slug,
+        basePath: basePath === '/' ? '' : basePath,
+        prev,
+        next,
+      },
+    })
+  })
+  
+  
+
   // Create a page containing all "posts" and paginate.
+
   paginate({
     createPage,
     component: path.resolve(`./src/templates/posts.js`),
@@ -40,6 +65,10 @@ module.exports = async ({ graphql, actions }) => {
       paginationPath: basePath === '/' ? '' : `/${basePath}`,
     },
   })
+
+
+
+
 
   // Create "tag" page and paginate
   const tagsQuery = await graphql(query.data.tags)

@@ -7,6 +7,13 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
+    "@fontsource/biorhyme": "^4.2.2",
+    "@fontsource/ibm-plex-mono": "^4.2.2",
+    "@fontsource/ibm-plex-sans": "^4.2.2",
+    "@fontsource/open-sans": "^4.2.2",
+    "@fontsource/orelega-one": "^4.2.1",
+    "@fontsource/rubik-mono-one": "^4.2.2",
+    "@theme-ui/preset-funk": "^0.7.3",
     "babel-plugin-styled-components": "^1.10.7",
     "chalk": "^3.0.0",
     "contentful-import": "^7.6.2",

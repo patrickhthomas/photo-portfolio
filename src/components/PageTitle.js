@@ -2,9 +2,10 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const Title = styled.h1`
+  color: ${props => props.theme.colors.black};
   font-size: ${props => (props.small ? '2em' : '3em')};
-  text-transform: capitalize;
-  font-weight: 600;
+  text-transform: uppercase;
+  font-weight: 400;
   text-align: center;
   margin: 0 0 3rem 0;
   margin: ${props => (props.small ? '1rem 0 4rem 0' : '0 0 3rem 0')};
@@ -14,7 +15,7 @@ const Title = styled.h1`
   }
   a {
     transition: all 0.2s;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.black};
     &:hover {
       color: ${props => props.theme.colors.highlight};
     }

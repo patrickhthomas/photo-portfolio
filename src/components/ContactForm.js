@@ -20,7 +20,7 @@ const Form = styled.form`
     font-family: inherit;
     font-size: inherit;
     background: ${props => props.theme.colors.tertiary};
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.black};
     border-radius: 2px;
     padding: 1em;
     &::-webkit-input-placeholder {
@@ -79,7 +79,7 @@ const Message = styled.textarea`
 `
 
 const Submit = styled.input`
-  background: ${props => props.theme.colors.text} !important;
+  background: ${props => props.theme.colors.black} !important;
   color: white !important;
   cursor: pointer;
   transition: 0.2s;
@@ -116,7 +116,7 @@ const Modal = styled.div`
 `
 
 const Button = styled.div`
-  background: ${props => props.theme.colors.text};
+  background: ${props => props.theme.colors.black};
   font-size: 1em;
   display: inline-block;
   margin: 0 auto;

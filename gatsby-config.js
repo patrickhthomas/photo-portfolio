@@ -17,19 +17,19 @@ try {
 
 module.exports = {
   siteMetadata: {
-    title: 'GCN',
+    title: 'Patrick Thomas Design',
     description:
-      'A starter template to build amazing static websites with Gatsby, Contentful and Netlify',
-    siteUrl: 'https://gcn.netlify.com',
+      'Portfolio for Patrick Thomas, UX Designer and Front End Developer',
+    siteUrl: 'https://patrickthomas.design',
     image: '/images/share.jpg',
     menuLinks: [
       {
-        name: 'Home',
-        slug: '/',
-      },
-      {
         name: 'About',
         slug: '/about/',
+      },
+      {
+        name: 'Home',
+        slug: '/',
       },
       {
         name: 'Contact',
@@ -41,9 +41,9 @@ module.exports = {
     basePath: '/',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     `gatsby-plugin-emotion`,
     'gatsby-plugin-theme-ui',
-    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-transformer-remark`,
       options: {

@@ -36,13 +36,13 @@ const Numbers = styled.div`
   border-radius: 2px;
   display: inline-block;
   float: left;
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.black};
   padding: 1rem;
   background: white;
   position: relative;
   transition: 0.3s all;
   svg {
-    fill: ${props => props.theme.colors.text};
+    fill: ${props => props.theme.colors.black};
     margin: 0 0 0 0.25rem;
     transition: 0.3s all;
   }

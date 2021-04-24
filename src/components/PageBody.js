@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 require('prismjs/themes/prism.css')
 
 const Body = styled.div`
+  backgorund-color: ${props => props.theme.colors.less};
   margin: 0 auto;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
   h1,
@@ -12,6 +13,13 @@ const Body = styled.div`
     line-height: 1.25;
     margin: 0 0 1rem 0;
     text-transform: capitalize;
+  }
+
+  p,
+  h1,
+  h2,
+  h3 {
+    color: ${props => props.theme.colors.black};
   }
 
   h1 {
@@ -31,7 +39,7 @@ const Body = styled.div`
 
   a {
     transition: 0.2s;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.black};
     &:hover {
       color: ${props => props.theme.colors.highlight};
     }

@@ -7,13 +7,16 @@ import { globalStyles } from '../styles/globalStyles.js'
 
 const Root = styled.div`
   font-family: ${props => props.theme.fonts.body};
+  div {
+    background: ${props => props.theme.colors.white};
+  }
 `
+
 
 const Skip = styled.a`
   font-family: ${props => props.theme.fonts.body};
   padding: 0 1rem;
   line-height: 60px;
-  background: #2867cf;
   color: white;
   z-index: 101;
   position: fixed;

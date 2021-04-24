@@ -30,4 +30,15 @@ module.exports.data = {
       }
     }
   }`,
+  pieces: `{
+    allContentfulPiece(sort: { fields: [publishDate], order: DESC }) {
+      edges {
+        node {
+          slug
+          publishDate
+        }
+      }
+    }
+  }
+  `,
 }

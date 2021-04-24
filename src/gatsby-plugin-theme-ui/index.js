@@ -1,15 +1,46 @@
+import "@fontsource/ibm-plex-mono/400.css"
+import "@fontsource/ibm-plex-mono/700.css"
+import "@fontsource/open-sans"
+import "@fontsource/biorhyme"
+import "@fontsource/ibm-plex-sans"
+import "@fontsource/orelega-one"
+
+
+
+const myBg = 'linear-gradient(135.31deg, #00113F 8.15%, #4F0051 99.17%);'
+
 export default {
+
+  
   colors: {
-    background: '#ffffff',
-    text: '#121212',
-    primary: '#121212',
-    secondary: '#e9e9e9',
-    tertiary: '#f3f3f3',
-    highlight: '#5b8bf7',
+    less: '#EDEDED',
+    black: '#1E1E2A',
+    primary: '#444444',
+    secondary: '#CECECE',
+    tertiary: '#F3F3F3',
+    highlight: '#5E5BF7',
+    link: '#90F660',
+    white: '#FAFAFA',
+    modes: {
+      dark: {
+        less: '#EDEDED',
+        black: '#1E1E2A',
+        primary: '#444444',
+        secondary: '#CECECE',
+        tertiary: '#F3F3F3',
+        highlight: '#5E5BF7',
+        link: '#90F660',
+        white: '#FAFAFA',
+      }
+    }
+  },  
+  gradients: {
+    primary: myBg,
   },
   fonts: {
     body:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+      'IBM Plex Sans, IBM Plex Mono, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    header: 'Orelega One',
   },
   sizes: {
     maxWidth: '1050px',
@@ -20,4 +51,6 @@ export default {
     medium: '50em',
     large: '70em',
   },
+
+  
 }
