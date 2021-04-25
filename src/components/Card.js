@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 const Post = styled.li`
+      background: ${props => props.theme.colors.highlight05};
   position: relative;
   border: 1px solid ${props => props.theme.gradients.primary};
   border-radius: 2px;
@@ -18,7 +19,10 @@ const Post = styled.li`
     flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
   }
   &:hover {
-    background: ${props => props.theme.colors.secondary};
+    background: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.black};
+    box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .4);
+    transition: all .5s ease-in;
   }
   a {
     display: flex;

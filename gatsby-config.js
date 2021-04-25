@@ -45,6 +45,15 @@ module.exports = {
     `gatsby-plugin-emotion`,
     'gatsby-plugin-theme-ui',
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

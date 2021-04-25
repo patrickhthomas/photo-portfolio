@@ -23,11 +23,11 @@ const HeroContainer = styled.div`
   grid-template-columns: .8fr;
   @media (min-width: ${props => props.theme.responsive.small}) {
     grid-template-columns: .3fr;
-    grid-gap: 2em;
+    grid-gap: 1em;
   }
   @media (min-width: ${props => props.theme.responsive.medium}) {
     grid-template-columns: .25fr;
-    grid-gap: 2em;
+    grid-gap: 1em;
   }
 
 `
@@ -184,6 +184,7 @@ const PieceTemplate = ({ data, pageContext }) => {
         <PieceContainer>
           <HeroContainer>
           <HeaderText><h1>{title}</h1></HeaderText>
+          <Body dangerouslySetInnerHTML={{ __html: data.contentfulPiece.excerpt.childMarkdownRemark.html }}/>
           <HeroPic src={ heroImage.file.url } alt="" /> 
           </HeroContainer>
           <Body dangerouslySetInnerHTML={{ __html: data.contentfulPiece.body.childMarkdownRemark.html }}/>
@@ -220,7 +221,7 @@ export const query = graphql`
         childMarkdownRemark {
           timeToRead
           html
-          excerpt(pruneLength: 320)
+          excerpt
         }
       }
     }

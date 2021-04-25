@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+
+
 const List = styled.ul`
   display: flex;
   flex-flow: row wrap;
@@ -9,6 +11,9 @@ const List = styled.ul`
   &::after {
     content: '';
     flex: 0 0 32%;
+  }
+  li {
+    list-style: none;
   }
 `
 

@@ -18,9 +18,10 @@ export default {
     primary: '#444444',
     secondary: '#CECECE',
     tertiary: '#F3F3F3',
-    highlight: '#5E5BF7',
+    highlight: '#5E5BF7', 
     link: '#90F660',
     white: '#FAFAFA',
+    highlight05: 'rgba(94, 91, 247, 0.05)',
     modes: {
       dark: {
         less: '#EDEDED',
