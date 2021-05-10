@@ -33,39 +33,42 @@ const HeroContainer = styled.div`
 `
 const HeroPic = styled.img`
   width: 100%;
+  max-width: 50vw;
 `
 const Body = styled.div`
+display: flex;
+flex-flow: row wrap;
+justify-content: space-evenly;
 color: ${props => props.theme.colors.black};
 max-width: 100%;
 margin: 0 auto;
   h1,
   h2,
   h3 {
-    font-weight: 600;
+    font-weight: 900;
     line-height: 1.25;
     margin: 0 0 1rem 0;
     text-transform: capitalize;
+
   }
-div.block.row1 p {
-  grid-column: 1 / 1;
-}
-div.block {
-  padding: 0 0 3em 0;
-  width: 100%;
+
+div {
+  width: 200px;
+  flex: 1 1 auto;
+  padding: 1em 1em 3em 1em;
   display: grid;
   align-items: start;
   grid-template-columns: 1fr;
   @media (min-width: ${props => props.theme.responsive.small}) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 2em;
   }
   @media (min-width: ${props => props.theme.responsive.medium}) {
-    grid-template-columns: 1fr 1fr;
     grid-gap: 3em;
   }
 }
 
-div.block.row3 p {
+div.block p {
   grid-column: 1 / 1;
 }
 div.block.row3 {
@@ -76,9 +79,16 @@ div.block.row3 {
   }
   h2 {
     font-size: 1.25em;
+    color: white;
+    background-color: ${props => props.theme.colors.black};
+    padding: 2em 0em .5em 1em;
+    margin-left: calc(50% - 50vw); 
+    width: 100vw;
   }
   h3 {
     font-size: 1em;
+    text-decoration: underline;
+    text-transform: uppercase;
   }
 
   p {
@@ -111,8 +121,8 @@ div.block.row3 {
 
   ul {
     li {
-      list-style: circle;
-      list-style-position: outside;
+      list-style: none;
+      list-style-position: inside;
       line-height: 1.6;
       font-weight: 500;
       letter-spacing: .02rem;
