@@ -36,9 +36,10 @@ const HeroPic = styled.img`
   max-width: 50vw;
 `
 const Body = styled.div`
+
 display: flex;
-flex-flow: row wrap;
-justify-content: space-evenly;
+flex-flow: column nowrap;
+justify-content: space-between;
 color: ${props => props.theme.colors.black};
 max-width: 100%;
 margin: 0 auto;
@@ -53,26 +54,59 @@ margin: 0 auto;
   }
 
 div {
-  width: 200px;
-  flex: 1 1 auto;
-  padding: 1em 1em 3em 1em;
-  display: grid;
-  align-items: start;
-  grid-template-columns: 1fr;
+  padding: 1em em 3em 0em;
+  display: flex;
+  flex-flow: column nowrap;
   @media (min-width: ${props => props.theme.responsive.small}) {
-    grid-template-columns: 1fr;
-    grid-gap: 2em;
+
   }
   @media (min-width: ${props => props.theme.responsive.medium}) {
-    grid-gap: 3em;
+
   }
 }
-
-div.block p {
-  grid-column: 1 / 1;
+.singleColumn{
+  width: 100%;
+  flex: 2 2 auto;
 }
-div.block.row3 {
-  grid-gap: 1em;
+.twinColumn {
+  flex: 1 1 auto;
+}
+
+.nine, .eleven {
+  width: 100%;
+  flex: 2 2 auto;
+}
+
+p {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+
+
+p.notAnImage {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+button {
+  padding: 1em 10% 1em 10%;
+  width: 100%;
+  background: ${props => props.theme.colors.white};
+  border: .2em solid ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.black};
+  transition: all .2s ease-in;
+  box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
+  border-radius: .2rem;
+  margin: 1em 0 1em 0;
+
+  &:hover {
+    background: ${props => props.theme.colors.highlight};
+    color: ${props => props.theme.colors.white};
+    transition: all .2s ease-in;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 }
   h1 {
     font-size: 1.5em;
@@ -82,8 +116,8 @@ div.block.row3 {
     color: white;
     background-color: ${props => props.theme.colors.black};
     padding: 2em 0em .5em 1em;
-    margin-left: calc(50% - 50vw); 
-    width: 100vw;
+    border-radius: 1em 1em 0em 0em;
+    width: 100%;
   }
   h3 {
     font-size: 1em;
@@ -121,15 +155,17 @@ div.block.row3 {
 
   ul {
     li {
+      width: 100%;
       list-style: none;
       list-style-position: inside;
       line-height: 1.6;
       font-weight: 500;
       letter-spacing: .02rem;
-      padding-bottom: .4em;
-      &:last-child {
-        margin: 0;
-      }
+      padding: .05em 0 .05em 1em;
+      margin: 2.5em 0 0 -1em;
+   
+      border-left: 2px solid ${props => props.theme.colors.highlight};
+
     }
   }
 
@@ -164,6 +200,26 @@ div.block.row3 {
       background: inherit !important;
     }
   }
+.bold {
+  font-weight: 900;
+  font-size: 1em;
+  margin-bottom: .5em;
+}
+
+div p{
+  width: 100%;
+}
+
+@media screen and (min-width: ${props => props.theme.responsive.small}) {
+  display: flex;
+  flex-flow: row wrap;
+  .twinColumn {
+      width: 50%;
+  }
+  p {
+  width: 100%;
+  }
+}
 `
 
 const PieceTemplate = ({ data, pageContext }) => {
@@ -195,7 +251,6 @@ const PieceTemplate = ({ data, pageContext }) => {
           <HeroContainer>
           <HeaderText><h1>{title}</h1></HeaderText>
           <Body dangerouslySetInnerHTML={{ __html: data.contentfulPiece.excerpt.childMarkdownRemark.html }}/>
-          <HeroPic src={ heroImage.file.url } alt="" /> 
           </HeroContainer>
           <Body dangerouslySetInnerHTML={{ __html: data.contentfulPiece.body.childMarkdownRemark.html }}/>
         </PieceContainer>

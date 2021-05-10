@@ -96,9 +96,7 @@ margin: 0 auto;
       background: inherit !important;
     }
   }
-    @media (min-width: ${props => props.theme.responsive.small}) {
 
-  }
 
 `
 

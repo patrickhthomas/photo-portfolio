@@ -4,7 +4,10 @@ import styled from '@emotion/styled'
 const Title = styled.div`
   color: ${props => props.theme.colors.black};
   h1 {
+      font-size: 2em;
+      @media (min-width: ${props => props.theme.responsive.small}) {
       font-size: 2.8em;
+  }
   }
   h2 {
       font-size: 1.8em;
