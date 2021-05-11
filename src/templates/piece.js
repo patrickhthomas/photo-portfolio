@@ -214,7 +214,8 @@ div p{
   display: flex;
   flex-flow: row wrap;
   .twinColumn {
-      width: 50%;
+      max-width: 50%;
+      padding: 2em;
   }
   p {
   width: 100%;
