@@ -22,6 +22,7 @@ export default {
     link: '#90F660',
     white: '#FAFAFA',
     highlight05: 'rgba(94, 91, 247, 0.05)',
+    nav: 'rgba(255, 255, 255, 0.5)',
     modes: {
       dark: {
         less: '#EDEDED',

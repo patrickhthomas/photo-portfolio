@@ -12,16 +12,17 @@ import ScrollTo from "react-scroll-into-view";
 
 const LogoContainer = styled.div`
   grid-column: 2 / 3;
+  background-color: rgba(30, 30, 42, .00);
 `
 
 
 const MyLogo = styled.img`
+  background-color: rgba(30, 30, 42, .00);
   width: 3em;
   margin-left: 0;
   border-radius: 1em;
   box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .05);
-      &:hover {
-    background: ${props => props.theme.colors.white};
+    &:hover {
     transition: all .2s ease-in;
     transform: scale(1.05);
     box-shadow: 0px 0px 20px 0px rgba(30, 30, 42, .2);
@@ -32,9 +33,14 @@ const MyLogo = styled.img`
 `
 
 const Header = styled.header`
-  background: ${props => props.theme.colors.white};
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: ${props => props.theme.colors.nav};
   width: 100%;
   padding: 1.5em 0;
+  z-index: 4;
+      box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .1);
 `
 
 
@@ -54,7 +60,9 @@ const Button = styled.button`
 
 const Nav = styled.nav`
 
-
+div {
+    background-color: rgba(30, 30, 42, .00);
+}
 
   display: flex;
   align-items: flex-end;
@@ -114,7 +122,7 @@ const Menu = props => {
           </LogoContainer>
         <ul>
           <li>
-          <ScrollTo selector="#blog">
+          <ScrollTo selector="#blog" alignToTop={true} style={{backgroundColor: 'rgba(0, 0, 30, 0.0)'}}>
             <Button>Blog</Button>
           </ScrollTo>
           </li>

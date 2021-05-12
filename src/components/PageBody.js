@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 require('prismjs/themes/prism.css')
 
 const Body = styled.div`
-  backgorund-color: ${props => props.theme.colors.less};
+  background-color: ${props => props.theme.colors.less};
   margin: 0 auto;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
   h1,

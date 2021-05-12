@@ -70,7 +70,7 @@ const Posts = ({ data, pageContext }) => {
             role3={preview[3].node.role} 
             title3={preview[3].node.title}
             />
-            <HeaderText><h1>Blog posts</h1></HeaderText>
+            <HeaderText><h1 id="blog">Blog posts</h1></HeaderText>
              <Card {...featuredPost} featured basePath={basePath} />
             {posts.slice(1).map(({ node: post }) => (
               <Card key={post.id} {...post} basePath={basePath} />
