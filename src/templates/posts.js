@@ -12,6 +12,7 @@ import Preview from'../components/Preview'
 import HeaderText from '../components/HeaderText'
 
 
+
 const Posts = ({ data, pageContext }) => {
   const about = data.contentfulPage
   const preview = data.allContentfulPiece.edges
@@ -77,7 +78,6 @@ const Posts = ({ data, pageContext }) => {
           </CardList>
           
         ) : (
-          
           <CardList>
             {posts.map(({ node: post }) => (
               <Card key={post.id} {...post} basePath={basePath} />

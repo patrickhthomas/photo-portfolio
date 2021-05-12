@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import LogoSrc from "../../static/images/favicon.png"
+import ScrollTo from "react-scroll-into-view";
 
 
 
@@ -47,6 +48,10 @@ const Header = styled.header`
   }
 
 */
+
+const Button = styled.button`
+`
+
 const Nav = styled.nav`
 
 
@@ -95,7 +100,7 @@ const activeLinkStyle = {
 
 
 
-const Menu = ({pageContext}) => {
+const Menu = props => {
 
   const { menuLinks } = useSiteMetadata()
   const { basePath } = useSiteMetadata()
@@ -108,6 +113,11 @@ const Menu = ({pageContext}) => {
             </Link>
           </LogoContainer>
         <ul>
+          <li>
+          <ScrollTo selector="#blog">
+            <Button>Blog</Button>
+          </ScrollTo>
+          </li>
           {menuLinks.map(link => (
             <li key={link.name}>
               <Link to={link.slug} activeStyle={activeLinkStyle}>

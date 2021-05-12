@@ -11964,6 +11964,11 @@
     "prop-types" "^15.6.2"
     "scheduler" "^0.18.0"
 
+"react-scroll-into-view@^1.8.2":
+  "integrity" "sha512-tYY3TEjFFFazKSx05DElH750WB4cxxSU5mkD27eFxI2JIUpMuySsBEy9q6D7DM8VjjlMjT4KKo4dKcoNENatdg=="
+  "resolved" "https://registry.npmjs.org/react-scroll-into-view/-/react-scroll-into-view-1.8.2.tgz"
+  "version" "1.8.2"
+
 "react-side-effect@^1.1.0":
   "integrity" "sha512-v1ht1aHg5k/thv56DRcjw+WtojuuDHFUgGfc+bFHOWsF4ZK6C2V57DO0Or0GPsg6+LSTE0M6Ry/gfzhzSwbc5w=="
   "resolved" "https://registry.npmjs.org/react-side-effect/-/react-side-effect-1.2.0.tgz"
@@ -11971,7 +11976,7 @@
   dependencies:
     "shallowequal" "^1.0.1"
 
-"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^16.0.0", "react@^16.11.0", "react@^16.12.0", "react@^16.4.2", "react@^16.8.0", "react@^16.8.2", "react@^16.9.0", "react@>=15.0.0", "react@>=16.3.0", "react@>=16.8.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
+"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^16.0.0", "react@^16.11.0", "react@^16.12.0", "react@^16.4.2", "react@^16.5.2", "react@^16.8.0", "react@^16.8.2", "react@^16.9.0", "react@>=15.0.0", "react@>=16.3.0", "react@>=16.8.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
   "integrity" "sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.12.0.tgz"
   "version" "16.12.0"
