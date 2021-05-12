@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { StaticQuery, graphql } from "gatsby"
+import HeroImageLeft from "../components/heroImageLeft"
 import PicSrc from "/Users/patrickthomas/Developer-Files/portfolioV2/gatsby-starter-gcn/public/images/heroImageRight.png"
 import LeftPicSrc from "/Users/patrickthomas/Developer-Files/portfolioV2/gatsby-starter-gcn/public/images/heroImageLeft.png"
 
@@ -71,9 +73,11 @@ const MyPic = styled.img`
   }
 `
 
+
 const BgPic = styled.img`
   display: none;
   @media (min-width: ${props => props.theme.responsive.small}) {
+
     display: flex;
     width: 100%;
     grid-column: 1 / 1;
@@ -193,16 +197,16 @@ const Text = styled.div`
 `
 
 
-const HomeHero = ({ children }) => {
+const HomeHero = ({ imgLeft, imgRight }) => {
   return (
     <Container>
       <Grid>
         <Text>
-            <BgPic src={ LeftPicSrc } alt="background image"/>
+            <BgPic src={ imgLeft } alt="background image"/>
             <h1>Howdy, I’m Patrick Thomas, a designer and developer in the Pacific Northwest.</h1>
         </Text>
         <Me>
-          <MyPic src={ PicSrc } alt="My Profile Picture" />
+          <MyPic src={ imgRight } alt="My Profile Picture" />
         </Me>
       </Grid>
     </Container>

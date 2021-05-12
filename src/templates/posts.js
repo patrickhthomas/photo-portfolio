@@ -38,7 +38,10 @@ const Posts = ({ data, pageContext }) => {
     <Layout>
       <SEO title={startCase(basePath)} image={ogImage} />
       <Container>
-        <HomeHero />
+        <HomeHero 
+        imgLeft={data.contentfulHeroImageLeft.image.file.url}
+        imgRight={data.contentfulHeroImageRight.image.file.url}
+        />
         {isFirstPage ? (
           <CardList>
             
@@ -154,6 +157,20 @@ export const query = graphql`
             url
           }
         }
+      }
+    }
+  }
+  contentfulHeroImageLeft {
+    image {
+      file {
+        url
+      }
+    }
+  }
+  contentfulHeroImageRight {
+    image {
+      file {
+        url
       }
     }
   }

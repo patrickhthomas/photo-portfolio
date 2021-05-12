@@ -16,25 +16,7 @@ import SEO from '../components/SEO'
 const PieceContainer = styled.div`
     width: 100%;
 `
-const HeroContainer = styled.div`
-  padding: 0 0 3em 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: .8fr;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-    grid-template-columns: .3fr;
-    grid-gap: 1em;
-  }
-  @media (min-width: ${props => props.theme.responsive.medium}) {
-    grid-template-columns: .25fr;
-    grid-gap: 1em;
-  }
 
-`
-const HeroPic = styled.img`
-  width: 100%;
-  max-width: 50vw;
-`
 const Body = styled.div`
 
 display: flex;
@@ -53,21 +35,18 @@ margin: 0 auto;
 
   }
 
+
 div {
   padding: 1em em 3em 0em;
   display: flex;
   flex-flow: column nowrap;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-
-  }
-  @media (min-width: ${props => props.theme.responsive.medium}) {
-
-  }
 }
+
 .singleColumn{
   width: 100%;
   flex: 2 2 auto;
 }
+
 .twinColumn {
   flex: 1 1 auto;
 }
@@ -80,14 +59,12 @@ div {
 p {
   width: 100%;
   flex: 1 1 auto;
+  line-height: 1.6;
+  margin: 0 0 2em 0;
 }
 
 
 
-p.notAnImage {
-  width: 100%;
-  flex: 0 0 auto;
-}
 
 button {
   padding: 1em 10% 1em 10%;
@@ -123,11 +100,6 @@ button {
     font-size: 1em;
     text-decoration: underline;
     text-transform: uppercase;
-  }
-
-  p {
-    line-height: 1.6;
-    margin: 0 0 2em 0;
   }
 
   a {
@@ -206,21 +178,51 @@ button {
   margin-bottom: .5em;
 }
 
-div p{
-  width: 100%;
-}
+
 
 @media screen and (min-width: ${props => props.theme.responsive.small}) {
   display: flex;
   flex-flow: row wrap;
-  .twinColumn {
-      max-width: 50%;
+  .twinColumn, p {
+      width: 50%;
       padding: 2em;
   }
-  p {
-  width: 100%;
-  }
 }
+
+
+p.notAnImage {
+  width: 100%;
+  flex: 0 0 auto;
+  padding: 0em;
+}
+
+div p{
+  width: 100%;
+  padding: 0;
+}
+`
+
+const HeroContainer = styled.div`
+  padding: 0 0 3em 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: .8fr;
+  @media (min-width: ${props => props.theme.responsive.small}) {
+    grid-template-columns: .3fr;
+    grid-gap: 1em;
+  }
+  @media (min-width: ${props => props.theme.responsive.medium}) {
+    grid-template-columns: .5fr;
+    grid-gap: 1em;
+  }
+  div {
+    width: 100%;
+  }
+  div > p {
+    width: 100%;
+    padding: 0;
+  }
+
 `
 
 const PieceTemplate = ({ data, pageContext }) => {
