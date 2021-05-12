@@ -1,15 +1,33 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import HeaderText from '../components/HeaderText'
 
 const Title = styled.h1`
   color: ${props => props.theme.colors.black};
-  font-size: ${props => (props.small ? '2em' : '3em')};
-  text-transform: uppercase;
-  font-weight: 400;
-  text-align: center;
-  margin: 0 0 3rem 0;
-  margin: ${props => (props.small ? '1rem 0 4rem 0' : '0 0 3rem 0')};
-  line-height: 1.2;
+  h1 {
+      font-size: 2em;
+      @media (min-width: ${props => props.theme.responsive.small}) {
+      font-size: 2.8em;
+  }
+  }
+  h2 {
+      font-size: 1.8em;
+      border-bottom: .5px solid ${props => props.theme.colors.secondary};
+  }
+  h3 {
+      font-size: 1.2em;
+      border-bottom: .5px solid ${props => props.theme.colors.secondary};
+  }
+  h1,
+  h2,
+  h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: left;
+    margin: 0 0 .5em 0;
+    line-height: 1.2;
+    font-family: ${props => props.theme.fonts.header};
+  }
   span {
     margin: 0 0 0 0.25em;
   }
@@ -23,7 +41,7 @@ const Title = styled.h1`
 `
 
 const PageTitle = props => {
-  return <Title small={props.small}>{props.children}</Title>
+  return <HeaderText>{props.children}</HeaderText>
 }
 
 export default PageTitle

@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import PageBody from '../components/PageBody'
+import HeaderText from '../components/HeaderText'
 
 
 const Section = ({ data }) => {
@@ -12,7 +13,7 @@ const Section = ({ data }) => {
   return (
     <Layout>
       <Container>
-        <PageTitle>{title}</PageTitle>
+        <HeaderText><h1>{title}</h1></HeaderText>
         <PageBody body={body} />
       </Container>
     </Layout>

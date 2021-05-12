@@ -32,6 +32,10 @@ module.exports = {
         slug: '/blog/',
       },
       {
+        name: 'About',
+        slug: '/about/',
+      },
+      {
         name: 'Contact',
         slug: '/contact/',
       },

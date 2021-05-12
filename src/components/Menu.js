@@ -38,7 +38,7 @@ const Header = styled.header`
   top: 0;
   background: ${props => props.theme.colors.nav};
   width: 100%;
-  padding: 1.5em 0;
+  padding: .5em 0;
   z-index: 4;
       box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .1);
 `
@@ -83,12 +83,12 @@ div {
     display: inline-block;
     margin-left: 1em;
     margin-right: 1em;
-    border-bottom: .5px solid ${props => props.theme.colors.secondary}
+    border-bottom: .5px solid ${props => props.theme.colors.secondary};
   }
 
   a {
     text-decoration: none;
-    color: DarkGray;
+    color: ${props => props.theme.colors.black};
     font-weight: 600;
     transition: all 0.2s;
     &:hover {
@@ -121,11 +121,6 @@ const Menu = props => {
             </Link>
           </LogoContainer>
         <ul>
-          <li>
-          <ScrollTo selector="#blog" alignToTop={true} style={{backgroundColor: 'rgba(0, 0, 30, 0.0)'}}>
-            <Button>Blog</Button>
-          </ScrollTo>
-          </li>
           {menuLinks.map(link => (
             <li key={link.name}>
               <Link to={link.slug} activeStyle={activeLinkStyle}>

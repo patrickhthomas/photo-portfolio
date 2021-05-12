@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
-import PageTitle from '../components/PageTitle'
+import HeaderText from '../components/HeaderText'
 import PageBody from '../components/PageBody'
 import SEO from '../components/SEO'
 
@@ -19,7 +19,7 @@ const PageTemplate = ({ data }) => {
         }
       />
       <Container>
-        <PageTitle>{title}</PageTitle>
+        <HeaderText><h1>{title}</h1></HeaderText>
         <PageBody body={body} />
       </Container>
     </Layout>

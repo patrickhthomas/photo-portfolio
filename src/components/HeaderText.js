@@ -3,6 +3,11 @@ import styled from '@emotion/styled'
 
 const Title = styled.div`
   color: ${props => props.theme.colors.black};
+ .pageTitle {
+  max-width: 650px;
+  margin: auto;
+ }
+
   h1 {
       font-size: 2em;
       @media (min-width: ${props => props.theme.responsive.small}) {

@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
+import HeaderText from '../components/HeaderText'
+
 
 /*
   ⚠️ This is an example of a contact form powered with Netlify form handling.
@@ -79,13 +81,29 @@ const Message = styled.textarea`
 `
 
 const Submit = styled.input`
-  background: ${props => props.theme.colors.black} !important;
-  color: white !important;
-  cursor: pointer;
-  transition: 0.2s;
+  width: 100%;
+  background: ${props => props.theme.colors.white};
+  border: .01em solid ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.black};
+  transition: all .2s ease-in;
+  box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
+  max-width: 12em;
+  height: 3em;
+  align-self: end;
+  border-radius: .2rem;
+
   &:hover {
-    background: ${props => props.theme.colors.highlight} !important;
+    background: ${props => props.theme.colors.highlight};
+    transition: all .2s ease-in;
+    transform: scale(1.05);
+    cursor: pointer;
+    color: ${props => props.theme.colors.white};
   }
+    @media (min-width: ${props => props.theme.responsive.small}) {
+      grid-column: 1 / span 2;
+      color: ${props => props.theme.colors.less};
+  box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
+    }
 `
 
 const Modal = styled.div`
@@ -114,28 +132,33 @@ const Modal = styled.div`
     margin: 0 0 2em 0;
   }
 `
+const Button = styled.button`
+  width: 100%;
+  background: ${props => props.theme.colors.white};
+  border: .2em solid ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.black};
+  transition: all .2s ease-in;
+  box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
+  max-width: 12em;
+  height: 3em;
+  align-self: end;
+  border-radius: .2rem;
 
-const Button = styled.div`
-  background: ${props => props.theme.colors.black};
-  font-size: 1em;
-  display: inline-block;
-  margin: 0 auto;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: white;
-  padding: 1em;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: 0.2s;
-  z-index: 99;
-  &:focus {
-    outline: none;
-  }
   &:hover {
-    background: ${props => props.theme.colors.highlight};
+    background: ${props => props.theme.colors.secondary};
+    transition: all .2s ease-in;
+    transform: scale(1.05);
+    cursor: pointer;
   }
+    @media (min-width: ${props => props.theme.responsive.small}) {
+      grid-column: 1 / span 2;
+      color: ${props => props.theme.colors.less};
+      border: .01em solid ${props => props.theme.colors.less};
+      box-shadow: none;
+    }
 `
+
+
 
 const encode = data => {
   return Object.keys(data)
@@ -189,6 +212,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
+      
       <Form
         name="contact"
         onSubmit={this.handleSubmit}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import PageTitle from '../components/PageTitle'
+import HeaderText from '../components/HeaderText'
 import Container from '../components/Container'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -13,16 +13,28 @@ const Text = styled.p`
     color: ${props => props.theme.colors.black};
   }
 `
+const HeaderContainer = styled.div`
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+  h1 {
+    text-align: center;
+     max-width: 650px;
+     margin: auto; 
+  }
+`
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404" description="Page Not Found" />
     <Container>
-      <PageTitle>Page Not Found</PageTitle>
+      <HeaderContainer>
+      <HeaderText><h1>Page Not Found</h1></HeaderText>
       <Text>
         Please return <Link to="/">home</Link> or use the menu to navigate to a
         different page.
       </Text>
+      </HeaderContainer>
     </Container>
   </Layout>
 )

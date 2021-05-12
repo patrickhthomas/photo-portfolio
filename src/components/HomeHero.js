@@ -6,6 +6,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 
 const Container = styled.div`
+ margin-top: -3em;
  display: flex;
  padding-bottom: 3em;
 
@@ -17,7 +18,7 @@ const Container = styled.div`
      max-width: ${props => props.theme.sizes.maxWidth};
       width: 100%;
       margin-left: 0;
-      margin: 0 auto;
+      margin: -3em auto;
   }
 
 `
@@ -47,7 +48,6 @@ const Me = styled.div`
   align-self: start;
   margin: auto;
   height: auto;
-  max-height: 300px;
   overflow: hidden;
   width: 100vw;
   margin-left: calc(50% - 50vw);

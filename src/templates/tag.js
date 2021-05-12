@@ -6,7 +6,7 @@ import moment from 'moment'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardList from '../components/CardList'
-import PageTitle from '../components/PageTitle'
+import HeaderText from '../components/HeaderText'
 import Pagination from '../components/Pagination'
 import Container from '../components/Container'
 
@@ -40,11 +40,13 @@ const TagTemplate = ({ data, pageContext }) => {
           image={ogImage}
         />
         <Container>
-          <PageTitle small>
+          <HeaderText>
+            <h3>
             {numberOfPosts} Posts Tagged: &ldquo;
             {title}
             &rdquo;
-          </PageTitle>
+            </h3>
+          </HeaderText>
           <CardList>
             {posts.slice(skip, limit * humanPageNumber).map(post => (
               <Card {...post} key={post.id} basePath={basePath} />
