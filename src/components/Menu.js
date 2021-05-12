@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import LogoSrc from "/Users/patrickthomas/Developer-Files/portfolioV2/gatsby-starter-gcn/static/images/favicon.png"
+import LogoSrc from "../../static/images/favicon.png"
 
 
 

@@ -2,9 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
-import HeroImageLeft from "../components/heroImageLeft"
-import PicSrc from "/Users/patrickthomas/Developer-Files/portfolioV2/gatsby-starter-gcn/public/images/heroImageRight.png"
-import LeftPicSrc from "/Users/patrickthomas/Developer-Files/portfolioV2/gatsby-starter-gcn/public/images/heroImageLeft.png"
+
 
 
 const Container = styled.div`
