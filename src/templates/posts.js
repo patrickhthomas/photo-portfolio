@@ -52,16 +52,22 @@ const Posts = ({ data, pageContext }) => {
             src={preview[0].node.heroImage.file.url}
             excerpt={{ __html: leftQuote+preview[0].node.excerpt.childMarkdownRemark.excerpt+rightQuote }}
             role={preview[0].node.role}
+            title={preview[0].node.title}
             slug1={preview[1].node.slug}
             src1={preview[1].node.heroImage.file.url}
             excerpt1={{ __html: leftQuote+preview[1].node.excerpt.childMarkdownRemark.excerpt+rightQuote}}
             role1={preview[1].node.role}
-            /*src2={preview[1].node.heroImage.file.url}
-            excerpt2={{ __html: preview[1].node.body.childMarkdownRemark.excerpt }}
+            title1={preview[1].node.title}
+            slug2={preview[2].node.slug}
+            src2={preview[2].node.heroImage.file.url}
+            excerpt2={{ __html: leftQuote+preview[2].node.excerpt.childMarkdownRemark.excerpt+rightQuote}}
             role2={preview[2].node.role}
+            title2={preview[2].node.title}
+            slug3={preview[3].node.slug}
             src3={preview[3].node.heroImage.file.url}
             excerpt3={{ __html: preview[3].node.body.childMarkdownRemark.excerpt }}
-            role3={preview[3].node.role} */
+            role3={preview[3].node.role} 
+            title3={preview[3].node.title}
             />
             <HeaderText><h1>Blog posts</h1></HeaderText>
              <Card {...featuredPost} featured basePath={basePath} />

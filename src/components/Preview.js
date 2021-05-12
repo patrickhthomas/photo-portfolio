@@ -240,58 +240,88 @@ const Text = styled.div`
 `
 
 
-const AffirmativePreview = ({ slug, src, excerpt, role, slug1, src1, excerpt1, role1, basePath }) => {
+const AffirmativePreview = props => {
   return (
     <Container>
     <Grid>
       <GridItem>
-      <Link to={`${basePath}/${slug}/`}>
+      <Link to={`${props.basePath}/${props.slug}/`}>
         <ChildGrid>
         <div>
           <HeaderText><h3>Affirmative</h3></HeaderText>
           <Role>
-              <li>{role[0]}</li>
-              <li>{role[1]}</li>
-              <li>{role[2]}</li>
-              <li>{role[3]}</li>
+              <li>{props.role[0]}</li>
+              <li>{props.role[1]}</li>
+              <li>{props.role[2]}</li>
+              <li>{props.role[3]}</li>
           </Role>
-          <Text dangerouslySetInnerHTML={excerpt} /> 
+          <Text dangerouslySetInnerHTML={props.excerpt} /> 
         </div>
-        <MyPic src={ src } alt="My Profile Picture" /> 
+        <MyPic src={ props.src } alt="My Profile Picture" /> 
         <Button>View Project</Button>
         </ChildGrid>
       </Link>
       </GridItem>
+
+
       <GridItem>
-      <Link to={`${basePath}/${slug1}/`}>
+      <Link to={`${props.basePath}/${props.slug1}/`}>
       <ChildGrid>
         <div>
           <HeaderText><h3>Dandelion</h3></HeaderText>
           <Role>
-              <li>{role1[0]}</li>
-              <li>{role1[1]}</li>
-              <li>{role1[2]}</li>
-              <li>{role1[3]}</li>
+              <li>{props.role1[0]}</li>
+              <li>{props.role1[1]}</li>
+              <li>{props.role1[2]}</li>
+              <li>{props.role1[3]}</li>
           </Role>
-          <Text dangerouslySetInnerHTML={excerpt1} />
+          <Text dangerouslySetInnerHTML={props.excerpt1} />
         </div>
-        <MyPic src={ src1 } alt="My Profile Picture" />
+        <MyPic src={ props.src1 } alt="My Profile Picture" />
         <Button>View Project</Button>  
       </ChildGrid>
       </Link>
       </GridItem>
+
       <GridItem>
+      <Link to={`${props.basePath}/${props.slug2}/`}>
       <ChildGrid>
-        <Text dangerouslySetInnerHTML={excerpt} />
-        <MyPic src={ src } alt="My Profile Picture" />  
+        <div>
+          <HeaderText><h3>{props.title2}</h3></HeaderText>
+          <Role>
+              <li>{props.role2[0]}</li>
+              <li>{props.role2[1]}</li>
+              <li>{props.role2[2]}</li>
+              <li>{props.role2[3]}</li>
+          </Role>
+          <Text dangerouslySetInnerHTML={props.excerpt2} />
+        </div>
+        <MyPic src={ props.src2 } alt="My Profile Picture" />
+        <Button>View Project</Button>  
       </ChildGrid>
+      </Link>
       </GridItem>
+
       <GridItem>
+      <Link to={`${props.basePath}/${props.slug3}/`}>
       <ChildGrid>
-        <Text dangerouslySetInnerHTML={excerpt} />
-        <MyPic src={ src } alt="My Profile Picture" />  
+        <div>
+          <HeaderText><h3>{props.title3}</h3></HeaderText>
+          <Role>
+              <li>{props.role3[0]}</li>
+              <li>{props.role3[1]}</li>
+              <li>{props.role3[2]}</li>
+              <li>{props.role3[3]}</li>
+          </Role>
+          <Text dangerouslySetInnerHTML={props.excerpt3} />
+        </div>
+        <MyPic src={ props.src3 } alt="My Profile Picture" />
+        <Button>View Project</Button>  
       </ChildGrid>
+      </Link>
       </GridItem>
+
+
     </Grid>
     </Container>
   )
