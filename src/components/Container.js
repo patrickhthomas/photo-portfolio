@@ -7,6 +7,12 @@ const Wrapper = styled.section`
   max-width: ${props => props.theme.sizes.maxWidth};
   padding: 3em 1.5em 2em;
   flex-grow: 1;
+  .aboutHeader {
+    h1 {
+    max-width: 650px;
+    margin: auto;
+    }
+  }
 `
 
 const Container = props => {

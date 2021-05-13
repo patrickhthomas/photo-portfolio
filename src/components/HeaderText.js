@@ -6,6 +6,7 @@ const Title = styled.div`
  .pageTitle {
   max-width: 650px;
   margin: auto;
+  
  }
 
   h1 {
@@ -32,6 +33,7 @@ const Title = styled.div`
     line-height: 1.2;
     font-family: ${props => props.theme.fonts.header};
   }
+
   span {
     margin: 0 0 0 0.25em;
   }

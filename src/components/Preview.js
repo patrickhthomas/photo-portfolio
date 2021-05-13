@@ -65,7 +65,6 @@ const GridItem = styled.div`
 
   height: 100%;
   place-items: stretch;
-
   &:hover div {
     color: ${props => props.theme.colors.black};
     transition: all .2s ease-in;
@@ -87,11 +86,13 @@ const GridItem = styled.div`
   }
   @media (min-width: ${props => props.theme.responsive.small}) {
     box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .05);
+    border: 1px solid ${props => props.theme.colors.highlight25};  
     grid-template-columns: 1fr 1fr;
     padding: 2em;
     grid-gap: 16px;
           &:hover {
     background: ${props => props.theme.colors.white};
+    border: 1px solid ${props => props.theme.colors.highlight};
     transition: all .2s ease-in;
     transform: scale(1.05);
     box-shadow: 0px 0px 20px 0px rgba(30, 30, 42, .2);

@@ -1041,6 +1041,11 @@
   "resolved" "https://registry.npmjs.org/@fontsource/biorhyme/-/biorhyme-4.2.2.tgz"
   "version" "4.2.2"
 
+"@fontsource/fraunces@^4.3.0":
+  "integrity" "sha512-Ywz5hTbdtGG2UpsRVwH+mTuDx035i6BZB/ADVMSdJjq/WfIbSmGbGafbVvQXkn/YN5WWVDP5qOjA3VGyDxh2YA=="
+  "resolved" "https://registry.npmjs.org/@fontsource/fraunces/-/fraunces-4.3.0.tgz"
+  "version" "4.3.0"
+
 "@fontsource/ibm-plex-mono@^4.2.2":
   "integrity" "sha512-jxXdPAXOval8i93QLEDxDI+CHGtKIr4lokpZedjMl35SQhO5Rp4UIk+LJuheIJRewDflfVgWH0+dQrkFxcv3JQ=="
   "resolved" "https://registry.npmjs.org/@fontsource/ibm-plex-mono/-/ibm-plex-mono-4.2.2.tgz"

@@ -17,10 +17,9 @@ const PageTemplate = ({ data }) => {
             ? metaDescription.internal.content
             : body.childMarkdownRemark.excerpt
         }
-      />
+      />       
       <Container>
-        <HeaderText><h1>{title}</h1></HeaderText>
-        <PageBody body={body} />
+        <PageBody body={body} title={title} />
       </Container>
     </Layout>
   )

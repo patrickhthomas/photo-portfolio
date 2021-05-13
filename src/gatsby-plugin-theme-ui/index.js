@@ -4,6 +4,7 @@ import "@fontsource/open-sans"
 import "@fontsource/biorhyme"
 import "@fontsource/ibm-plex-sans"
 import "@fontsource/orelega-one"
+import "@fontsource/fraunces"
 
 
 
@@ -22,6 +23,7 @@ export default {
     link: '#90F660',
     white: '#FAFAFA',
     highlight05: 'rgba(94, 91, 247, 0.05)',
+    highlight25: 'rgba(94, 91, 247, 0.25)',
     nav: 'rgba(255, 255, 255, 0.5)',
     modes: {
       dark: {
@@ -42,7 +44,7 @@ export default {
   fonts: {
     body:
       'IBM Plex Sans, IBM Plex Mono, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    header: 'Orelega One',
+    header: 'Fraunces',
   },
   sizes: {
     maxWidth: '1050px',
