@@ -123,12 +123,7 @@ const ChildGrid = styled.div`
  
   }
   padding-bottom: 2em;
-  @media (min-width: ${props => props.theme.responsive.medium}) {
-    grid-template-columns: 1fr 1fr;
-    padding: 1%;
-    grid-gap: 2em;
-    border-bottom: 0;
-  }
+
   @media (min-width: ${props => props.theme.responsive.small}) {
     grid-template-columns: 1fr 1fr;
     padding: 3%;
@@ -136,6 +131,12 @@ const ChildGrid = styled.div`
     border-bottom: 0;
   :after {
     display: none;
+  }
+    @media (min-width: ${props => props.theme.responsive.medium}) {
+    grid-template-columns: 1fr 1fr;
+    padding: 1%;
+    grid-gap: 2em;
+    border-bottom: 0;
   }
 }
 
@@ -238,6 +239,107 @@ const Text = styled.div`
       background: inherit !important;
     }
   }
+    @media (min-width: ${props => props.theme.responsive.medium}) {
+    display: none;
+  }
+`
+
+const LargeBPText = styled.div`
+  display: none;
+  grid-column: 1 / 3;
+  color: ${props => props.theme.colors.black};
+  margin: 0 auto;
+  line-height: 1.6;
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 1rem 0;
+    text-transform: capitalize;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.25em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+
+  p {
+    line-height: 1.6;
+    margin: 0 0 2em 0;
+  }
+
+  a {
+    transition: 0.2s;
+    color: ${props => props.theme.colors.tertiary};
+  }
+
+  del {
+    text-decoration: line-through;
+  }
+  strong {
+    font-weight: 600;
+  }
+  em {
+    font-style: italic;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 2em 0;
+  }
+
+  ul {
+    li {
+      list-style: disc;
+      list-style-position: inside;
+      line-height: 1.25;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  ol {
+    li {
+      list-style: decimal;
+      list-style-position: inside;
+      line-height: 1.25;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  hr {
+    border-style: solid;
+    border-color: ${props => props.theme.colors.secondary};
+    margin: 0 0 2em 0;
+  }
+
+  blockquote {
+    font-style: italic;
+    border-left: 4px solid ${props => props.theme.colors.secondary};
+    padding: 0 0 0 0.5em;
+  }
+
+  pre {
+    margin: 0 0 2em 0;
+    border-radius: 2px;
+    background: ${props => props.theme.colors.secondary} !important;
+    span {
+      background: inherit !important;
+    }
+  }
+    @media (min-width: ${props => props.theme.responsive.medium}) {
+    display: block;
+    margin-left: 1em;
+  }
 `
 
 
@@ -249,16 +351,17 @@ const AffirmativePreview = props => {
       <Link to={`${props.basePath}/${props.slug}/`}>
         <ChildGrid>
         <div>
-          <HeaderText><h3>Affirmative</h3></HeaderText>
+          <HeaderText><h3>{props.title}</h3></HeaderText>
           <Role>
               <li>{props.role[0]}</li>
               <li>{props.role[1]}</li>
               <li>{props.role[2]}</li>
               <li>{props.role[3]}</li>
           </Role>
-          <Text dangerouslySetInnerHTML={props.excerpt} /> 
+        <Text dangerouslySetInnerHTML={props.excerpt} /> 
         </div>
         <MyPic src={ props.src } alt="My Profile Picture" /> 
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt} /> 
         <Button>View Project</Button>
         </ChildGrid>
       </Link>
@@ -269,7 +372,7 @@ const AffirmativePreview = props => {
       <Link to={`${props.basePath}/${props.slug1}/`}>
       <ChildGrid>
         <div>
-          <HeaderText><h3>Dandelion</h3></HeaderText>
+          <HeaderText><h3>{props.title1}</h3></HeaderText>
           <Role>
               <li>{props.role1[0]}</li>
               <li>{props.role1[1]}</li>
@@ -279,6 +382,7 @@ const AffirmativePreview = props => {
           <Text dangerouslySetInnerHTML={props.excerpt1} />
         </div>
         <MyPic src={ props.src1 } alt="My Profile Picture" />
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt1} /> 
         <Button>View Project</Button>  
       </ChildGrid>
       </Link>
@@ -298,6 +402,7 @@ const AffirmativePreview = props => {
           <Text dangerouslySetInnerHTML={props.excerpt2} />
         </div>
         <MyPic src={ props.src2 } alt="My Profile Picture" />
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt2} /> 
         <Button>View Project</Button>  
       </ChildGrid>
       </Link>
@@ -317,6 +422,7 @@ const AffirmativePreview = props => {
           <Text dangerouslySetInnerHTML={props.excerpt3} />
         </div>
         <MyPic src={ props.src3 } alt="My Profile Picture" />
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt3} /> 
         <Button>View Project</Button>  
       </ChildGrid>
       </Link>
