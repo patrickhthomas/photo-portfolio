@@ -49,45 +49,7 @@ const Contact = ({ data }) => {
                   <Text>{data.contentfulContact.description.description}</Text>
         <ContactForm>
         </ContactForm>
-        <div>
-        <Social>
-          <a
-          href="https://github.com/patrickhthomas"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          >
-            <img src={github}></img>
-          </a>
-
-          <a
-          href="https://www.linkedin.com/in/patrickhthomas/"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          >
-            <img src={linkedin}></img>
-          </a>
-
-          <a
-          href="https://twitter.com/product_pat"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          >
-          <img src={twitter}></img>
-          </a>
-
-          <a
-          href="https://www.instagram.com/product.pat/"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          >
-          <img src={instagram}></img>
-          </a>
-          
-
-
-
-        </Social>
-        </div>
+    
         </Wrapper>
       </Container>
     </Layout>

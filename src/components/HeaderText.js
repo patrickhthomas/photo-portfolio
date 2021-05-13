@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const Title = styled.div`
+  z-index: 3;
   color: ${props => props.theme.colors.black};
  .pageTitle {
   max-width: 650px;

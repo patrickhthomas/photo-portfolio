@@ -9,7 +9,7 @@ const Container = styled.div`
  margin-top: -3em;
  display: flex;
  padding-bottom: 3em;
-
+position: relative;
    @media (min-width: ${props => props.theme.responsive.small}) {
      width: 100vw;
      margin-left: calc(50% - 50vw);
@@ -21,11 +21,12 @@ const Container = styled.div`
       margin: -3em auto;
       padding-bottom: 6em;
   }
-
+  
 `
 
 const Grid = styled.div`
   display: grid;
+  z-index: 1;
   flex-direction: column;
   justify-content: center;
   width: 100%;
@@ -40,6 +41,17 @@ const Grid = styled.div`
     width: 100vw;
     max-height: 18em;
     overflow: hidden;
+  }
+    &::after {
+    content: " ";
+    width: 2000px;
+    height: 290px;
+    margin-left: -50%;
+    background: black;
+    mix-blend-mode: screen;
+    position: absolute;
+    display: block;
+    z-index: 0;
   }
 `
 const Me = styled.div`
