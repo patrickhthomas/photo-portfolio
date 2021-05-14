@@ -42,6 +42,8 @@ const Grid = styled.div`
     max-height: 18em;
     overflow: hidden;
   }
+
+  @media (min-width: ${props => props.theme.responsive.large}) {
     &::after {
     content: " ";
     width: 2000px;
@@ -52,6 +54,7 @@ const Grid = styled.div`
     position: absolute;
     display: block;
     z-index: 0;
+  }
   }
 `
 const Me = styled.div`
