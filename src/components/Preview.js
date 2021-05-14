@@ -2,11 +2,15 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import HeaderText from '../components/HeaderText'
+import Collapsible from 'react-collapsible';
 
 const Container = styled.div`
  display: flex;
  width: 100%;
  padding-bottom: 3em;
+ .opened {
+   background-color: black;
+   color: white;
 `
 
 const MyPic = styled.img`
@@ -52,6 +56,7 @@ const Grid = styled.div`
   row-gap: 4em;
   width: 100%;
   margin: 0 auto;
+  padding-top: 2em;
   @media (min-width: ${props => props.theme.responsive.medium}) {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
@@ -341,12 +346,20 @@ const LargeBPText = styled.div`
     margin-left: 1em;
   }
 `
+const Huh = styled.h2`
+      font-size: 1.8em;
+      border-bottom: .5px solid ${props => props.theme.colors.secondary};
+      padding: .5em 0 .5em .5em;
+      `
 
 
 const AffirmativePreview = props => {
   return (
+    <div>
     <Container>
+      <Collapsible contentInnerClassName='openContent' triggerOpenedClassName='openContent'openedClassName='opened' overflowWhenOpen='visible' trigger={<Huh>UX/Product Design</Huh>}>
     <Grid>
+      
       <GridItem>
       <Link to={`${props.basePath}/${props.slug}/`}>
         <ChildGrid>
@@ -366,6 +379,7 @@ const AffirmativePreview = props => {
         </ChildGrid>
       </Link>
       </GridItem>
+      
 
 
       <GridItem>
@@ -387,6 +401,8 @@ const AffirmativePreview = props => {
       </ChildGrid>
       </Link>
       </GridItem>
+
+      
 
       <GridItem>
       <Link to={`${props.basePath}/${props.slug2}/`}>
@@ -430,7 +446,104 @@ const AffirmativePreview = props => {
 
 
     </Grid>
+    </Collapsible>
+
     </Container>
+
+        <Container>
+      <Collapsible contentInnerClassName='openContent' triggerOpenedClassName='openContent'openedClassName='opened' overflowWhenOpen='visible' trigger={<Huh>Marketing and Branding</Huh>}>
+    <Grid>
+      
+      <GridItem>
+      <Link to={`${props.basePath}/${props.slug}/`}>
+        <ChildGrid>
+        <div>
+          <HeaderText><h3>{props.title}</h3></HeaderText>
+          <Role>
+              <li>{props.role[0]}</li>
+              <li>{props.role[1]}</li>
+              <li>{props.role[2]}</li>
+              <li>{props.role[3]}</li>
+          </Role>
+        <Text dangerouslySetInnerHTML={props.excerpt} /> 
+        </div>
+        <MyPic src={ props.src } alt="My Profile Picture" /> 
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt} /> 
+        <Button>View Project</Button>
+        </ChildGrid>
+      </Link>
+      </GridItem>
+      
+
+
+      <GridItem>
+      <Link to={`${props.basePath}/${props.slug1}/`}>
+      <ChildGrid>
+        <div>
+          <HeaderText><h3>{props.title1}</h3></HeaderText>
+          <Role>
+              <li>{props.role1[0]}</li>
+              <li>{props.role1[1]}</li>
+              <li>{props.role1[2]}</li>
+              <li>{props.role1[3]}</li>
+          </Role>
+          <Text dangerouslySetInnerHTML={props.excerpt1} />
+        </div>
+        <MyPic src={ props.src1 } alt="My Profile Picture" />
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt1} /> 
+        <Button>View Project</Button>  
+      </ChildGrid>
+      </Link>
+      </GridItem>
+
+      
+
+      <GridItem>
+      <Link to={`${props.basePath}/${props.slug2}/`}>
+      <ChildGrid>
+        <div>
+          <HeaderText><h3>{props.title2}</h3></HeaderText>
+          <Role>
+              <li>{props.role2[0]}</li>
+              <li>{props.role2[1]}</li>
+              <li>{props.role2[2]}</li>
+              <li>{props.role2[3]}</li>
+          </Role>
+          <Text dangerouslySetInnerHTML={props.excerpt2} />
+        </div>
+        <MyPic src={ props.src2 } alt="My Profile Picture" />
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt2} /> 
+        <Button>View Project</Button>  
+      </ChildGrid>
+      </Link>
+      </GridItem>
+
+      <GridItem>
+      <Link to={`${props.basePath}/${props.slug3}/`}>
+      <ChildGrid>
+        <div>
+          <HeaderText><h3>{props.title3}</h3></HeaderText>
+          <Role>
+              <li>{props.role3[0]}</li>
+              <li>{props.role3[1]}</li>
+              <li>{props.role3[2]}</li>
+              <li>{props.role3[3]}</li>
+          </Role>
+          <Text dangerouslySetInnerHTML={props.excerpt3} />
+        </div>
+        <MyPic src={ props.src3 } alt="My Profile Picture" />
+        <LargeBPText dangerouslySetInnerHTML={props.excerpt3} /> 
+        <Button>View Project</Button>  
+      </ChildGrid>
+      </Link>
+      </GridItem>
+
+
+    </Grid>
+    </Collapsible>
+
+    </Container>
+    </div>
   )
 }
 

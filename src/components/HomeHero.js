@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import Collapsible from 'react-collapsible';
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
 
