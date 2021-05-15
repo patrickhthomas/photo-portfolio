@@ -46,7 +46,7 @@ const Posts = ({ data, pageContext }) => {
         {isFirstPage ? (
           <CardList>
             
-            <HeaderText><h1>My Work</h1></HeaderText>
+            <HeaderText><h1>What I can do for you</h1></HeaderText>
             <Preview
             basePath={basePath}
             slug={preview[0].node.slug}
