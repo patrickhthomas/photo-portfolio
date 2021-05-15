@@ -46,7 +46,7 @@ const Posts = ({ data, pageContext }) => {
         {isFirstPage ? (
           <CardList>
             
-            <HeaderText><h1>What I can do for you</h1></HeaderText>
+            <HeaderText><h1>What I do</h1></HeaderText>
             <Preview
             basePath={basePath}
             slug={preview[0].node.slug}
@@ -69,6 +69,16 @@ const Posts = ({ data, pageContext }) => {
             excerpt3={{ __html: preview[3].node.body.childMarkdownRemark.excerpt }}
             role3={preview[3].node.role} 
             title3={preview[3].node.title}
+            slug4={preview[4].node.slug}
+            src4={preview[4].node.heroImage.file.url}
+            excerpt4={{ __html: preview[4].node.body.childMarkdownRemark.excerpt }}
+            role4={preview[4].node.role} 
+            title4={preview[4].node.title}
+            slug5={preview[5].node.slug}
+            src5={preview[5].node.heroImage.file.url}
+            excerpt5={{ __html: preview[5].node.body.childMarkdownRemark.excerpt }}
+            role5={preview[5].node.role} 
+            title5={preview[5].node.title}
             />
             <HeaderText><h1 id="blog">Blog posts</h1></HeaderText>
              <Card {...featuredPost} featured basePath={basePath} />

@@ -5,6 +5,7 @@ import HeaderText from '../components/HeaderText'
 import Collapsible from 'react-collapsible';
 import expand from '../../static/images/expand.svg'
 import compress from '../../static/images/compress.svg'
+import arrow from '../../static/images/arrow-right.svg'
 
 const Container = styled.div`
 display: flex;
@@ -17,14 +18,14 @@ padding-bottom: 3em;
   padding: .5em;
   position: relative;
   z-index: 1;
-  &::after {
-    content: url('${compress}') 'hide';
-    margin-right: 3em;
-    width: 2em;
-    text-align: center;
-    z-index: 4;
+  img {
+    position: absolute;
+    transform: rotate(90deg);
+    right: 2em;
+    transition: all .4s ease-in;
   }
 
+  
   &::before {
     content: '';
     width: 100%;
@@ -32,16 +33,15 @@ padding-bottom: 3em;
     position: absolute;
     background: ${props => props.theme.colors.highlight}; 
     mix-blend-mode: multiply;
-    z-index: 0;
+    z-index: 5000;
     display: block;
     width: 100%;
     margin-left: -.5em;
     padding: 0;
-    transition: all .5s ease-in;
+    transition: all .3s ease-in;
   }
   background: ${props => props.theme.colors.white};
   border-bottom: .2em solid ${props => props.theme.colors.highlight};
-  color: ${props => props.theme.colors.white};
   transition: all .2s ease-in;
   box-shadow: -2px 2px 2px 0px rgba(30, 30, 42, .1);
   align-self: end;
@@ -52,7 +52,7 @@ padding-bottom: 3em;
     transition: all .2s ease-in;
     cursor: pointer;
   }
-
+  
 }
 
 .closed {
@@ -62,13 +62,12 @@ padding-bottom: 3em;
   padding: .5em;
   position: relative;
   z-index: 1;
-  &::after {
-    display: flex;
-    content: url('${expand}') 'expand';
-    margin-right: 3em;
-    width: 2em;
-    text-align: center;
-    z-index: 1;
+  img {
+    position: absolute;
+    transform: rotate(0deg);
+    right: 1em;
+    transition: all .4s ease-in;
+
   }
   &::before {
     content: '';
@@ -76,12 +75,12 @@ padding-bottom: 3em;
     height: 100%;
     position: absolute;
     background: ${props => props.theme.colors.highlight}; 
-    
-    z-index: 0;
+    mix-blend-mode: multiply;
+    z-index: 5000;
     display: block;
     margin-left: -.5em;
     width: 0%;
-    transition: all .5s ease-in;
+    transition: all .7s ease-in;
   }
   background: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.black};
@@ -95,7 +94,7 @@ padding-bottom: 3em;
     transition: all .2s ease-in;
     cursor: pointer;
   }
-
+  
 }
 `
 
@@ -432,11 +431,15 @@ pre {
   margin-left: 1em;
 }
 `
-const Trigger = styled.h2`
+const Trigger = styled.div`
 font-size: 1.2em;
 padding: .5em 0 .5em .5em;
 margin: 0;
-z-index: 400;
+display: flex;
+flex-flow: row nowrap;
+  img {
+    width: 1.2em;
+  }
 `
 
 const WorkType = styled.div`
@@ -450,9 +453,11 @@ z-index: 400;
 const AffirmativePreview = props => {
   return (
     <div>
+          <WorkType><p>Continously collecting user insights to craft holistic design solutions, in addition to eye catching interfaces.</p></WorkType>
     <Container>
-    <Collapsible easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible' trigger={<Trigger>UX/UI Design</Trigger>}>
-    <WorkType><p>A visually striking user interface is crucial, but a well executed experience is designed well before the pixels hit the page. Design solutions derived holistically, by continuously harnessing user insights, will always outlast the competition. Below are a few projects, some with heavy emphasis on UX reasearch, others focused more on interface design.</p></WorkType>
+      
+    <Collapsible trigger={<Trigger><p>Product Design & Development</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
+
     <Grid>
     
     <GridItem>
@@ -546,24 +551,24 @@ const AffirmativePreview = props => {
     </Container>
     
     <Container>
-    <Collapsible  triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible' trigger={<Trigger>Marketing</Trigger>}>
+    <Collapsible trigger={<Trigger><p>Digital Marketing</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
     <Grid>
     
     <GridItem>
-    <Link to={`${props.basePath}/${props.slug}/`}>
+    <Link to={`${props.basePath}/${props.slug4}/`}>
     <ChildGrid>
     <div>
-    <HeaderText><h3>{props.title}</h3></HeaderText>
+    <HeaderText><h3>{props.title4}</h3></HeaderText>
     <Role>
     <li>{props.role[0]}</li>
     <li>{props.role[1]}</li>
     <li>{props.role[2]}</li>
     <li>{props.role[3]}</li>
     </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt} /> 
+    <Text dangerouslySetInnerHTML={props.excerpt4} /> 
     </div>
-    <MyPic src={ props.src } alt="My Profile Picture" /> 
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt} /> 
+    <MyPic src={ props.src4 } alt="My Profile Picture" /> 
+    <LargeBPText dangerouslySetInnerHTML={props.excerpt4} /> 
     <Button>View Project</Button>
     </ChildGrid>
     </Link>
@@ -572,20 +577,20 @@ const AffirmativePreview = props => {
     
     
     <GridItem>
-    <Link to={`${props.basePath}/${props.slug1}/`}>
+    <Link to={`${props.basePath}/${props.slug5}/`}>
     <ChildGrid>
     <div>
-    <HeaderText><h3>{props.title1}</h3></HeaderText>
+    <HeaderText><h3>{props.title5}</h3></HeaderText>
     <Role>
-    <li>{props.role1[0]}</li>
-    <li>{props.role1[1]}</li>
-    <li>{props.role1[2]}</li>
-    <li>{props.role1[3]}</li>
+    <li>{props.role5[0]}</li>
+    <li>{props.role5[1]}</li>
+    <li>{props.role5[2]}</li>
+    <li>{props.role5[3]}</li>
     </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt1} />
+    <Text dangerouslySetInnerHTML={props.excerpt5} />
     </div>
-    <MyPic src={ props.src1 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt1} /> 
+    <MyPic src={ props.src5 } alt="My Profile Picture" />
+    <LargeBPText dangerouslySetInnerHTML={props.excerpt5} /> 
     <Button>View Project</Button>  
     </ChildGrid>
     </Link>
@@ -638,99 +643,7 @@ const AffirmativePreview = props => {
     </Collapsible>
     
     </Container>
-    <Container>
-    <Collapsible  triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible' trigger={<Trigger>Mobile/Web Development</Trigger>}>
-    <Grid>
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title}</h3></HeaderText>
-    <Role>
-    <li>{props.role[0]}</li>
-    <li>{props.role[1]}</li>
-    <li>{props.role[2]}</li>
-    <li>{props.role[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt} /> 
-    </div>
-    <MyPic src={ props.src } alt="My Profile Picture" /> 
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt} /> 
-    <Button>View Project</Button>
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug1}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title1}</h3></HeaderText>
-    <Role>
-    <li>{props.role1[0]}</li>
-    <li>{props.role1[1]}</li>
-    <li>{props.role1[2]}</li>
-    <li>{props.role1[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt1} />
-    </div>
-    <MyPic src={ props.src1 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt1} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug2}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title2}</h3></HeaderText>
-    <Role>
-    <li>{props.role2[0]}</li>
-    <li>{props.role2[1]}</li>
-    <li>{props.role2[2]}</li>
-    <li>{props.role2[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt2} />
-    </div>
-    <MyPic src={ props.src2 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt2} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug3}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title3}</h3></HeaderText>
-    <Role>
-    <li>{props.role3[0]}</li>
-    <li>{props.role3[1]}</li>
-    <li>{props.role3[2]}</li>
-    <li>{props.role3[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt3} />
-    </div>
-    <MyPic src={ props.src3 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt3} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    </Grid>
-    </Collapsible>
-    
-    </Container>
+   
     </div>
     )
   }
