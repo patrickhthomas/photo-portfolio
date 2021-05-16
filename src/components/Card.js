@@ -4,10 +4,10 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 const Post = styled.li`
-      background: ${props => props.theme.colors.highlight05};
+  box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .05);
+  border: 1px solid ${props => props.theme.colors.highlight25}; 
   position: relative;
-  border: 1px solid ${props => props.theme.gradients.primary};
-  border-radius: 2px;
+  border-radius: .2em;
   margin: 0 0 1em 0;
   width: 100%;
   transition: background .5s;
@@ -20,9 +20,10 @@ const Post = styled.li`
   }
   &:hover {
     background: ${props => props.theme.colors.white};
-    color: ${props => props.theme.colors.black};
-    box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .4);
-    transition: all .5s ease-in;
+    border: 1px solid ${props => props.theme.colors.highlight};
+    transition: all .2s ease-in;
+    transform: scale(1.01);
+    box-shadow: 0px 0px 20px 0px rgba(30, 30, 42, .2);
   }
   a {
     display: flex;

@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import LogoSrc from "../../static/images/favicon.png"
-import ScrollTo from "react-scroll-into-view";
+import svgLogo from '../../static/images/favicon.svg'
+import Collapsible from 'react-collapsible'
+import menu from '../../static/images/bars-light.svg'
 
 
 
@@ -12,15 +13,18 @@ import ScrollTo from "react-scroll-into-view";
 
 const LogoContainer = styled.div`
   grid-column: 2 / 3;
-  background-color: rgba(30, 30, 42, .00);
+  background: transparent;
 `
 
 
-const MyLogo = styled.img`
+
+
+const MySVGLogo = styled.img`
   background-color: rgba(30, 30, 42, .00);
-  width: 3em;
+  max-width: 3em;
+  max-height: 3em;
   margin-left: 0;
-  border-radius: 1em;
+  border-radius: 2em;
   box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .05);
     &:hover {
     transition: all .2s ease-in;
@@ -37,6 +41,7 @@ const Header = styled.header`
   position: sticky;
   top: 0;
   background: ${props => props.theme.colors.nav};
+  backdrop-filter: blur(.5em);
   width: 100%;
   padding: .5em 0;
   z-index: 4;
@@ -59,11 +64,9 @@ const Button = styled.button`
 `
 
 const Nav = styled.nav`
-
 div {
     background-color: rgba(30, 30, 42, .00);
 }
-
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -72,13 +75,53 @@ div {
   margin: 0 auto;
   padding: 0 1.5em;
   line-height: 1.5em;
-  ul {
+  .smallUL {
+    box-shadow: 0px 0px 20px 0px rgba(30, 30, 42, .2);
+    border-radius: .2em;
+    display: grid;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    margin-right: 1em;
+    margin-top: .5em;
+    grid-gap: 2em;
+    justify-items: end;
+    position: absolute;
+    right: 0;
+    width: 12em;
+    border: 2px solid ${props => props.theme.colors.highlight};
+    background-color: ${props => props.theme.colors.white};
+    opacity: 100%;
+    transition: all 0.2s;
+  li {
     display: flex;
-    justify-content: flex-end;
-    visibility: visible;
-    max-width: 100%;
-  
+    width: 80%;
+    margin-left: 1em;
+    margin-right: 1em;
+    border-bottom: .5px solid ${props => props.theme.colors.secondary};
+  }
 
+  a {
+    text-align: right;
+    width: 100%;
+    text-decoration: none;
+    color: ${props => props.theme.colors.primary};
+    font-weight: 400;
+    transition: all 0.2s;
+    &:hover {
+      color: ${props => props.theme.colors.secondary};
+    }
+  }
+  }
+
+
+.large {
+  display: none;
+  @media (min-width: ${props => props.theme.responsive.small}) {
+  display: flex;
+  justify-content: flex-end;
+  visibility: visible;
+  max-width: 100%;
+  }
   li {
     display: inline-block;
     margin-left: 1em;
@@ -96,13 +139,52 @@ div {
     }
   }
 }
+.closeUL {
+  .smallUL {
+    display: none;
+    opacity: 0%;
+    transition: all 0.2s;
+  }
+}
+
+.openUL, .closeUL {
+@media (min-width: ${props => props.theme.responsive.small}) {
+  display: none;
+}
+}
+`
+
+const Trigger = styled.div`
+font-size: 1.2em;
+margin: 0;
+display: flex;
+flex-flow: column nowrap;
+cursor: pointer;
+p {
+  margin: auto;
+  z-index: 100;
+}
+  img {
+    width: 1.5em;
+    margin: 0 0 0 auto;
+  }
 `
 
 
 
 const activeLinkStyle = {
+  
   color: '#5E5BF7',
   fontWeight: 'bold',
+}
+
+const activeLinkStyleSmall = {
+  
+  color: 'Black',
+  borderBottom: '1px solid #5E5BF7',
+  fontWeight: 'bold',
+  fontSize: '1.2em',
+  textTransform: 'uppercase'
 }
 
 
@@ -117,10 +199,10 @@ const Menu = props => {
       <Nav>
         <LogoContainer>
             <Link to={basePath}>
-              <MyLogo src={ LogoSrc } alt="Logo"/>
+              <MySVGLogo src={svgLogo} alt="my logo"/>
             </Link>
           </LogoContainer>
-        <ul>
+        <ul className="large">
           {menuLinks.map(link => (
             <li key={link.name}>
               <Link to={link.slug} activeStyle={activeLinkStyle}>
@@ -129,6 +211,17 @@ const Menu = props => {
             </li>
           ))}
         </ul>
+        <Collapsible className="closeUL" openedClassName="openUL" trigger={<Trigger><img src={menu}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened'>
+                <ul className="smallUL">
+          {menuLinks.map(link => (
+            <li key={link.name}>
+              <Link to={link.slug} activeStyle={activeLinkStyleSmall}>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        </Collapsible>
       </Nav>
       
     </Header>

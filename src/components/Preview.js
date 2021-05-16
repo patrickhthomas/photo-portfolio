@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import HeaderText from '../components/HeaderText'
-import Collapsible from 'react-collapsible';
+import Collapsible from 'react-collapsible'
 import expand from '../../static/images/expand.svg'
 import compress from '../../static/images/compress.svg'
 import arrow from '../../static/images/arrow-right.svg'
@@ -11,20 +11,27 @@ const Container = styled.div`
 display: flex;
 width: 100%;
 padding-bottom: 3em;
+div {
+  width: 100%;
+}
 .opened {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .5em;
   position: relative;
-  z-index: 1;
+  z-index: 100;
+  p {
+    color: white;
+    transition: all .4s ease-in;
+  }
   img {
     position: absolute;
     transform: rotate(90deg);
-    right: 2em;
+    right: 1em;
     transition: all .4s ease-in;
   }
-
+  
   
   &::before {
     content: '';
@@ -33,11 +40,12 @@ padding-bottom: 3em;
     position: absolute;
     background: ${props => props.theme.colors.highlight}; 
     mix-blend-mode: multiply;
-    z-index: 5000;
+    z-index: 0;
     display: block;
     width: 100%;
     margin-left: -.5em;
     padding: 0;
+    opacity: 100%;
     transition: all .3s ease-in;
   }
   background: ${props => props.theme.colors.white};
@@ -48,7 +56,6 @@ padding-bottom: 3em;
   border-radius: .2rem;
   
   &:hover {
-    background: ${props => props.theme.colors.tertiary};
     transition: all .2s ease-in;
     cursor: pointer;
   }
@@ -56,6 +63,7 @@ padding-bottom: 3em;
 }
 
 .closed {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +75,7 @@ padding-bottom: 3em;
     transform: rotate(0deg);
     right: 1em;
     transition: all .4s ease-in;
-
+    
   }
   &::before {
     content: '';
@@ -79,18 +87,19 @@ padding-bottom: 3em;
     z-index: 5000;
     display: block;
     margin-left: -.5em;
-    width: 0%;
+    width: .5em;
+    opacity: 100%;
     transition: all .7s ease-in;
   }
   background: ${props => props.theme.colors.white};
+  border-bottom: .2em solid ${props => props.theme.colors.highlight05};
   color: ${props => props.theme.colors.black};
   transition: all .2s ease-in;
-  box-shadow: -2px 2px 2px 0px rgba(30, 30, 42, .1);
+  
   align-self: end;
   border-radius: .2rem;
   
   &:hover {
-    background: ${props => props.theme.colors.tertiary};
     transition: all .2s ease-in;
     cursor: pointer;
   }
@@ -184,7 +193,7 @@ a {
     background: ${props => props.theme.colors.white};
     border: 1px solid ${props => props.theme.colors.highlight};
     transition: all .2s ease-in;
-    transform: scale(1.05);
+    transform: scale(1.01);
     box-shadow: 0px 0px 20px 0px rgba(30, 30, 42, .2);
   }
 }
@@ -437,9 +446,13 @@ padding: .5em 0 .5em .5em;
 margin: 0;
 display: flex;
 flex-flow: row nowrap;
-  img {
-    width: 1.2em;
-  }
+p {
+  margin: 0;
+  z-index: 100;
+}
+img {
+  width: 1.2em;
+}
 `
 
 const WorkType = styled.div`
@@ -453,11 +466,11 @@ z-index: 400;
 const AffirmativePreview = props => {
   return (
     <div>
-          <WorkType><p>Continously collecting user insights to craft holistic design solutions, in addition to eye catching interfaces.</p></WorkType>
+    
     <Container>
-      
+    
     <Collapsible trigger={<Trigger><p>Product Design & Development</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
-
+    <WorkType><p>Continously collecting user insights to craft holistic design solutions, in addition to eye catching interfaces.</p></WorkType>
     <Grid>
     
     <GridItem>
@@ -643,7 +656,7 @@ const AffirmativePreview = props => {
     </Collapsible>
     
     </Container>
-   
+    
     </div>
     )
   }

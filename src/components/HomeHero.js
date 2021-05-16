@@ -48,7 +48,7 @@ const Grid = styled.div`
     &::after {
     content: " ";
     width: 2000px;
-    height: 290px;
+    height: 288px;
     margin-left: -50%;
     background: black;
     mix-blend-mode: screen;

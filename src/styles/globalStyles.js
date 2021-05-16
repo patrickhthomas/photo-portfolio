@@ -98,7 +98,7 @@ export const globalStyles = css`
   /* Added to Fix Footer to bottom of viewport */
   html,
   body {
-    background: inherit;
+    background: #FAFAFA;
     height: 100%;
     overflow-x: hidden;
   }
