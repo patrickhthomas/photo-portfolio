@@ -100,7 +100,6 @@ export const globalStyles = css`
   body {
     background: #FAFAFA;
     height: 100%;
-    overflow-x: hidden;
   }
   .siteRoot {
     height: 100vh;

@@ -9,7 +9,7 @@ import arrow from '../../static/images/arrow-right.svg'
 
 const Container = styled.div`
 display: flex;
-width: 100%;
+max-width: 100vw;
 padding-bottom: 3em;
 div {
   width: 100%;
@@ -24,6 +24,7 @@ div {
   p {
     color: white;
     transition: all .4s ease-in;
+    max-width: 90%;
   }
   img {
     position: absolute;
@@ -76,6 +77,11 @@ div {
     right: 1em;
     transition: all .4s ease-in;
     
+  }
+  p {
+    color: ${props => props.theme.colors.primary};
+    transition: all .4s ease-in;
+    max-width: 90%;
   }
   &::before {
     content: '';

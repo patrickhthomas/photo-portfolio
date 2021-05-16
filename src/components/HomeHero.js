@@ -68,6 +68,7 @@ const Me = styled.div`
   overflow: hidden;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  align-items: flex-start;
   @media (min-width: ${props => props.theme.responsive.small}) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -77,7 +78,9 @@ const Me = styled.div`
   }
 `
 const MyPic = styled.img`
-  width: 100vw;
+
+  width: 100%;
+  height: auto;
   @media (min-width: ${props => props.theme.responsive.small}) {
     display: flex;
     width: 100%;
@@ -112,6 +115,7 @@ const Text = styled.div`
     letter-spacing: .1rem;
     font-weight: 400;
     line-height: 1.25;
+    padding-left: .5em;
     font-family: ${props => props.theme.fonts.header};
   }
 

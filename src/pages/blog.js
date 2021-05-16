@@ -15,6 +15,12 @@ const Text = styled.p`
     color: ${props => props.theme.colors.black};
   }
 `
+const Wrapper=styled.section`
+  margin: 0 auto;
+  padding-top: 3em;
+  max-width: ${props => props.theme.sizes.maxWidthCentered};
+  
+`
 
 const BlogPage = ({ data, pageContext }) => {
 const basePath = pageContext
@@ -26,11 +32,11 @@ const totalCount = data.allContentfulPost.totalCount
 return (
   <Layout>
     <SEO title="Blog" description="List of blog posts" />
-    <Container>
+    <Wrapper>
       <BlogLinks blogPost={blogPost} basePath={basePath} totalCount={totalCount}/>
 
 
-    </Container>
+    </Wrapper>
   </Layout>
 )}
 

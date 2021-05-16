@@ -108,7 +108,7 @@ const BlogLinks = props => {
             <p>{node.publishDate}</p>
             <p>{node.title}</p>
             </span>
-            <span class="imageContainer">
+            <span className="imageContainer">
             <Image src={node.heroImage.file.url}/>
             </span>
             
