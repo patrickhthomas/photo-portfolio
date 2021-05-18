@@ -117,6 +117,7 @@ const Text = styled.div`
     line-height: 1.25;
     padding-left: .5em;
     font-family: ${props => props.theme.fonts.header};
+    font-style: italic;
   }
 
   h1 {

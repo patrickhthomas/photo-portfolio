@@ -5,7 +5,8 @@ import "@fontsource/biorhyme"
 import "@fontsource/ibm-plex-sans"
 import "@fontsource/orelega-one"
 import "@fontsource/fraunces"
-
+import "@fontsource/fraunces/variable.css"; // Contains ONLY variable weights and no other axes.
+import "@fontsource/fraunces/variable-italic.css"
 
 
 const myBg = 'linear-gradient(135.31deg, #00113F 8.15%, #4F0051 99.17%);'
@@ -44,7 +45,7 @@ export default {
   fonts: {
     body:
       'IBM Plex Sans, IBM Plex Mono, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    header: 'Fraunces',
+    header: 'FrauncesVariable',
   },
   sizes: {
     maxWidth: '1050px',

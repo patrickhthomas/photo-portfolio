@@ -30,6 +30,7 @@ div {
 .singleColumn{
   width: 100%;
   flex: 2 2 auto;
+  padding: 2em;
 }
 
 .twinColumn {

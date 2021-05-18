@@ -13,9 +13,7 @@ import PostLinks from '../components/PostLinks'
 import PostDetails from '../components/PostDetails'
 import SEO from '../components/SEO'
 
-const PieceContainer = styled.div`
-    width: 100%;
-`
+
 
 const Body = styled.div`
 
@@ -45,16 +43,13 @@ div {
 .singleColumn{
   width: 100%;
   flex: 2 2 auto;
+  
 }
 
 .twinColumn {
   flex: 1 1 auto;
 }
 
-.nine, .eleven {
-  width: 100%;
-  flex: 2 2 auto;
-}
 
 p {
   width: 100%;
@@ -62,6 +57,7 @@ p {
   line-height: 1.6;
   margin: 0 0 2em 0;
 }
+
 
 
 
@@ -187,6 +183,19 @@ button {
       width: 50%;
       padding: 2em;
   }
+  .singleColumn {
+    padding: 2em;
+  }
+  .nine {
+    width: 100%;
+  }
+
+.nine p{
+      width: 50%;
+    }
+  .ninePointFive {
+    width: 50%;
+  }
 }
 
 
@@ -196,9 +205,16 @@ p.notAnImage {
   padding: 0em;
 }
 
+
 div p{
   width: 100%;
   padding: 0;
+}
+
+
+.seven, .eight, .nine, .eleven, .twelve, .thirteen, .fourteen, .twentyTwo, .twentyThree, .twentyFour {
+  width: 100%;
+  flex: 2 2 auto;
 }
 `
 
@@ -210,6 +226,8 @@ const HeroContainer = styled.div`
   @media (min-width: ${props => props.theme.responsive.small}) {
     grid-template-columns: .3fr;
     grid-gap: 1em;
+    padding: 2em;
+    
   }
   @media (min-width: ${props => props.theme.responsive.medium}) {
     grid-template-columns: .5fr;
@@ -223,6 +241,39 @@ const HeroContainer = styled.div`
     padding: 0;
   }
 
+`
+
+const PieceContainer = styled.div`
+    width: 100%;
+    .mainBody > p {
+      width: 100%;
+    }
+
+@media screen and (min-width: ${props => props.theme.responsive.small}) {
+.mainBody > p {
+      max-width: 50%;
+      padding: 2em;
+      &:first-child {
+        max-width: 100%;
+      }
+    }
+.mainBody > p img {
+      width: 100%;
+    }
+  }
+@media screen and (min-width: ${props => props.theme.responsive.medium}) {
+.mainBody > p {
+      max-width: 100%;
+      padding: 4em;
+      &:first-child {
+      max-width: 100%;
+      padding: 0em;
+      }
+    }
+.mainBody > p img {
+      width: 100%;
+    }
+  }
 `
 
 const PieceTemplate = ({ data, pageContext }) => {
@@ -255,7 +306,7 @@ const PieceTemplate = ({ data, pageContext }) => {
           <HeaderText><h1>{title}</h1></HeaderText>
           <Body dangerouslySetInnerHTML={{ __html: data.contentfulPiece.excerpt.childMarkdownRemark.html }}/>
           </HeroContainer>
-          <Body dangerouslySetInnerHTML={{ __html: data.contentfulPiece.body.childMarkdownRemark.html }}/>
+          <Body className="mainBody" dangerouslySetInnerHTML={{ __html: data.contentfulPiece.body.childMarkdownRemark.html }}/>
         </PieceContainer>
       </Container>
 

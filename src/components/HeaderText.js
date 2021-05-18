@@ -28,7 +28,7 @@ const Title = styled.div`
   h2,
   h3 {
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 200;
     text-align: left;
     margin: 0 0 .5em 0;
     line-height: 1.2;

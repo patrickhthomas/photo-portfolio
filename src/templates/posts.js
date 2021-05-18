@@ -79,6 +79,16 @@ const Posts = ({ data, pageContext }) => {
             excerpt5={{ __html: preview[5].node.body.childMarkdownRemark.excerpt }}
             role5={preview[5].node.role} 
             title5={preview[5].node.title}
+            slug6={preview[6].node.slug}
+            src6={preview[6].node.heroImage.file.url}
+            excerpt6={{ __html: preview[6].node.body.childMarkdownRemark.excerpt }}
+            role6={preview[6].node.role} 
+            title6={preview[6].node.title}
+            slug7={preview[7].node.slug}
+            src7={preview[7].node.heroImage.file.url}
+            excerpt7={{ __html: preview[7].node.body.childMarkdownRemark.excerpt }}
+            role7={preview[7].node.role} 
+            title7={preview[7].node.title}
             />
             <HeaderText><h1 id="blog">Blog posts</h1></HeaderText>
              <Card {...featuredPost} featured basePath={basePath} />

@@ -618,40 +618,40 @@ const AffirmativePreview = props => {
     
     
     <GridItem>
-    <Link to={`${props.basePath}/${props.slug2}/`}>
+    <Link to={`${props.basePath}/${props.slug6}/`}>
     <ChildGrid>
     <div>
-    <HeaderText><h3>{props.title2}</h3></HeaderText>
+    <HeaderText><h3>{props.title6}</h3></HeaderText>
     <Role>
-    <li>{props.role2[0]}</li>
-    <li>{props.role2[1]}</li>
-    <li>{props.role2[2]}</li>
-    <li>{props.role2[3]}</li>
+    <li>{props.role6[0]}</li>
+    <li>{props.role6[1]}</li>
+    <li>{props.role6[2]}</li>
+    <li>{props.role6[3]}</li>
     </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt2} />
+    <Text dangerouslySetInnerHTML={props.excerpt6} />
     </div>
-    <MyPic src={ props.src2 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt2} /> 
+    <MyPic src={ props.src6 } alt="My Profile Picture" />
+    <LargeBPText dangerouslySetInnerHTML={props.excerpt6} /> 
     <Button>View Project</Button>  
     </ChildGrid>
     </Link>
     </GridItem>
     
     <GridItem>
-    <Link to={`${props.basePath}/${props.slug3}/`}>
+    <Link to={`${props.basePath}/${props.slug7}/`}>
     <ChildGrid>
     <div>
-    <HeaderText><h3>{props.title3}</h3></HeaderText>
+    <HeaderText><h3>{props.title7}</h3></HeaderText>
     <Role>
-    <li>{props.role3[0]}</li>
-    <li>{props.role3[1]}</li>
-    <li>{props.role3[2]}</li>
-    <li>{props.role3[3]}</li>
+    <li>{props.role7[0]}</li>
+    <li>{props.role7[1]}</li>
+    <li>{props.role7[2]}</li>
+    <li>{props.role7[3]}</li>
     </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt3} />
+    <Text dangerouslySetInnerHTML={props.excerpt7} />
     </div>
-    <MyPic src={ props.src3 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt3} /> 
+    <MyPic src={ props.src7 } alt="My Profile Picture" />
+    <LargeBPText dangerouslySetInnerHTML={props.excerpt7} /> 
     <Button>View Project</Button>  
     </ChildGrid>
     </Link>
