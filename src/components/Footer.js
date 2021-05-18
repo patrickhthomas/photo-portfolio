@@ -59,14 +59,13 @@ padding: .5em;
 `
 
 const Item = styled.li`
+
 cursor: pointer;
 display: flex;
 flex-flow: row nowrap;
-align-items: center;
-padding: 0.25em 0;
-width: 100%;
 max-width: 10em;
 padding: .5em;
+
 img {
   max-width: 1.5em;
   padding-right: .5em;
@@ -74,10 +73,11 @@ img {
 
 
 a {
+  flex: 0 0 10px;
+  width: auto;
   font-weight: 600;
   transition: all 0.2s;
   text-decoration: none;
-  text-align: center;
   color: ${props => props.theme.colors.black};
   &:hover {
     color: ${props => props.theme.colors.highlight};
@@ -86,6 +86,7 @@ a {
     color: ${props => props.theme.colors.black};
   }
 }
+margin: 0 0 0 auto;
 `
 
  

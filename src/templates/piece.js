@@ -180,21 +180,11 @@ button {
   display: flex;
   flex-flow: row wrap;
   .twinColumn, p {
-      width: 50%;
+      width: 55%;
       padding: 2em;
   }
   .singleColumn {
     padding: 2em;
-  }
-  .nine {
-    width: 100%;
-  }
-
-.nine p{
-      width: 50%;
-    }
-  .ninePointFive {
-    width: 50%;
   }
 }
 
@@ -212,10 +202,6 @@ div p{
 }
 
 
-.seven, .eight, .nine, .eleven, .twelve, .thirteen, .fourteen, .twentyTwo, .twentyThree, .twentyFour {
-  width: 100%;
-  flex: 2 2 auto;
-}
 `
 
 const HeroContainer = styled.div`

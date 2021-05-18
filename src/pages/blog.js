@@ -17,7 +17,7 @@ const Text = styled.p`
 `
 const Wrapper=styled.section`
   margin: 0 auto;
-  padding-top: 3em;
+  padding-top: 5em;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
   
 `

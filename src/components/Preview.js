@@ -12,7 +12,7 @@ display: flex;
 max-width: 100vw;
 padding-bottom: 3em;
 div {
-  width: 100%;
+  
 }
 .opened {
   display: flex;
@@ -21,18 +21,21 @@ div {
   padding: .5em;
   position: relative;
   z-index: 100;
+  margin-bottom: 3em;
+  
   p {
     color: white;
     transition: all .4s ease-in;
     max-width: 90%;
   }
+  
   img {
     position: absolute;
     transform: rotate(90deg);
     right: 1em;
     transition: all .4s ease-in;
   }
-  
+
   
   &::before {
     content: '';
@@ -83,6 +86,7 @@ div {
     transition: all .4s ease-in;
     max-width: 90%;
   }
+  
   &::before {
     content: '';
     width: 100%;
@@ -459,193 +463,90 @@ p {
 img {
   width: 1.2em;
 }
+
+.bold {
+  font-weight: 900;
+  font-size: 1.1em;
+}
 `
 
 const WorkType = styled.div`
-padding: .5em 0 .5em .5em;
-margin: 0;
-z-index: 400;
+max-width: 500px;
+
 
 `
 
 
+
 const AffirmativePreview = props => {
+  
+  
   return (
     <div>
-    
     <Container>
-    
-    <Collapsible trigger={<Trigger><p>Product Design & Development</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
-    <WorkType><p>Continously collecting user insights to craft holistic design solutions, in addition to eye catching interfaces.</p></WorkType>
-    <Grid>
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title}</h3></HeaderText>
-    <Role>
-    <li>{props.role[0]}</li>
-    <li>{props.role[1]}</li>
-    <li>{props.role[2]}</li>
-    <li>{props.role[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt} /> 
-    </div>
-    <MyPic src={ props.src } alt="My Profile Picture" /> 
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt} /> 
-    <Button>View Project</Button>
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug1}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title1}</h3></HeaderText>
-    <Role>
-    <li>{props.role1[0]}</li>
-    <li>{props.role1[1]}</li>
-    <li>{props.role1[2]}</li>
-    <li>{props.role1[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt1} />
-    </div>
-    <MyPic src={ props.src1 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt1} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug2}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title2}</h3></HeaderText>
-    <Role>
-    <li>{props.role2[0]}</li>
-    <li>{props.role2[1]}</li>
-    <li>{props.role2[2]}</li>
-    <li>{props.role2[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt2} />
-    </div>
-    <MyPic src={ props.src2 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt2} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug3}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title3}</h3></HeaderText>
-    <Role>
-    <li>{props.role3[0]}</li>
-    <li>{props.role3[1]}</li>
-    <li>{props.role3[2]}</li>
-    <li>{props.role3[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt3} />
-    </div>
-    <MyPic src={ props.src3 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt3} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    </Grid>
-    </Collapsible>
-    
+    <WorkType className="workType"><p>{props.previewInfo.paragraph.internal.content}</p></WorkType>
     </Container>
-    
     <Container>
-    <Collapsible trigger={<Trigger><p>Digital Marketing</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
+    <Collapsible trigger={<Trigger><p>{props.previewInfo.previewTitle1.internal.content}</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
+    <WorkType></WorkType>
     <Grid>
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug4}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title4}</h3></HeaderText>
-    <Role>
-    <li>{props.role[0]}</li>
-    <li>{props.role[1]}</li>
-    <li>{props.role[2]}</li>
-    <li>{props.role[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt4} /> 
-    </div>
-    <MyPic src={ props.src4 } alt="My Profile Picture" /> 
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt4} /> 
-    <Button>View Project</Button>
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug5}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title5}</h3></HeaderText>
-    <Role>
-    <li>{props.role5[0]}</li>
-    <li>{props.role5[1]}</li>
-    <li>{props.role5[2]}</li>
-    <li>{props.role5[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt5} />
-    </div>
-    <MyPic src={ props.src5 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt5} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug6}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title6}</h3></HeaderText>
-    <Role>
-    <li>{props.role6[0]}</li>
-    <li>{props.role6[1]}</li>
-    <li>{props.role6[2]}</li>
-    <li>{props.role6[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt6} />
-    </div>
-    <MyPic src={ props.src6 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt6} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
-    
-    
-    
-    </Grid>
-    </Collapsible>
-    
-    </Container>
-    
-    </div>
-    )
-  }
-  
-  export default AffirmativePreview
+    {props.preview.slice(0, 4).map(({node}) => (
+      <GridItem key={node.title}>
+      <Link to={`${props.basePath}/${node.slug}/`}>
+      <ChildGrid>
+      <div>
+      <HeaderText><h3>{node.title}</h3></HeaderText>
+      <Role>
+      <li>{node.role[0]}</li>
+      <li>{node.role[1]}</li>
+      <li>{node.role[2]}</li>
+      <li>{node.role[3]}</li>
+      </Role>
+      <Text dangerouslySetInnerHTML={{ __html: node.excerpt.childMarkdownRemark.excerpt }} /> 
+      </div>
+      <MyPic src={ node.heroImage.file.url } alt="My Profile Picture" /> 
+      <LargeBPText dangerouslySetInnerHTML={{ __html: node.excerpt.childMarkdownRemark.excerpt }} /> 
+      <Button>View Project</Button>
+      </ChildGrid>
+      </Link>
+      </GridItem>
+      ))}
+      </Grid>
+      </Collapsible>
+      
+      </Container>
+      
+      <Container>
+      <Collapsible trigger={<Trigger><p>{props.previewInfo.previewTitle2.internal.content}</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
+      <Grid>
+      {props.preview.slice(4, 8).map(({node}) => (
+        <GridItem key={node.title}>
+        <Link to={`${props.basePath}/${node.slug}/`}>
+        <ChildGrid>
+        <div>
+        <HeaderText><h3>{node.title}</h3></HeaderText>
+        <Role>
+        <li>{node.role[0]}</li>
+        <li>{node.role[1]}</li>
+        <li>{node.role[2]}</li>
+        <li>{node.role[3]}</li>
+        </Role>
+        <Text dangerouslySetInnerHTML={{ __html: node.excerpt.childMarkdownRemark.excerpt }} /> 
+        </div>
+        <MyPic src={ node.heroImage.file.url } alt="My Profile Picture" /> 
+        <LargeBPText dangerouslySetInnerHTML={{ __html: node.excerpt.childMarkdownRemark.excerpt }} /> 
+        <Button>View Project</Button>
+        </ChildGrid>
+        </Link>
+        </GridItem>
+        ))}
+        </Grid>
+        </Collapsible>
+        
+        </Container>
+        
+        </div>
+        )
+      }
+      
+      export default AffirmativePreview

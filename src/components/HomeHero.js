@@ -214,16 +214,22 @@ const Text = styled.div`
     margin-bottom: 0;
   }
 
+  @media (min-width: ${props => props.theme.responsive.large}) {
+    h1 {
+      padding-left: 0;
+    }
+  }
+
 `
 
 
-const HomeHero = ({ imgLeft, imgRight }) => {
+const HomeHero = ({ imgLeft, imgRight, heroDescription }) => {
   return (
     <Container>
       <Grid>
         <Text>
             <BgPic src={ imgLeft } alt="background image"/>
-            <h1>Howdy, I’m Patrick Thomas, a designer and developer in the Pacific Northwest.</h1>
+            <h1>{heroDescription}</h1>
         </Text>
         <Me>
           <MyPic src={ imgRight } alt="My Profile Picture" />

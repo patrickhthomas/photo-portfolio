@@ -19,8 +19,8 @@ const Posts = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
   const { humanPageNumber, basePath } = pageContext
   const isFirstPage = humanPageNumber === 1
-  const leftQuote = `&ldquo;`
-  const rightQuote = `&rdquo;`
+  const previewInfo = data.contentfulPreviewInfo
+  const heroDescription = data.contentfulHeroDescription.description.internal.content
   let featuredPost
   let ogImage
 
@@ -42,48 +42,16 @@ const Posts = ({ data, pageContext }) => {
         <HomeHero 
         imgLeft={data.contentfulHeroImageLeft.image.file.url}
         imgRight={data.contentfulHeroImageRight.image.file.url}
+        heroDescription={heroDescription}
         />
         {isFirstPage ? (
           <CardList>
             
-            <HeaderText><h1>What I do</h1></HeaderText>
+            <HeaderText><h1>My Work</h1></HeaderText>
             <Preview
+            preview={preview}
+            previewInfo={previewInfo}
             basePath={basePath}
-            slug={preview[0].node.slug}
-            src={preview[0].node.heroImage.file.url}
-            excerpt={{ __html: leftQuote+preview[0].node.excerpt.childMarkdownRemark.excerpt+rightQuote }}
-            role={preview[0].node.role}
-            title={preview[0].node.title}
-            slug1={preview[1].node.slug}
-            src1={preview[1].node.heroImage.file.url}
-            excerpt1={{ __html: leftQuote+preview[1].node.excerpt.childMarkdownRemark.excerpt+rightQuote}}
-            role1={preview[1].node.role}
-            title1={preview[1].node.title}
-            slug2={preview[2].node.slug}
-            src2={preview[2].node.heroImage.file.url}
-            excerpt2={{ __html: leftQuote+preview[2].node.excerpt.childMarkdownRemark.excerpt+rightQuote}}
-            role2={preview[2].node.role}
-            title2={preview[2].node.title}
-            slug3={preview[3].node.slug}
-            src3={preview[3].node.heroImage.file.url}
-            excerpt3={{ __html: preview[3].node.body.childMarkdownRemark.excerpt }}
-            role3={preview[3].node.role} 
-            title3={preview[3].node.title}
-            slug4={preview[4].node.slug}
-            src4={preview[4].node.heroImage.file.url}
-            excerpt4={{ __html: preview[4].node.body.childMarkdownRemark.excerpt }}
-            role4={preview[4].node.role} 
-            title4={preview[4].node.title}
-            slug5={preview[5].node.slug}
-            src5={preview[5].node.heroImage.file.url}
-            excerpt5={{ __html: preview[5].node.body.childMarkdownRemark.excerpt }}
-            role5={preview[5].node.role} 
-            title5={preview[5].node.title}
-            slug6={preview[6].node.slug}
-            src6={preview[6].node.heroImage.file.url}
-            excerpt6={{ __html: preview[6].node.body.childMarkdownRemark.excerpt }}
-            role6={preview[6].node.role} 
-            title6={preview[6].node.title}
             />
             <HeaderText><h1 id="blog">Blog posts</h1></HeaderText>
              <Card {...featuredPost} featured basePath={basePath} />
@@ -192,6 +160,33 @@ export const query = graphql`
     image {
       file {
         url
+      }
+    }
+  }
+    contentfulPreviewInfo {
+    paragraph {
+      internal {
+        content
+      }
+      childMarkdownRemark {
+        html
+      }
+    }
+    previewTitle1 {
+      internal {
+        content
+      }
+    }
+    previewTitle2 {
+      internal {
+        content
+      }
+    }
+  }
+    contentfulHeroDescription {
+    description {
+      internal {
+        content
       }
     }
   }
