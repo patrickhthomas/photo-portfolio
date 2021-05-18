@@ -637,25 +637,6 @@ const AffirmativePreview = props => {
     </Link>
     </GridItem>
     
-    <GridItem>
-    <Link to={`${props.basePath}/${props.slug7}/`}>
-    <ChildGrid>
-    <div>
-    <HeaderText><h3>{props.title7}</h3></HeaderText>
-    <Role>
-    <li>{props.role7[0]}</li>
-    <li>{props.role7[1]}</li>
-    <li>{props.role7[2]}</li>
-    <li>{props.role7[3]}</li>
-    </Role>
-    <Text dangerouslySetInnerHTML={props.excerpt7} />
-    </div>
-    <MyPic src={ props.src7 } alt="My Profile Picture" />
-    <LargeBPText dangerouslySetInnerHTML={props.excerpt7} /> 
-    <Button>View Project</Button>  
-    </ChildGrid>
-    </Link>
-    </GridItem>
     
     
     </Grid>
