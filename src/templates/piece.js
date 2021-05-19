@@ -1,4 +1,7 @@
+
+
 import React from 'react'
+import SEO from '../components/SEO'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from "../components/Container"
@@ -11,52 +14,13 @@ import PageBody from '../components/PageBody'
 import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
 import PostDetails from '../components/PostDetails'
-import SEO from '../components/SEO'
+
 
 
 
 const Body = styled.div`
 
-display: flex;
-flex-flow: column nowrap;
-justify-content: space-between;
-color: ${props => props.theme.colors.black};
-max-width: 100%;
-margin: 0 auto;
-  h1,
-  h2,
-  h3 {
-    font-weight: 900;
-    line-height: 1.25;
-    margin: 0 0 1rem 0;
-    text-transform: capitalize;
 
-  }
-
-
-div {
-  padding: 1em em 3em 0em;
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.singleColumn{
-  width: 100%;
-  flex: 2 2 auto;
-  
-}
-
-.twinColumn {
-  flex: 1 1 auto;
-}
-
-
-p {
-  width: 100%;
-  flex: 1 1 auto;
-  line-height: 1.6;
-  margin: 0 0 2em 0;
-}
 
 
 
@@ -176,129 +140,39 @@ button {
 
 
 
-@media screen and (min-width: ${props => props.theme.responsive.small}) {
-  display: flex;
-  flex-flow: row wrap;
-  .twinColumn, p {
-      width: 55%;
-      padding: 2em;
-  }
-  .singleColumn {
-    padding: 2em;
-  }
-}
-
-
-p.notAnImage {
-  width: 100%;
-  flex: 0 0 auto;
-  padding: 0em;
-}
-
-
-div p{
-  width: 100%;
-  padding: 0;
-}
 
 
 `
 
 const HeroContainer = styled.div`
-  padding: 0 0 3em 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: .8fr;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-    grid-template-columns: .3fr;
-    grid-gap: 1em;
-    padding: 2em;
-    
-  }
-  @media (min-width: ${props => props.theme.responsive.medium}) {
-    grid-template-columns: .5fr;
-    grid-gap: 1em;
-  }
-  div {
-    width: 100%;
-  }
-  div > p {
-    width: 100%;
-    padding: 0;
-  }
 
 `
 
 const PieceContainer = styled.div`
-    width: 100%;
-    .mainBody > p {
-      width: 100%;
-    }
 
-@media screen and (min-width: ${props => props.theme.responsive.small}) {
-.mainBody > p {
-      max-width: 50%;
-      padding: 2em;
-      &:first-child {
-        max-width: 100%;
-      }
-    }
-.mainBody > p img {
-      width: 100%;
-    }
-  }
-@media screen and (min-width: ${props => props.theme.responsive.medium}) {
-.mainBody > p {
-      max-width: 100%;
-      padding: 4em;
-      &:first-child {
-      max-width: 100%;
-      padding: 0em;
-      }
-    }
-.mainBody > p img {
-      width: 100%;
-    }
-  }
 `
 
-const PieceTemplate = ({ data, pageContext }) => {
-  const {
-    title,
-    metaDescription,
-    heroImage,
-    body,
-    publishDate,
-    tags,
-  } = data.contentfulPiece
 
-  const previous = pageContext.prev
-  const next = pageContext.next
-  const { basePath } = pageContext
 
-  let ogImage
-  try {
-    ogImage = heroImage.file.url
-  } catch (error) {
-    ogImage = null
-  }
-
+const PieceTemplate = ({ data }) => {
+  const { title, metaDescription, body } = data.contentfulPiece
   return (
     <Layout>
-
+      <SEO
+        title={title}
+        description={
+          metaDescription
+            ? metaDescription.internal.content
+            : body.childMarkdownRemark.excerpt
+        }
+      />       
       <Container>
-        <PieceContainer>
-          <HeroContainer>
-          <HeaderText><h1>{title}</h1></HeaderText>
-          <Body dangerouslySetInnerHTML={{ __html: data.contentfulPiece.excerpt.childMarkdownRemark.html }}/>
-          </HeroContainer>
-          <Body className="mainBody" dangerouslySetInnerHTML={{ __html: data.contentfulPiece.body.childMarkdownRemark.html }}/>
-        </PieceContainer>
+        <PageBody body={body} title={title} />
       </Container>
-
     </Layout>
   )
 }
+
 
 export const query = graphql`
   query($slug: String!) {
