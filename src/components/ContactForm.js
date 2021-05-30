@@ -117,6 +117,7 @@ const Modal = styled.div`
   transform: translate(-50%, -50%);
   margin: 0 auto;
   z-index: 99;
+  color: ${props => props.theme.colors.black};
   display: flex;
   flex-flow: column;
   align-items: flex-start;
@@ -152,8 +153,8 @@ const Button = styled.button`
   }
     @media (min-width: ${props => props.theme.responsive.small}) {
       grid-column: 1 / span 2;
-      color: ${props => props.theme.colors.less};
-      border: .01em solid ${props => props.theme.colors.less};
+      
+      border: .01em solid ${props => props.theme.colors.highlight};
       box-shadow: none;
     }
 `
