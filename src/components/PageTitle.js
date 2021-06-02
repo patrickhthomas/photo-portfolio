@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import HeaderText from '../components/HeaderText'
 
-const Title = styled.h1`
+const HeaderText = styled.h1`
   color: ${props => props.theme.colors.black};
   h1 {
       font-size: 2em;

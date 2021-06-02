@@ -177,23 +177,36 @@ p.notAnImage {
   padding: 0em;
 }
 
-div p{
+div p {
   width: 100%;
   padding: 0;
 }
+
+
 `
 
 const Wrapper=styled.section`
   margin: 0 auto;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
-  
+  .gatsby-resp-image-wrapper {
+ 
+mix-blend-mode: multiply;
+@media (min-width: ${props => props.theme.responsive.small}) {
+ width: 80%;
+  }
+  @media (min-width: ${props => props.theme.responsive.medium}) {
+ width: 60%;
+  }
+
+  }
+
 `
 
 const PageBody = props => {
   return (
     <Wrapper>
     <HeaderText className="aboutHeader"><h1>{props.title}</h1></HeaderText>
-    <Body
+    <Body className="pieceBody"
       dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
     />
     </Wrapper>

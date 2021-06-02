@@ -167,7 +167,9 @@ const PieceTemplate = ({ data }) => {
         }
       />       
       <Container>
+        <PieceContainer>
         <PageBody body={body} title={title} />
+        </PieceContainer>
       </Container>
     </Layout>
   )
