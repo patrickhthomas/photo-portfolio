@@ -152,6 +152,7 @@ div {
   display: none;
 }
 }
+z-index: 1000;
 `
 
 const Trigger = styled.div`
