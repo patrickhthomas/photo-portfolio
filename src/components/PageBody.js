@@ -10,15 +10,15 @@ justify-content: space-between;
 color: ${props => props.theme.colors.black};
 max-width: 100%;
 margin: 0 auto;
-  h1,
-  h2,
-  h3 {
-    font-weight: 900;
-    line-height: 1.25;
-    margin: 0 0 1rem 0;
-    text-transform: capitalize;
-
-  }
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+  text-transform: capitalize;
+  
+}
 
 
 div {
@@ -62,7 +62,7 @@ button {
   box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
   border-radius: .2rem;
   margin: 1em 0 1em 0;
-
+  
   &:hover {
     background: ${props => props.theme.colors.highlight};
     color: ${props => props.theme.colors.white};
@@ -71,96 +71,96 @@ button {
     cursor: pointer;
   }
 }
-  h1 {
-    font-size: 1.5em;
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.25em;
+  color: white;
+  background-color: ${props => props.theme.colors.black};
+  padding: 2em 0em .5em 1em;
+  border-radius: 1em 1em 0em 0em;
+  width: 100%;
+}
+h3 {
+  font-size: 1em;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+a {
+  transition: 0.2s;
+  color: ${props => props.theme.colors.link};
+  &:hover {
+    color: ${props => props.theme.colors.highlight};
   }
-  h2 {
-    font-size: 1.25em;
-    color: white;
-    background-color: ${props => props.theme.colors.black};
-    padding: 2em 0em .5em 1em;
-    border-radius: 1em 1em 0em 0em;
+}
+
+del {
+  text-decoration: line-through;
+}
+strong {
+  font-weight: 600;
+}
+em {
+  font-style: italic;
+}
+
+ul,
+ol {
+  margin: 0 0 2em 0;
+}
+
+ul {
+  li {
     width: 100%;
+    list-style: none;
+    list-style-position: inside;
+    line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: .02rem;
+    padding: .05em 0 .05em 1em;
+    margin: 2.5em 0 0 -1em;
+    
+    border-left: 2px solid ${props => props.theme.colors.highlight};
+    
   }
-  h3 {
-    font-size: 1em;
-    text-decoration: underline;
-    text-transform: uppercase;
+  li:first-child {
+    padding-top: 0em;
+    margin-top: .5em;
+    
   }
+  padding-bottom: 2em;
+}
 
-  a {
-    transition: 0.2s;
-    color: ${props => props.theme.colors.link};
-    &:hover {
-      color: ${props => props.theme.colors.highlight};
-    }
+ol {
+  li {
+    list-style: decimal;
+    list-style-position: inside;
+    line-height: 1.25;
   }
+}
 
-  del {
-    text-decoration: line-through;
-  }
-  strong {
-    font-weight: 600;
-  }
-  em {
-    font-style: italic;
-  }
+hr {
+  border-style: solid;
+  border-color: ${props => props.theme.colors.secondary};
+  margin: 0 0 2em 0;
+}
 
-  ul,
-  ol {
-    margin: 0 0 2em 0;
-  }
+blockquote {
+  font-style: italic;
+  border-left: 4px solid ${props => props.theme.colors.secondary};
+  padding: 0 0 0 0.5em;
+}
 
-  ul {
-    li {
-      width: 100%;
-      list-style: none;
-      list-style-position: inside;
-      line-height: 1.6;
-      font-weight: 500;
-      letter-spacing: .02rem;
-      padding: .05em 0 .05em 1em;
-      margin: 2.5em 0 0 -1em;
-   
-      border-left: 2px solid ${props => props.theme.colors.highlight};
-     
-    }
-     li:first-child {
-       padding-top: 0em;
-       margin-top: .5em;
-
-     }
-      padding-bottom: 2em;
+pre {
+  margin: 0 0 2em 0;
+  border-radius: 2px;
+  background: ${props => props.theme.colors.secondary} !important;
+  span {
+    background: inherit !important;
   }
-
-  ol {
-    li {
-      list-style: decimal;
-      list-style-position: inside;
-      line-height: 1.25;
-    }
-  }
-
-  hr {
-    border-style: solid;
-    border-color: ${props => props.theme.colors.secondary};
-    margin: 0 0 2em 0;
-  }
-
-  blockquote {
-    font-style: italic;
-    border-left: 4px solid ${props => props.theme.colors.secondary};
-    padding: 0 0 0 0.5em;
-  }
-
-  pre {
-    margin: 0 0 2em 0;
-    border-radius: 2px;
-    background: ${props => props.theme.colors.secondary} !important;
-    span {
-      background: inherit !important;
-    }
-  }
+}
 .bold {
   font-weight: 900;
   font-size: 1em;
@@ -186,19 +186,24 @@ div p {
 `
 
 const Wrapper=styled.section`
-  margin: 0 auto;
-  max-width: ${props => props.theme.sizes.maxWidthCentered};
-  .gatsby-resp-image-wrapper {
- 
-mix-blend-mode: multiply;
-@media (min-width: ${props => props.theme.responsive.small}) {
- width: 80%;
-  }
-  @media (min-width: ${props => props.theme.responsive.medium}) {
- width: 60%;
-  }
+margin: 0 auto;
+max-width: ${props => props.theme.sizes.maxWidthCentered};
+.gatsby-resp-image-wrapper { 
+  min-width: 60%;
+  width: 100%;
+  mix-blend-mode: multiply;
+  cursor: pointer;
+  @media (min-width: ${props => props.theme.responsive.small}) {
 
   }
+
+  @media (min-width: ${props => props.theme.responsive.medium}) {
+
+  }
+  
+}
+
+
 
 `
 
@@ -207,10 +212,11 @@ const PageBody = props => {
     <Wrapper>
     <HeaderText className="aboutHeader"><h1>{props.title}</h1></HeaderText>
     <Body className="pieceBody"
-      dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
+    dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
     />
     </Wrapper>
-  )
-}
-
-export default PageBody
+    )
+  }
+  
+  export default PageBody
+  

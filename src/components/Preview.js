@@ -490,7 +490,7 @@ const AffirmativePreview = props => {
     <Collapsible trigger={<Trigger><p>{props.previewInfo.previewTitle1.internal.content}</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
     <WorkType></WorkType>
     <Grid>
-    {props.preview.slice(0, 4).map(({node}) => (
+    {props.preview.slice(0, 3).map(({node}) => (
       <GridItem key={node.title}>
       <Link to={`${props.basePath}/${node.slug}/`}>
       <ChildGrid>
@@ -519,7 +519,7 @@ const AffirmativePreview = props => {
       <Container>
       <Collapsible trigger={<Trigger><p>{props.previewInfo.previewTitle2.internal.content}</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
       <Grid>
-      {props.preview.slice(4, 8).map(({node}) => (
+      {props.preview.slice(3, 8).map(({node}) => (
         <GridItem key={node.title}>
         <Link to={`${props.basePath}/${node.slug}/`}>
         <ChildGrid>
