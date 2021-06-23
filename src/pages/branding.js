@@ -9,7 +9,7 @@ import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import { startCase } from 'lodash'
 
-import PreviewBranding from'../components/Preview'
+import PreviewBranding from'../components/PreviewBranding'
 
 import SEO from '../components/SEO'
 import { graphql } from 'gatsby'
@@ -40,11 +40,11 @@ const previewInfo = data.contentfulPreviewInfo
 
 return (
   <Layout>
-    <SEO title="Blog" description="List of blog posts" />
+    <SEO title="Branding + Photo" description="Examples of branding and photography work by Patrick Thomas" />
     <Container>
           <CardList>
             
-            <HeaderText><h1>My Work</h1></HeaderText>
+            <HeaderText><h1>Branding and Photography</h1></HeaderText>
             <PreviewBranding
             preview={preview}
             previewInfo={previewInfo}

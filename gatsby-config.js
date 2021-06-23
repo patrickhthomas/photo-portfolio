@@ -28,20 +28,16 @@ module.exports = {
         slug: '/',
       },
       {
-        name: 'Branding + Photo',
-        slug: '/branding/',
-      },
-      {
         name: 'UX Design',
         slug: '/work/',
       },
       {
-        name: 'Blog',
-        slug: '/blog/',
+        name: 'Branding + Photo',
+        slug: '/branding/',
       },
       {
-        name: 'About',
-        slug: '/about/',
+        name: 'Blog',
+        slug: '/blog/',
       },
       {
         name: 'Contact',

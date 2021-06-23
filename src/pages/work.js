@@ -40,11 +40,11 @@ const previewInfo = data.contentfulPreviewInfo
 
 return (
   <Layout>
-    <SEO title="Blog" description="List of blog posts" />
+    <SEO title="UX Design" description="Examples of UX Design work by Patrick Thomas" />
     <Container>
           <CardList>
             
-            <HeaderText><h1>My Work</h1></HeaderText>
+            <HeaderText><h1>UX Design</h1></HeaderText>
             <Preview
             preview={preview}
             previewInfo={previewInfo}
