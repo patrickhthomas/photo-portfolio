@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import HeaderText from '../components/HeaderText'
 import Container from '../components/Container'
 import PageBody from '../components/PageBody'
 import TagList from '../components/TagList'
@@ -30,6 +31,8 @@ const PostTemplate = ({ data, pageContext }) => {
     ogImage = null
   }
 
+  const maxW=props => props.theme.sizes.maxWidthCentered
+
   return (
     <Layout>
       <SEO
@@ -44,6 +47,7 @@ const PostTemplate = ({ data, pageContext }) => {
       <Hero title={title} image={heroImage} height={'50vh'} />
       <Container>
         {tags && <TagList tags={tags} basePath={basePath} />}
+        <HeaderText><h2 style={{maxWidth: '650px', margin: 'auto'}}>{title}</h2></HeaderText>
         <PostDetails
           date={publishDate}
           timeToRead={body.childMarkdownRemark.timeToRead}

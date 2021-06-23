@@ -516,34 +516,7 @@ const AffirmativePreview = props => {
       
       </Container>
       
-      <Container>
-      <Collapsible open={true} trigger={<Trigger><p>{props.previewInfo.previewTitle2.internal.content}</p><img src={arrow}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened' overflowWhenOpen='visible'>
-      <Grid>
-      {props.preview.slice(3, 8).map(({node}) => (
-        <GridItem key={node.title}>
-        <Link to={`${props.basePath}/${node.slug}/`}>
-        <ChildGrid>
-        <div>
-        <HeaderText><h3>{node.title}</h3></HeaderText>
-        <Role>
-        <li>{node.role[0]}</li>
-        <li>{node.role[1]}</li>
-        <li>{node.role[2]}</li>
-        <li>{node.role[3]}</li>
-        </Role>
-        <Text dangerouslySetInnerHTML={{ __html: node.excerpt.childMarkdownRemark.excerpt }} /> 
-        </div>
-        <MyPic src={ node.heroImage.file.url } alt="My Profile Picture" /> 
-        <LargeBPText dangerouslySetInnerHTML={{ __html: node.excerpt.childMarkdownRemark.excerpt }} /> 
-        <Button>View Project</Button>
-        </ChildGrid>
-        </Link>
-        </GridItem>
-        ))}
-        </Grid>
-        </Collapsible>
-        
-        </Container>
+      
         
         </div>
         )

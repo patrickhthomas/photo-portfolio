@@ -24,16 +24,20 @@ module.exports = {
     image: '/images/share.jpg',
     menuLinks: [
       {
-        name: 'Home',
+        name: 'About me',
         slug: '/',
+      },
+      {
+        name: 'UX Design',
+        slug: '/work/',
+      },
+      {
+        name: 'Branding + Photo',
+        slug: '/branding/',
       },
       {
         name: 'Blog',
         slug: '/blog/',
-      },
-      {
-        name: 'About',
-        slug: '/about/',
       },
       {
         name: 'Contact',

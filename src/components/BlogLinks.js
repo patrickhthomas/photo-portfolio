@@ -2,19 +2,17 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import HeaderText from '../components/HeaderText'
+import Container from '../components/Container'
 
 
 const Image = styled.img`
-width: 80%;
+margin: auto;
+`
+const BlogTop = styled.div`
+padding-bottom: 2em;
 `
 
-const Wrapper = styled.div`
-margin: -2em 0 0 0;
-text-align: left;
-.blogTop {
-    padding-bottom: 1em;
-}
-`
+
 const PostList = styled.div`
 display: grid;
 grid-template-columns: 1fr;
@@ -37,51 +35,51 @@ div {
 }
 
 .linkList {
+    .bold {
+        font-weight: 700;
+        color: ${props => props.theme.colors.primary};
+    }
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: .5em;
     p {
         justify-self: start;
         margin: 0;
     }
-    
-    img {
-        position: absolute;
-        width: 200%;
-        margin: auto;
-        bottom: 0%;
-        justify-self: end;
-    }
     .imageContainer {
-        position: relative;
         width: 100%;
         height: 10em;
+        position-self: end;
+        display: grid;
         overflow: hidden;
-        border-radius: .5em;
-        justify-self: end;
+        img {
+            position-self: justify;
+            height: 10em;
+            width: auto;
+        }
     }
 }
 @media (min-width: ${props => props.theme.responsive.small}) {
     text-align: center;
     grid-template-columns: 1fr 1fr;
     .linkList {
-        display: flex;
-        flex-flow: column nowrap;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5em 12em;
         align-content: center;
         justify-content: center;
     }
-    .imageContainer {
-        width: 100%;
-        
-    }
+
+
 }
 @media (min-width: ${props => props.theme.responsive.medium}) {
     grid-template-columns: 1fr 1fr 1fr;
     .linkList {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 7em 10em;
+        align-content: center;
+        justify-content: center;
     }
 }
 
@@ -90,13 +88,13 @@ div {
 const BlogLinks = props => {
     
     return (
-        <Wrapper>
+        <Container>
         <HeaderText><h1>Blog Posts</h1></HeaderText>
-        <div className="blogTop">
+        <BlogTop>
         <p>
         Howdy! Below is a collection of my blog posts, all {props.totalCount} of them! They're presented in reverse chronological order, with the most recent posts at the top.
         </p> 
-        </div>
+        </BlogTop>
         <PostList>
         {props.blogPost.map(({node}) => (
             <div key={node.slug}>
@@ -105,7 +103,7 @@ const BlogLinks = props => {
             to={`${node.slug}/`}>
             <span>
             <p>{node.publishDate}</p>
-            <p>{node.title}</p>
+            <p className='bold'>{node.title}</p>
             </span>
             <span className="imageContainer">
             <Image src={node.heroImage.file.url}/>
@@ -116,7 +114,7 @@ const BlogLinks = props => {
             ))}
             </PostList>  
             
-            </Wrapper>
+            </Container>
             )
         }
         

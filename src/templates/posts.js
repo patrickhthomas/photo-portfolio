@@ -10,6 +10,7 @@ import { startCase } from 'lodash'
 import HomeHero from '../components/HomeHero'
 import Preview from'../components/Preview'
 import HeaderText from '../components/HeaderText'
+import HomeSection from '../components/HomeSection'
 
 
 
@@ -23,6 +24,7 @@ const Posts = ({ data, pageContext }) => {
   const heroDescription = data.contentfulHeroDescription.description.internal.content
   let featuredPost
   let ogImage
+  let sections = data.allContentfulHomeSection.edges
 
   try {
     featuredPost = posts[0].node
@@ -44,29 +46,10 @@ const Posts = ({ data, pageContext }) => {
         imgRight={data.contentfulHeroImageRight.image.file.url}
         heroDescription={heroDescription}
         />
-        {isFirstPage ? (
-          <CardList>
-            
-            <HeaderText><h1>My Work</h1></HeaderText>
-            <Preview
-            preview={preview}
-            previewInfo={previewInfo}
-            basePath={basePath}
-            />
-            <HeaderText><h1 id="blog">Blog posts</h1></HeaderText>
-             <Card {...featuredPost} featured basePath={basePath} />
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} basePath={basePath} />
-            ))}
-          </CardList>
-          
-        ) : (
-          <CardList>
-            {posts.map(({ node: post }) => (
-              <Card key={post.id} {...post} basePath={basePath} />
-            ))}
-          </CardList>
-        )}
+        <HomeSection
+        sections={sections}
+        />
+
       </Container>
       <Pagination context={pageContext} />
     </Layout>
@@ -187,6 +170,18 @@ export const query = graphql`
     description {
       internal {
         content
+      }
+    }
+  }
+  allContentfulHomeSection(sort: {order: ASC, fields: order}) {
+    edges {
+      node {
+        content {
+          childMarkdownRemark {
+            html
+          }
+        }
+        title
       }
     }
   }
