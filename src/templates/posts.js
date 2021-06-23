@@ -8,7 +8,7 @@ import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import { startCase } from 'lodash'
 import HomeHero from '../components/HomeHero'
-import Preview from'../components/Preview'
+import PreviewHome from'../components/PreviewHome'
 import HeaderText from '../components/HeaderText'
 import HomeSection from '../components/HomeSection'
 
@@ -17,6 +17,8 @@ import HomeSection from '../components/HomeSection'
 const Posts = ({ data, pageContext }) => {
   const about = data.contentfulPage
   const preview = data.allContentfulPiece.edges
+  const homePreview1 = data.allContentfulPiece.edges[2]
+  const homePreview2 = data.allContentfulPiece.edges[4]
   const posts = data.allContentfulPost.edges
   const { humanPageNumber, basePath } = pageContext
   const isFirstPage = humanPageNumber === 1
@@ -46,6 +48,14 @@ const Posts = ({ data, pageContext }) => {
         imgRight={data.contentfulHeroImageRight.image.file.url}
         heroDescription={heroDescription}
         />
+        <Container>
+        <HeaderText><h2>Featured work</h2></HeaderText>
+            <PreviewHome
+            preview={preview}
+            previewInfo={previewInfo}
+            basePath={basePath}
+            />
+        </Container>
         <HomeSection
         sections={sections}
         />
