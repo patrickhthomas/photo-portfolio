@@ -492,7 +492,7 @@ const AffirmativePreview = props => {
     <Grid>
     {props.preview.slice(0, 3).map(({node}) => (
       <GridItem key={node.title}>
-      <Link to={`${props.basePath}/${node.slug}/`}>
+      <Link to={`${node.slug}/`}>
       <ChildGrid>
       <div>
       <HeaderText><h3>{node.title}</h3></HeaderText>

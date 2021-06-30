@@ -43,6 +43,10 @@ module.exports = {
         name: 'Contact',
         slug: '/contact/',
       },
+      {
+        name: 'Test',
+        slug: '/testPage/',
+      },
     ],
     postsPerFirstPage: 7,
     postsPerPage: 6,
@@ -52,15 +56,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-emotion`,
     'gatsby-plugin-theme-ui',
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `tomato`,
-        // Disable the loading spinner.
-        showSpinner: true,
-      },
-    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

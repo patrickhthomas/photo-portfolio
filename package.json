@@ -26,7 +26,6 @@
     "gatsby-plugin-google-analytics": "^2.1.35",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-netlify": "^2.1.32",
-    "gatsby-plugin-nprogress": "^3.3.0",
     "gatsby-plugin-offline": "^3.0.34",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-schema-snapshot": "^1.0.0",
@@ -45,6 +44,7 @@
     "react": "^16.12.0",
     "react-collapsible": "^2.8.3",
     "react-dom": "^16.12.0",
+    "react-gallery-carousel": "^0.2.2",
     "react-helmet": "^5.2.1",
     "react-scroll-into-view": "^1.8.2",
     "theme-ui": "^0.3.1"

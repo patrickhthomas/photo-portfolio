@@ -491,7 +491,7 @@ const PreviewHome = props => {
     <Grid>
     {props.preview.slice(0, 1).map(({node}) => (
       <GridItem key={node.title}>
-      <Link to={`${props.basePath}/${node.slug}/`}>
+      <Link to={`${node.slug}/`}>
       <ChildGrid>
       <div>
       <HeaderText><h3>{node.title}</h3></HeaderText>
@@ -512,7 +512,7 @@ const PreviewHome = props => {
       ))}
           {props.preview.slice(3, 4).map(({node}) => (
       <GridItem key={node.title}>
-      <Link to={`${props.basePath}/${node.slug}/`}>
+      <Link to={`${node.slug}/`}>
       <ChildGrid>
       <div>
       <HeaderText><h3>{node.title}</h3></HeaderText>
