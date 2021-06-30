@@ -9,6 +9,7 @@ import styled from "@emotion/styled"
 import HeaderText from "../components/HeaderText"
 import jsx from "@emotion/core"
 import Carousel from 'react-gallery-carousel';
+import CustomCarousel from '../components/Carousel1'
 import 'react-gallery-carousel/dist/index.css';
 
 
@@ -149,6 +150,19 @@ const PieceContainer = styled.div`
 .carousel {
     div {
         display: flex;
+        background-color: ${props => props.theme.colors.white};
+    }
+    ul {
+      align-items: center;
+
+    }
+    li[role='presentation'] {
+      border: .5em solid ${props => props.theme.colors.white};
+      border-radius: 2em;
+      overflow: hidden;
+      img {
+        
+      }
     }
   @media (min-width: ${props => props.theme.responsive.small}) {
 
@@ -162,63 +176,14 @@ const PieceContainer = styled.div`
 
 
 const TestPage = ({ data }) => {
-  const testImages = data.testPhoto.photos.map((photo) => ({
-    src: `${photo.file.url}`
-  }));
-    const foodImages = data.foodPhoto.photos.map((photo) => ({
-    src: `${photo.file.url}`
-  }));
+
   return (
     <Layout>    
       <Container>
         <PieceContainer>
-    <section className='section' aria-labelledby='example2'>
-      <header className='section-header'>
-        <HeaderText><h2>
-          {data.testPhoto.title}
-          </h2>
-        </HeaderText>
-        <p dangerouslySetInnerHTML={{ __html: data.testPhoto.description.childMarkdownRemark.html }}>
-         
-        </p>
-      </header>
-      <div className='carousel-container'>
-        <Carousel className='carousel'
-        images={testImages}
-        hasIndexBoard={false} 
-        hasSizeButton={false} 
-        hasMediaButton={false}
-        hasLeftButton={false} 
-        hasRightButton={false}
-        hasCaptions={true}
-        objectFit={'cover'}
-        />
-      </div>
-    </section>
-        <section className='section' aria-labelledby='example2'>
-      <header className='section-header'>
-        <HeaderText><h2>
-          {data.foodPhoto.title}
-          </h2>
-        </HeaderText>
-        <p dangerouslySetInnerHTML={{ __html: data.foodPhoto.description.childMarkdownRemark.html }}>
-         
-        </p>
-      </header>
-      <div className='carousel-container'>
-        <Carousel className='carousel'
-        images={foodImages}
-        hasIndexBoard={false} 
-        hasSizeButton={false} 
-        hasMediaButton={false}
-        hasLeftButton={false} 
-        hasRightButton={false}
-        hasCaptions={true}
-        objectFit={'cover'}
-        />
-      </div>
-    </section>
-
+          <CustomCarousel alias={data.foodPhoto}/>
+          <CustomCarousel alias={data.productPhoto}/>
+          <CustomCarousel alias={data.logoPhoto}/>
         </PieceContainer>
       </Container>
     </Layout>
@@ -228,7 +193,7 @@ const TestPage = ({ data }) => {
 
 export const query = graphql`
 query TestQuery {
-      testPhoto: contentfulPhotoAlbum(contentful_id: {eq: "6nbx4LdTgTMSaJzR084I2j"}) {
+      productPhoto: contentfulPhotoAlbum(contentful_id: {eq: "34C1e43oFbfXO76Be0HdA9"}) {
     title
     description {
       childMarkdownRemark {
@@ -242,6 +207,19 @@ query TestQuery {
     }
   }
   foodPhoto: contentfulPhotoAlbum(contentful_id: {eq: "5oM4Lo9OYVDBUodqUdSrot"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+    }
+  }
+  logoPhoto: contentfulPhotoAlbum(contentful_id: {eq: "3tL5xSUWYJudLGkThC6DaW"}) {
     title
     description {
       childMarkdownRemark {
