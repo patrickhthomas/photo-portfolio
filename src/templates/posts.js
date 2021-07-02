@@ -27,7 +27,7 @@ const Posts = ({ data, pageContext }) => {
   let featuredPost
   let ogImage
   let sections = data.allContentfulHomeSection.edges
-
+  
   try {
     featuredPost = posts[0].node
   } catch (error) {
@@ -38,33 +38,32 @@ const Posts = ({ data, pageContext }) => {
   } catch (error) {
     ogImage = null
   }
-
+  
   return (
     <Layout>
-      <SEO title={startCase(basePath)} image={ogImage} />
-      <Container>
-        <HomeHero 
-        imgLeft={data.contentfulHeroImageLeft.image.file.url}
-        imgRight={data.contentfulHeroImageRight.image.file.url}
-        heroDescription={heroDescription}
-        />
-        <Container>
-        <HeaderText><h2>Featured work</h2></HeaderText>
-            <PreviewHome
-            preview={preview}
-            previewInfo={previewInfo}
-            basePath={basePath}
-            />
-        </Container>
-        <HomeSection
-        sections={sections}
-        />
-
-      </Container>
-      <Pagination context={pageContext} />
+    <SEO title={startCase(basePath)} image={ogImage} />
+    <Container>
+    <HomeHero 
+    imgLeft={data.contentfulHeroImageLeft.image.file.url}
+    imgRight={data.contentfulHeroImageRight.image.file.url}
+    heroDescription={heroDescription}
+    />
+    <Container>
+    <HeaderText><h2>Featured work</h2></HeaderText>
+    <PreviewHome
+    preview={preview}
+    basePath={basePath}
+    />
+    </Container>
+    <HomeSection
+    sections={sections}
+    />
+    
+    </Container>
+    <Pagination context={pageContext} />
     </Layout>
-  )
-}
+    )
+  }
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
@@ -98,103 +97,63 @@ export const query = graphql`
         }
       }
     }
-      contentfulPage(slug: {eq: "about"}) {
-    title
-    slug
-    metaDescription {
-      internal {
-        content
-      }
-    }
-    body {
-      childMarkdownRemark {
-        html
-        excerpt(pruneLength: 320)
-      }
-    }
-  }
-  allContentfulPiece(sort: {fields: publishDate, order: DESC}) {
-    edges {
-      node {
-        title
-        id
-        slug
-        publishDate(formatString: "MMMM DD, YYYY")
-        role
-        excerpt {
-        childMarkdownRemark {
-          timeToRead
-          html
-          excerpt(pruneLength: 60)
-        }
-      }
-        body {
-          childMarkdownRemark {
-            html
-            excerpt(pruneLength: 120)
+    allContentfulPiece(sort: {fields: publishDate, order: DESC}) {
+        edges {
+          node {
+            title
+            id
+            slug
+            publishDate(formatString: "MMMM DD, YYYY")
+            role
+            excerpt {
+              childMarkdownRemark {
+                timeToRead
+                html
+                excerpt(pruneLength: 60)
+              }
+            }
+            
+            heroImage {
+              file {
+                url
+              }
+            }
           }
         }
-        heroImage {
+      }
+    contentfulHeroDescription {
+      description {
+        internal {
+          content
+        }
+      }
+    }
+    allContentfulHomeSection(sort: {order: ASC, fields: order}) {
+        edges {
+          node {
+            content {
+              childMarkdownRemark {
+                html
+              }
+            }
+            title
+          }
+        }
+      }
+    contentfulHeroImageLeft {
+        image {
           file {
             url
           }
         }
       }
-    }
-  }
-  contentfulHeroImageLeft {
-    image {
-      file {
-        url
-      }
-    }
-  }
-  contentfulHeroImageRight {
-    image {
-      file {
-        url
-      }
-    }
-  }
-    contentfulPreviewInfo {
-    paragraph {
-      internal {
-        content
-      }
-      childMarkdownRemark {
-        html
-      }
-    }
-    previewTitle1 {
-      internal {
-        content
-      }
-    }
-    previewTitle2 {
-      internal {
-        content
-      }
-    }
-  }
-    contentfulHeroDescription {
-    description {
-      internal {
-        content
-      }
-    }
-  }
-  allContentfulHomeSection(sort: {order: ASC, fields: order}) {
-    edges {
-      node {
-        content {
-          childMarkdownRemark {
-            html
+      contentfulHeroImageRight {
+        image {
+          file {
+            url
           }
         }
-        title
       }
-    }
-  }
   }
 `
 

@@ -155,7 +155,12 @@ const PieceContainer = styled.div`
 
 
 const PieceTemplate = ({ data }) => {
-  const { title, metaDescription, body } = data.contentfulPiece
+  const { 
+    title, 
+    metaDescription, 
+    body,
+    heroImage,
+  } = data.contentfulPiece
   return (
     <Layout>
       <SEO
