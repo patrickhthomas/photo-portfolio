@@ -94,8 +94,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'GCN',
-        short_name: 'GCN',
+        name: 'Patrick Thomas Design',
+        short_name: 'Patrick Thomas Design',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#ffffff',

@@ -3,7 +3,8 @@ import styled from '@emotion/styled'
 import Collapsible from 'react-collapsible';
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
-
+import CustomButton from './CustomButton';
+import { render } from 'ink';
 
 
 const Container = styled.div`
@@ -34,6 +35,7 @@ const Grid = styled.div`
   margin: 0 auto;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
+  grid-template-rows: auto auto;
   @media (min-width: ${props => props.theme.responsive.small}) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -223,7 +225,11 @@ const Text = styled.div`
 `
 
 
+
+
 const HomeHero = ({ imgLeft, imgRight, heroDescription }) => {
+
+  
   return (
     <Container>
       <Grid>
@@ -234,7 +240,9 @@ const HomeHero = ({ imgLeft, imgRight, heroDescription }) => {
         <Me>
           <MyPic src={ imgRight } alt="My Profile Picture" />
         </Me>
+        <CustomButton hero label='Hire me!'></CustomButton>
       </Grid>
+      
     </Container>
   )
 }

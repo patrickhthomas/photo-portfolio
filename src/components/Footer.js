@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import ScrollTo from "react-scroll-into-view";
 import styled from '@emotion/styled'
 import github from '../../static/images/github.svg'
 import instagram from '../../static/images/instagram.svg'

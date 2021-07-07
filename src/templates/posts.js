@@ -11,12 +11,17 @@ import HomeHero from '../components/HomeHero'
 import PreviewHome from'../components/PreviewHome'
 import HeaderText from '../components/HeaderText'
 import HomeSection from '../components/HomeSection'
+import CustomCarousel from '../components/Carousel1'
+import CustomCarousel2 from '../components/Carousel2'
+import styled from '@emotion/styled'
+import SquarePhotos from '../components/SquarePhotos'
+
+
 
 
 
 const Posts = ({ data, pageContext }) => {
-  const about = data.contentfulPage
-  const preview = data.allContentfulPiece.edges
+  const header = 'Digital Marketing'
   const homePreview1 = data.allContentfulPiece.edges[2]
   const homePreview2 = data.allContentfulPiece.edges[4]
   const posts = data.allContentfulPost.edges
@@ -48,17 +53,18 @@ const Posts = ({ data, pageContext }) => {
     imgRight={data.contentfulHeroImageRight.image.file.url}
     heroDescription={heroDescription}
     />
-    <Container>
-    <HeaderText><h2>Featured work</h2></HeaderText>
-    <PreviewHome
-    preview={preview}
-    basePath={basePath}
+
+
+
+
+     <CustomCarousel2 
+    alias1={data.digitalMarketingPhoto}
+    alias2={data.webDesignPhoto}
     />
-    </Container>
+
     <HomeSection
     sections={sections}
     />
-    
     </Container>
     <Pagination context={pageContext} />
     </Layout>
@@ -154,7 +160,74 @@ export const query = graphql`
           }
         }
       }
+      productPhoto: contentfulPhotoAlbum(contentful_id: {eq: "34C1e43oFbfXO76Be0HdA9"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+    }
+  }
+  foodPhoto: contentfulPhotoAlbum(contentful_id: {eq: "5oM4Lo9OYVDBUodqUdSrot"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+    }
+  }
+  logoPhoto: contentfulPhotoAlbum(contentful_id: {eq: "3tL5xSUWYJudLGkThC6DaW"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+    }
+  }
+    digitalMarketingPhoto: contentfulPhotoAlbum(contentful_id: {eq: "1poRdq8WvybMvGi64kJSrq"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+    }
+  }
+    webDesignPhoto: contentfulPhotoAlbum(contentful_id: {eq: "3rcYZgnGEROqo6TtHlD4Sb"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+    }
+  }
   }
 `
 
 export default Posts
+
+

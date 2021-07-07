@@ -1,13 +1,8 @@
 
 
 import React from 'react'
-import SEO from '../components/SEO'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Container from "../components/Container"
 import styled from "@emotion/styled"
 import HeaderText from "../components/HeaderText"
-import jsx from "@emotion/core"
 import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 import MinIcon from '../components/Icons/minimize'
@@ -76,9 +71,10 @@ const CarouselContainer = styled.div`
 
 
 
-const CustomCarousel = ({ alias }) => {
+const CustomCarousel = ({ alias, ...props }) => {
     const maxIcon = <MaxIcon/>
     const minIcon = <MinIcon/>
+    const hasIndexBoard = props.hasIndexBoard
     const images = alias.photos.map((photo) => ({
     src: `${photo.file.url}`
   }));
@@ -86,9 +82,9 @@ const CustomCarousel = ({ alias }) => {
 
     <CarouselContainer className='section' aria-labelledby='example2'>
       <header className='section-header'>
-        <HeaderText><h2>
+        <HeaderText><h3>
           {alias.title}
-          </h2>
+          </h3>
         </HeaderText>
         <p className="description" dangerouslySetInnerHTML={{ __html: alias.description.childMarkdownRemark.html }}>
          
@@ -99,7 +95,10 @@ const CustomCarousel = ({ alias }) => {
         images={images}
         shouldMaximizeOnClick={true}
         shouldMinimizeOnClick={true}
-        hasIndexBoard={'topRight'} 
+        hasIndexBoard={hasIndexBoard}
+        canAutoPlay={true}
+        isAutoPlaying={true} 
+        isPlaying={true} 
         hasSizeButton={'bottomRight'} 
         hasMediaButton={false}
         hasLeftButton={false} 
@@ -108,6 +107,7 @@ const CustomCarousel = ({ alias }) => {
         objectFit={'cover'}
         maxIcon={maxIcon}
         minIcon={minIcon}
+        autoPlayInterval={100}
         />
       </div>
     </CarouselContainer>

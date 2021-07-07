@@ -48,21 +48,6 @@ const Header = styled.header`
       box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .1);
 `
 
-
-/*  display: grid;  !! Reinsert into Nav after configuring Modal element
-  grid-template-columns: 1.5em 1fr 1fr 1fr 1fr 1.5em;
-  align-items: end;
-  ul {
-    display: flex;
-    justify-content: flex-end;
-    visibility: visible;
-  }
-
-*/
-
-const Button = styled.button`
-`
-
 const Nav = styled.nav`
 div {
     background-color: rgba(30, 30, 42, .00);

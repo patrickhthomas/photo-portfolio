@@ -228,7 +228,7 @@ max-width: ${props => props.theme.sizes.maxWidthCentered};
 
 const HomeSection = props => {
   return (
-    <Container>
+    <section>
     {props.sections.slice(0, 1).map(({node}) => (
    <Sub>
     <HeaderText><h2>{node.title}</h2></HeaderText>
@@ -255,7 +255,7 @@ const HomeSection = props => {
     />
     </Sub>
     ))}
-    </Container>
+    </section>
     )
   }
   
