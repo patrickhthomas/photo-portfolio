@@ -8,13 +8,9 @@ import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import { startCase } from 'lodash'
 import HomeHero from '../components/HomeHero'
-import PreviewHome from'../components/PreviewHome'
-import HeaderText from '../components/HeaderText'
 import HomeSection from '../components/HomeSection'
-import CustomCarousel from '../components/Carousel1'
 import CustomCarousel2 from '../components/Carousel2'
-import styled from '@emotion/styled'
-import SquarePhotos from '../components/SquarePhotos'
+
 
 
 

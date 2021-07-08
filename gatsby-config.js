@@ -24,28 +24,24 @@ module.exports = {
     image: '/images/share.jpg',
     menuLinks: [
       {
-        name: 'About me',
+        name: 'Home',
         slug: '/',
       },
       {
-        name: 'UX Design',
-        slug: '/work/',
+        name: 'Digital Marketing',
+        slug: '/digital-marketing/',
       },
       {
-        name: 'Branding + Photo',
-        slug: '/branding/',
+        name: 'Web Design',
+        slug: '/web-design/',
       },
       {
         name: 'Blog',
         slug: '/blog/',
       },
       {
-        name: 'Contact',
-        slug: '/contact/',
-      },
-      {
-        name: 'Test',
-        slug: '/testPage/',
+        name: 'Hire me',
+        slug: '/hire-me/',
       },
     ],
     postsPerFirstPage: 7,

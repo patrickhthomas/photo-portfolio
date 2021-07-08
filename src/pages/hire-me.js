@@ -10,6 +10,7 @@ import github from '../../static/images/github.svg'
 import instagram from '../../static/images/instagram.svg'
 import twitter from '../../static/images/twitter.svg'
 import linkedin from '../../static/images/linkedin.svg'
+import Pricing from '../components/Pricing'
 
 
 const Wrapper=styled.section`
@@ -45,7 +46,9 @@ const Contact = ({ data }) => {
       <SEO title="Contact" description="Contact description goes here" />
       <Container>
         <Wrapper>
-                  <HeaderText><h1 className="pageTitle">Contact</h1></HeaderText>
+          
+          
+                  <HeaderText><h1 className="pageTitle">{data.contentfulContact.title}</h1></HeaderText>
                   <Text>{data.contentfulContact.description.description}</Text>
         <ContactForm>
         </ContactForm>
@@ -66,7 +69,9 @@ query ContactQuery {
     linkedIn
     instagram
     gitHub
+    title
   }
+  
 }
 
 `

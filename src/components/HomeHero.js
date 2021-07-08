@@ -59,6 +59,11 @@ const Grid = styled.div`
     z-index: 0;
   }
   }
+
+.heroButton {
+  place-self: center;
+  display: none;
+}
 `
 const Me = styled.div`
   display: flex;
@@ -240,7 +245,7 @@ const HomeHero = ({ imgLeft, imgRight, heroDescription }) => {
         <Me>
           <MyPic src={ imgRight } alt="My Profile Picture" />
         </Me>
-        <CustomButton hero label='Hire me!'></CustomButton>
+        <CustomButton className="heroButton" label='Hire me!'></CustomButton>
       </Grid>
       
     </Container>
