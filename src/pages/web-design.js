@@ -7,7 +7,6 @@ import styled from '@emotion/styled'
 import SEO from '../components/SEO'
 import { startCase } from 'lodash'
 import sorrySrc from '../../static/images/sorry.jpeg'
-import CustomCarousel from '../components/Carousel1'
 import { Link } from 'gatsby'
 
 const Sorry = styled.img`
