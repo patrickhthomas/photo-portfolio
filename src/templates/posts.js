@@ -17,13 +17,8 @@ import CustomCarousel2 from '../components/Carousel2'
 
 
 const Posts = ({ data, pageContext }) => {
-  const header = 'Digital Marketing'
-  const homePreview1 = data.allContentfulPiece.edges[2]
-  const homePreview2 = data.allContentfulPiece.edges[4]
   const posts = data.allContentfulPost.edges
   const { humanPageNumber, basePath } = pageContext
-  const isFirstPage = humanPageNumber === 1
-  const previewInfo = data.contentfulPreviewInfo
   const heroDescription = data.contentfulHeroDescription.description.internal.content
   let featuredPost
   let ogImage
