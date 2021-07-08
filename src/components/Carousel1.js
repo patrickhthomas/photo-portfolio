@@ -1,12 +1,17 @@
 
 
-import React from 'react'
+import React, {Component} from 'react'
 import styled from "@emotion/styled"
 import HeaderText from "../components/HeaderText"
-import Carousel from 'react-gallery-carousel';
-import 'react-gallery-carousel/dist/index.css';
 import MinIcon from '../components/Icons/minimize'
 import MaxIcon from '../components/Icons/maximize'
+import PropTypes from "prop-types"
+
+import Loadable from "@loadable/component"
+
+import Carousel from 'react-gallery-carousel';
+import 'react-gallery-carousel/dist/index.css';
+
 
 
 
@@ -78,9 +83,7 @@ const CustomCarousel = ({ alias, ...props }) => {
     const images = alias.photos.map((photo) => ({
     src: `${photo.file.url}`
   }));
-  return (
-
-    <CarouselContainer className='section' aria-labelledby='example2'>
+  return <CarouselContainer className='section' aria-labelledby='example2'>
       <header className='section-header'>
         <HeaderText><h3>
           {alias.title}
@@ -112,10 +115,7 @@ const CustomCarousel = ({ alias, ...props }) => {
       </div>
     </CarouselContainer>
 
-  )
 }
-
-
 
 
 export default CustomCarousel

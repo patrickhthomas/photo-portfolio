@@ -16,12 +16,11 @@ import CustomCarousel2 from '../components/Carousel2'
 import styled from '@emotion/styled'
 import SquarePhotos from '../components/SquarePhotos'
 
+import Loadable from "@loadable/component"
 
 
 
-
-const DigitalMarketingPage
- = ({ data, pageContext }) => {
+const DigitalMarketingPage = ({ data, pageContext }) => {
   const { humanPageNumber, basePath } = pageContext
   let ogImage
   
