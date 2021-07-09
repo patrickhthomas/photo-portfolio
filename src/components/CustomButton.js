@@ -26,19 +26,15 @@ const Button = styled.button`
 }
 
 `
-const ButtonBuddy = styled.div`
-
-`
-
 
 
 const CustomButton = props => {
 
 
     return (
-    <ButtonBuddy>
+
     <Button className={props.className}>{props.label}</Button>
-    </ButtonBuddy>
+
     )
 }
 

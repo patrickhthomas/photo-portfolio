@@ -23,9 +23,12 @@ grid-template-columns: 1fr;
 const Container2 = styled.div`
 padding-bottom: 2em;
 max-width: 90%;
-display: flex;
-flex-flow: column;
+display: grid;
+grid-template-rows: auto auto auto;
 place-items: start;
+a {
+ place-self: end center;
+}
 @media (min-width: ${props => props.theme.responsive.medium}) {
 
 }
@@ -72,6 +75,7 @@ const CustomCarousel2 = ({ alias1, alias2 }) => {
         </p>
         <Link to={`/digital-marketing`}>
         <SquarePhotos 
+        className="photos"
         buttonLabel='Keep reading about my work in Digital Marketing'
         photoInterval={5000}
         photoDelay={5000}
@@ -108,6 +112,7 @@ const CustomCarousel2 = ({ alias1, alias2 }) => {
         </p>
         <Link to={`/web-design`}>
         <SquarePhotos 
+        className="photos"
         buttonLabel='Learn more about my Web Design work'
         photoInterval={5000}
         photoDelay={2000}
