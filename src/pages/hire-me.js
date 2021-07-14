@@ -6,6 +6,7 @@ import ContactForm from '../components/ContactForm'
 import SEO from '../components/SEO'
 import styled from '@emotion/styled'
 import { graphql } from "gatsby"
+import { Link } from 'gatsby'
 import github from '../../static/images/github.svg'
 import instagram from '../../static/images/instagram.svg'
 import twitter from '../../static/images/twitter.svg'
@@ -49,7 +50,10 @@ const Contact = ({ data }) => {
           
           
                   <HeaderText><h1 className="pageTitle">{data.contentfulContact.title}</h1></HeaderText>
-                  <Text>{data.contentfulContact.description.description}</Text>
+                  <Text>{data.contentfulContact.description.description}<Link to={`/pricing`}>
+                 HERE.
+              </Link></Text>
+                  
         <ContactForm>
         </ContactForm>
     

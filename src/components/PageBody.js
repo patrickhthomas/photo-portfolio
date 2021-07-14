@@ -11,15 +11,19 @@ color: ${props => props.theme.colors.black};
 max-width: 100%;
 margin: 0 auto;
 h1,
-h2,
+h2 {
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+  text-transform: capitalize;  
+}
+
 h3 {
   font-weight: 900;
   line-height: 1.25;
   margin: 0 0 1rem 0;
-  text-transform: capitalize;
-  
+  text-transform: lowercase;  
 }
-
 
 div {
   padding: 1em em 3em 0em;
@@ -84,8 +88,8 @@ h2 {
 }
 h3 {
   font-size: 1em;
-  text-decoration: underline;
-  text-transform: uppercase;
+  text-decoration: none;
+  text-transform: lowercase;
 }
 
 a {

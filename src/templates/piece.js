@@ -56,11 +56,11 @@ button {
     border-radius: 1em 1em 0em 0em;
     width: 100%;
   }
-  h3 {
-    font-size: 1em;
-    text-decoration: underline;
-    text-transform: uppercase;
-  }
+h3 {
+  font-size: 1em;
+  text-decoration: none;
+  text-transform: lowercase;
+}
 
   a {
     transition: 0.2s;

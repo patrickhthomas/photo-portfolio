@@ -85,8 +85,8 @@ h2 {
 }
 h3 {
   font-size: 1em;
-  text-decoration: underline;
-  text-transform: uppercase;
+  text-decoration: none;
+  text-transform: lowercase;
 }
 
 a {

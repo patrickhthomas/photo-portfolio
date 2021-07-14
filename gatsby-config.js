@@ -32,12 +32,8 @@ module.exports = {
         slug: '/digital-marketing/',
       },
       {
-        name: 'Web Design',
-        slug: '/web-design/',
-      },
-      {
-        name: 'Blog',
-        slug: '/blog/',
+        name: 'Pricing',
+        slug: '/pricing/',
       },
       {
         name: 'Hire me',

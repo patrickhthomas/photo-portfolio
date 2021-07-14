@@ -7,9 +7,6 @@ import { globalStyles } from '../styles/globalStyles.js'
 
 const Root = styled.div`
   font-family: ${props => props.theme.fonts.body};
-  div {
-    background: ${props => props.theme.colors.white};
-  }
 `
 
 

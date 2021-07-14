@@ -19,26 +19,34 @@ const Title = styled.div`
   h2 {
       font-size: 1.8em;
       font-weight: 700;
-      border-bottom: .5px solid ${props => props.theme.colors.secondary};
   }
   h3 {
       font-size: 1.3em;
-      border-bottom: .5px solid ${props => props.theme.colors.secondary};
   }
   h1,
-  h2,
-  h3 {
+  h2 {
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 600;
     text-align: left;
     margin: 0 0 .5em 0;
     line-height: 1.2;
     font-family: ${props => props.theme.fonts.header};
   }
 
-  h2 {
-    font-weight: 500;
+  h1 {
+        font-weight: 700;
   }
+
+  h3 {
+    text-transform: lowercase;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 0 .5em 0;
+    line-height: 1.2;
+    font-family: ${props => props.theme.fonts.header};
+  }
+
+
 
   span {
     margin: 0 0 0 0.25em;
