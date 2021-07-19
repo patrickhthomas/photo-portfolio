@@ -35,7 +35,7 @@ const Controls = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 place-self: end center;
-margin-bottom: 6em;
+margin-bottom: 0em;
 @media (min-width: ${props => props.theme.responsive.small}) {
 width: 30em;
 margin-bottom: 0em;
@@ -50,11 +50,12 @@ object-fit: contain;
 const SlideContainer = styled.div`
 display: flex;
 position: relative;
+place-self: end center;
 max-width: 100%;
 max-height: 110%;
 overflow: hidden;
 z-index: 1005;
-background-color: ${props => props.theme.colors.highlight};
+background-color: ${props => props.theme.colors.highlight05};
 `
 
 const AutoPlay = styled.div`
@@ -66,14 +67,14 @@ grid-template-rows: auto auto;
 align-items: center end;
 max-width: 100%;
 max-height: 100%;
-min-height: 666px;
+min-height: 100vh;
 overflow: hidden;
-background-color: ${props => props.theme.colors.black};
+background-color: ${props => props.theme.colors.white};
 box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
 padding: 1em;
 border-radius: .2em;
 .homeButtons {
-    background: ${props => props.theme.colors.highlight};
+    background: ${props => props.theme.colors.highlight05};
     transition: all .2s ease-in;
     transform: scale(1.05);
     cursor: pointer;

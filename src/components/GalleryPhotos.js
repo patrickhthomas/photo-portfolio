@@ -52,7 +52,7 @@ position: relative;
 max-width: 100%;
 max-height: 30em;
 overflow: hidden;
-background-color: ${props => props.theme.colors.highlight};
+background-color: ${props => props.theme.colors.highlight05};
 `
 
 const AutoPlay = styled.div`
@@ -62,12 +62,12 @@ const AutoPlay = styled.div`
 display: grid;
 
 
-grid-template-rows: auto auto;
+grid-template-rows: auto auto 1em;
 align-items: end center;
 max-width: 100%;
 height: 495px;
 overflow: hidden;
-background-color: ${props => props.theme.colors.black};
+background-color: ${props => props.theme.colors.highlight05};
 box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
 padding: 1em;
 border-radius: .2em;

@@ -39,7 +39,7 @@ const Enter = styled.div`
 width: 4em;
 place-self: end;
 transform: translate(-1em, 5em) ;
-z-index: 999;
+z-index: 1;
 `
 
 const Exit = styled.div`
@@ -96,7 +96,7 @@ const CustomCarousel3 = ({ alias }) => {
                 <Description dangerouslySetInnerHTML={{ __html: alias.description.childMarkdownRemark.html }}>
         </Description>
         <Enter onClick={() => handleSize()}>
-            <CustomButton label='Full Screen'/>
+            <CustomButton className='fullScreen' label='Full Screen'/>
         </Enter>
         <GalleryPhotos
         buttonLabel='Next'
