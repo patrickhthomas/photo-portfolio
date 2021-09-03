@@ -20,7 +20,7 @@ grid-auto-rows: minmax(10px, auto);
 grid-gap: 2em;
 a {
     text-decoration: none;
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.chartreuse};
 }
 div {
     background-color: ${props => props.theme.colors.white};
@@ -28,7 +28,7 @@ div {
     padding: 1em;
     border-radius: .2em;
     &:hover {
-        border: .2em solid ${props => props.theme.colors.highlight};
+        border: .2em solid ${props => props.theme.colors.chartreuse};
         transform: scale(1.02);
         transition: all .1s ease-in;
     }
@@ -37,7 +37,7 @@ div {
 .linkList {
     .bold {
         font-weight: 700;
-        color: ${props => props.theme.colors.primary};
+        color: ${props => props.theme.colors.chartreuse};
     }
     list-style: none;
     display: grid;

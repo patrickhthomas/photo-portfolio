@@ -52,7 +52,7 @@ position: relative;
 max-width: 100%;
 max-height: 30em;
 overflow: hidden;
-background-color: ${props => props.theme.colors.highlight05};
+background-color: ${props => props.theme.colors.chartreuse05};
 `
 
 const AutoPlay = styled.div`
@@ -67,7 +67,7 @@ align-items: end center;
 max-width: 100%;
 height: 495px;
 overflow: hidden;
-background-color: ${props => props.theme.colors.highlight05};
+background-color: ${props => props.theme.colors.chartreuse05};
 box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
 padding: 1em;
 border-radius: .2em;
@@ -96,31 +96,10 @@ padding-top: 1em;
 const Blip = styled.div`
 height: 100%;
 width: 100%;
-border: 1px solid ${props => props.theme.colors.highlight25};
+border: 1px solid ${props => props.theme.colors.chartreuse25};
 border-radius: 3em;
 `
 
-
-const Thumbnails = styled.div`
-border: 2px solid black;
-display: flex;
-height: 6em;
-width: 100%;
-`
-const ThumbnailImg = styled.img`
-max-width: 130%;
-`
-
-const ThumbnailContainer = styled.div`
-display: grid;
-grid-template-columns: repeat(27, 6em);
-grid-template-rows: 4em;
-`
-
-const ThumbnailScroll = styled.div`
-max-width: 100%;
-overflow-x: scroll;
-`
 
 
 

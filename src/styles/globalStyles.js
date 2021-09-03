@@ -100,11 +100,16 @@ html,
 body {
   background: #FAFAFA;
   height: 100%;
+  overflow: auto;
 }
+
 .siteRoot {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+body > .siteRoot > #fullScreen {
+  height: 100%;
 }
 .siteContent {
   display: flex;
@@ -142,7 +147,7 @@ section {
 @media screen and (min-width: 35em) {
   html {
     margin-right: calc(-100vw + 100%);
-    overflow-x: hidden;
+    overflow: hidden;
   }
 }
 

@@ -25,11 +25,11 @@ padding-bottom: 3em;
 max-width: ${props => props.theme.sizes.maxWidth};
   a {
     text-decoration: none;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     font-weight: 600;
     transition: all 0.2s;
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 `
@@ -77,12 +77,12 @@ a {
   font-weight: 600;
   transition: all 0.2s;
   text-decoration: none;
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.coffee};
   &:hover {
-    color: ${props => props.theme.colors.highlight};
+    color: ${props => props.theme.colors.chartreuse};
   }
   &:visited {
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
   }
 }
 margin: 0 0 0 auto;

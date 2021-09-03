@@ -30,15 +30,15 @@ button {
   padding: 1em 10% 1em 10%;
   width: 100%;
   background: ${props => props.theme.colors.white};
-  border: .2em solid ${props => props.theme.colors.highlight};
-  color: ${props => props.theme.colors.black};
+  border: .2em solid ${props => props.theme.colors.chartreuse};
+  color: ${props => props.theme.colors.coffee};
   transition: all .2s ease-in;
   box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
   border-radius: .2rem;
   margin: 1em 0 1em 0;
 
   &:hover {
-    background: ${props => props.theme.colors.highlight};
+    background: ${props => props.theme.colors.chartreuse};
     color: ${props => props.theme.colors.white};
     transition: all .2s ease-in;
     transform: scale(1.05);
@@ -51,7 +51,7 @@ button {
   h2 {
     font-size: 1.25em;
     color: white;
-    background-color: ${props => props.theme.colors.black};
+    background-color: ${props => props.theme.colors.coffee};
     padding: 2em 0em .5em 1em;
     border-radius: 1em 1em 0em 0em;
     width: 100%;
@@ -66,7 +66,7 @@ h3 {
     transition: 0.2s;
     color: ${props => props.theme.colors.link};
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 
@@ -96,7 +96,7 @@ h3 {
       padding: .05em 0 .05em 1em;
       margin: 2.5em 0 0 -1em;
    
-      border-left: 2px solid ${props => props.theme.colors.highlight};
+      border-left: 2px solid ${props => props.theme.colors.chartreuse};
 
     }
   }

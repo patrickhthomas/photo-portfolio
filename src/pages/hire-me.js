@@ -19,6 +19,9 @@ const Wrapper=styled.section`
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 2em;
+  a {
+    text-decoration: none;
+  }
 `
 
 const Text = styled.p`
@@ -38,7 +41,11 @@ a {
   pointer: cursor;
 }
 `
-
+const activeLinkStyle = {
+  
+  color: '#4A8F00',
+  fontWeight: 'bold',
+}
 
 const Contact = ({ data }) => {
 
@@ -50,7 +57,7 @@ const Contact = ({ data }) => {
           
           
                   <HeaderText><h1 className="pageTitle">{data.contentfulContact.title}</h1></HeaderText>
-                  <Text>{data.contentfulContact.description.description}<Link to={`/pricing`}>
+                  <Text>{data.contentfulContact.description.description}<Link to={`/pricing`} style={activeLinkStyle}>
                  HERE.
               </Link></Text>
                   

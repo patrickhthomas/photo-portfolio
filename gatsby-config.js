@@ -28,12 +28,12 @@ module.exports = {
         slug: '/',
       },
       {
-        name: 'Digital Marketing',
-        slug: '/digital-marketing/',
+        name: 'Products, Food, & Bev',
+        slug: '/product-photos/',
       },
       {
-        name: 'Pricing',
-        slug: '/pricing/',
+        name: 'Events',
+        slug: '/events-and-spaces/',
       },
       {
         name: 'Hire me',

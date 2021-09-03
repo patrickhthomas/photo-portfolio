@@ -10,21 +10,26 @@ import "@fontsource/fraunces/variable-italic.css"
 
 
 const myBg = 'linear-gradient(135.31deg, #00113F 8.15%, #4F0051 99.17%);'
-
+const borderBg = 'linear-gradient(315deg, hsla(51, 96%, 51%, 1) 0%, hsla(104, 64%, 35%, 1) 100%)'
 export default {
 
   
   colors: {
+    chartreuse:"#4A8F00",
+    mintCream:"#f1fffa",
+    middleGreen:"#568259",
+    ebony:"#464e47",
+    coffee:"#3b2c35",
     less: '#EDEDED',
     black: '#1E1E2A',
-    primary: '#444444',
+    primary: '#f1fffa',
     secondary: '#CECECE',
-    tertiary: '#F3F3F3',
-    highlight: '#5E5BF7', 
-    link: '#90F660',
-    white: '#FAFAFA',
-    highlight05: 'rgba(94, 91, 247, 0.05)',
-    highlight25: 'rgba(94, 91, 247, 0.25)',
+    tertiary: '#f1fffa',
+    highlight: '#568259', 
+    link: '#568259',
+    white: '#f1fffa',
+    highlight05: '#f1fffa',
+    highlight25: '#568259',
     nav: 'rgba(255, 255, 255, 0.5)',
     modes: {
       dark: {
@@ -41,6 +46,7 @@ export default {
   },  
   gradients: {
     primary: myBg,
+    border: borderBg,
   },
   fonts: {
     body:

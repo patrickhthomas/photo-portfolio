@@ -55,7 +55,7 @@ max-width: 100%;
 max-height: 110%;
 overflow: hidden;
 z-index: 1005;
-background-color: ${props => props.theme.colors.highlight05};
+background-color: ${props => props.theme.colors.chartreuse05};
 `
 
 const AutoPlay = styled.div`
@@ -74,7 +74,7 @@ box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
 padding: 1em;
 border-radius: .2em;
 .homeButtons {
-    background: ${props => props.theme.colors.highlight05};
+    background: ${props => props.theme.colors.chartreuse05};
     transition: all .2s ease-in;
     transform: scale(1.05);
     cursor: pointer;

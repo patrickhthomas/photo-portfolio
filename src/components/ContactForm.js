@@ -22,7 +22,7 @@ const Form = styled.form`
     font-family: inherit;
     font-size: inherit;
     background: ${props => props.theme.colors.tertiary};
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     border-radius: 2px;
     padding: 1em;
     &::-webkit-input-placeholder {
@@ -83,8 +83,8 @@ const Message = styled.textarea`
 const Submit = styled.input`
   width: 100%;
   background: ${props => props.theme.colors.white};
-  border: .01em solid ${props => props.theme.colors.highlight};
-  color: ${props => props.theme.colors.black};
+  border: .01em solid ${props => props.theme.colors.chartreuse};
+  color: ${props => props.theme.colors.coffee};
   transition: all .2s ease-in;
   box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
   max-width: 12em;
@@ -93,7 +93,7 @@ const Submit = styled.input`
   border-radius: .2rem;
 
   &:hover {
-    background: ${props => props.theme.colors.highlight};
+    background: ${props => props.theme.colors.chartreuse};
     transition: all .2s ease-in;
     transform: scale(1.05);
     cursor: pointer;
@@ -101,7 +101,7 @@ const Submit = styled.input`
   }
     @media (min-width: ${props => props.theme.responsive.small}) {
       grid-column: 1 / span 2;
-      color: ${props => props.theme.colors.less};
+      color: ${props => props.theme.colors.mintCream};
   box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
     }
 `
@@ -117,7 +117,7 @@ const Modal = styled.div`
   transform: translate(-50%, -50%);
   margin: 0 auto;
   z-index: 99;
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.coffee};
   display: flex;
   flex-flow: column;
   align-items: flex-start;
@@ -136,8 +136,8 @@ const Modal = styled.div`
 const Button = styled.button`
   width: 100%;
   background: ${props => props.theme.colors.white};
-  border: .2em solid ${props => props.theme.colors.highlight};
-  color: ${props => props.theme.colors.black};
+  border: .2em solid ${props => props.theme.colors.chartreuse};
+  color: ${props => props.theme.colors.coffee};
   transition: all .2s ease-in;
   box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
   max-width: 12em;
@@ -154,7 +154,7 @@ const Button = styled.button`
     @media (min-width: ${props => props.theme.responsive.small}) {
       grid-column: 1 / span 2;
       
-      border: .01em solid ${props => props.theme.colors.highlight};
+      border: .01em solid ${props => props.theme.colors.chartreuse};
       box-shadow: none;
     }
 `

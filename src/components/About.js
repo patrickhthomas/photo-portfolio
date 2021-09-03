@@ -52,14 +52,14 @@ const Text = styled.div`
   p {
     line-height: 1.6;
     margin: 0 0 2em 0;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
   }
 
   a {
     transition: 0.2s;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 

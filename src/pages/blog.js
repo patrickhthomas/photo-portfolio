@@ -12,7 +12,7 @@ const Text = styled.p`
   text-align: center;
   line-height: 1.6;
   a {
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
   }
 `
 const Wrapper=styled.section`

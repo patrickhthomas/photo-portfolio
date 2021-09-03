@@ -35,7 +35,7 @@ margin: 0 auto;
     transition: 0.2s;
     color: ${props => props.theme.colors.link};
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 

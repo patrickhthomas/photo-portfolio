@@ -15,26 +15,8 @@ display: block;
 position: relative;
 max-width: 100%;
 overflow: hidden;
-background-color: ${props => props.theme.colors.highlight};
-&:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${props => props.theme.colors.highlight};
-    opacity: .8;
-    transition: all .2s ease-in;
-    mix-blend-mode: overlay;
-}
-&:hover {
-  :after {
-    opacity: 0;
-    transition: all .2s ease-in;
-    mix-blend-mode: screen;
-  }
-}
+background-color: ${props => props.theme.colors.mintCream};
+
 `
 
 const AutoPlay = styled.div`
@@ -52,11 +34,11 @@ padding: 1em;
 border-radius: .2em;
 margin: 1em 0em 1em 0em;
 &:hover {
-  border: .2em solid ${props => props.theme.colors.highlight};
+  border: .2em solid ${props => props.theme.colors.chartreuse};
   transform: scale(1.02);
   transition: all .1s ease-in;
 .homeButtons {
-    background: ${props => props.theme.colors.highlight};
+    background: ${props => props.theme.colors.chartreuse};
     transition: all .2s ease-in;
     transform: scale(1.05);
     cursor: pointer;
@@ -75,18 +57,19 @@ margin: 1em 0em 1em 0em;
 }
 
 .none {
-  border-radius: 5em;
-  transform: scale(.7);
+  border-radius: 1em;
+  transform: translateX(100%);
   opacity: 0%;
   transition: all .5s ease-in;
 }
 .noneAgain {
-  border-radius: 5em;
+  border-radius: 1em;
   opacity: 0%;
-  transform: scale(.7);
+  transform: translateX(100%);
   transition: all .5s ease-in;
 }
 .active {
+  opacity: 100%;
   transition: all .5s ease-out;
 
 }
@@ -96,7 +79,8 @@ margin: 1em 0em 1em 0em;
 
 }
 .first {
-  border-radius: 5em;
+  opacity: 0%;
+  border-radius: 1em;
   transform: scale(1.02);
   transition: all .5s ease-out;
 
@@ -188,8 +172,6 @@ const SquarePhotos = ({ photoSrc, photoInterval, photoDelay, buttonLabel }) => {
         <SlideContainer className="slideContainer">
         <Slide src={activePhoto} className={activeClassName}/>
         </SlideContainer>
-        <CustomButton className='homeButtons' label={thisButtonLabel}
-        ></CustomButton>
         </AutoPlay>
         
         )

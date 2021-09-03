@@ -73,7 +73,7 @@ div {
     position: absolute;
     right: 0;
     width: 12em;
-    border: 2px solid ${props => props.theme.colors.highlight};
+    border: 2px solid ${props => props.theme.colors.chartreuse};
     background-color: ${props => props.theme.colors.white};
     opacity: 100%;
     transition: all 0.2s;
@@ -89,7 +89,7 @@ div {
     text-align: right;
     width: 100%;
     text-decoration: none;
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.chartreuse};
     font-weight: 400;
     transition: all 0.2s;
     &:hover {
@@ -116,11 +116,11 @@ div {
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     font-weight: 600;
     transition: all 0.2s;
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 }
@@ -160,14 +160,14 @@ p {
 
 const activeLinkStyle = {
   
-  color: '#5E5BF7',
+  color: '#4A8F00',
   fontWeight: 'bold',
 }
 
 const activeLinkStyleSmall = {
   
   color: 'Black',
-  borderBottom: '1px solid #5E5BF7',
+  borderBottom: '1px solid #4A8F00',
   fontWeight: 'bold',
   fontSize: '1.2em',
   textTransform: 'uppercase'

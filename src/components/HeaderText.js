@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 const Title = styled.div`
   z-index: 0;
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.coffee};
  .pageTitle {
   max-width: 650px;
   margin: auto;
@@ -53,9 +53,9 @@ const Title = styled.div`
   }
   a {
     transition: all 0.2s;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 `

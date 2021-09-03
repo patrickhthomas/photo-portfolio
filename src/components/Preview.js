@@ -42,7 +42,7 @@ div {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: ${props => props.theme.colors.highlight}; 
+    background: ${props => props.theme.colors.chartreuse}; 
     mix-blend-mode: multiply;
     z-index: 0;
     display: block;
@@ -53,7 +53,7 @@ div {
     transition: all .3s ease-in;
   }
   background: ${props => props.theme.colors.white};
-  border-bottom: .2em solid ${props => props.theme.colors.highlight};
+  border-bottom: .2em solid ${props => props.theme.colors.chartreuse};
   transition: all .2s ease-in;
   box-shadow: -2px 2px 2px 0px rgba(30, 30, 42, .1);
   align-self: end;
@@ -82,7 +82,7 @@ div {
     
   }
   p {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.chartreuse};
     transition: all .4s ease-in;
     max-width: 90%;
   }
@@ -92,7 +92,7 @@ div {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: ${props => props.theme.colors.highlight}; 
+    background: ${props => props.theme.colors.chartreuse}; 
     mix-blend-mode: multiply;
     z-index: 5000;
     display: block;
@@ -102,8 +102,8 @@ div {
     transition: all .7s ease-in;
   }
   background: ${props => props.theme.colors.white};
-  border-bottom: .2em solid ${props => props.theme.colors.highlight05};
-  color: ${props => props.theme.colors.black};
+  border-bottom: .2em solid ${props => props.theme.colors.chartreuse05};
+  color: ${props => props.theme.colors.coffee};
   transition: all .2s ease-in;
   
   align-self: end;
@@ -129,8 +129,8 @@ margin: 0 auto;
 const Button = styled.button`
 width: 100%;
 background: ${props => props.theme.colors.white};
-border: .2em solid ${props => props.theme.colors.highlight};
-color: ${props => props.theme.colors.black};
+border: .2em solid ${props => props.theme.colors.chartreuse};
+color: ${props => props.theme.colors.coffee};
 transition: all .2s ease-in;
 box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
 max-width: 12em;
@@ -146,8 +146,8 @@ border-radius: .2rem;
 }
 @media (min-width: ${props => props.theme.responsive.small}) {
   grid-column: 1 / span 2;
-  color: ${props => props.theme.colors.less};
-  border: .01em solid ${props => props.theme.colors.less};
+  color: ${props => props.theme.colors.mintCream};
+  border: .01em solid ${props => props.theme.colors.mintCream};
   box-shadow: none;
 }
 `
@@ -175,17 +175,17 @@ const GridItem = styled.div`
 height: 100%;
 place-items: stretch;
 &:hover div {
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.coffee};
   transition: all .2s ease-in;
 }
 &:hover ul {
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.coffee};
   transition: all .2s ease-in;
 }
 &:hover button {
   background: ${props => props.theme.colors.white};
-  border: .2em solid ${props => props.theme.colors.highlight};
-  color: ${props => props.theme.colors.black};
+  border: .2em solid ${props => props.theme.colors.chartreuse};
+  color: ${props => props.theme.colors.coffee};
   transition: all .2s ease-in;
   box-shadow: 0px 0px 4px 0px rgba(30, 30, 42, .4);
 }
@@ -195,13 +195,13 @@ a {
 }
 @media (min-width: ${props => props.theme.responsive.small}) {
   box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .05);
-  border: 1px solid ${props => props.theme.colors.highlight25};  
+  border: 1px solid ${props => props.theme.colors.chartreuse25};  
   grid-template-columns: 1fr 1fr;
   padding: 2em;
   grid-gap: 16px;
   &:hover {
     background: ${props => props.theme.colors.white};
-    border: 1px solid ${props => props.theme.colors.highlight};
+    border: 1px solid ${props => props.theme.colors.chartreuse};
     transition: all .2s ease-in;
     transform: scale(1.01);
     box-shadow: 0px 0px 20px 0px rgba(30, 30, 42, .2);
@@ -251,7 +251,7 @@ padding-bottom: 2em;
 
 `
 const Role = styled.ul`
-color: ${props => props.theme.colors.black};
+color: ${props => props.theme.colors.coffee};
 margin: 0 auto;
 line-height: 1.6;
 font-weight: 700;
@@ -259,7 +259,7 @@ padding-bottom: 1em;
 `
 
 const Text = styled.div`
-color: ${props => props.theme.colors.black};
+color: ${props => props.theme.colors.coffee};
 margin: 0 auto;
 line-height: 1.6;
 h1,
@@ -356,7 +356,7 @@ pre {
 const LargeBPText = styled.div`
 display: none;
 grid-column: 1 / 3;
-color: ${props => props.theme.colors.black};
+color: ${props => props.theme.colors.coffee};
 margin: 0 auto;
 line-height: 1.6;
 h1,

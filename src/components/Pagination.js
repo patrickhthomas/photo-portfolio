@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 `
 
 const Button = styled(Link)`
-  background: ${props => props.theme.colors.primary};
+  background: ${props => props.theme.colors.chartreuse};
   color: white;
   padding: 1rem;
   border-radius: 2px;
@@ -24,10 +24,10 @@ const Button = styled(Link)`
   text-decoration: none;
   transition: 0.3s all;
   &:hover {
-    background: ${props => props.theme.colors.highlight};
+    background: ${props => props.theme.colors.chartreuse};
   }
   @media (hover: none) {
-    background: ${props => props.theme.colors.primary} !important;
+    background: ${props => props.theme.colors.chartreuse} !important;
   }
 `
 
@@ -36,13 +36,13 @@ const Numbers = styled.div`
   border-radius: 2px;
   display: inline-block;
   float: left;
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.coffee};
   padding: 1rem;
   background: white;
   position: relative;
   transition: 0.3s all;
   svg {
-    fill: ${props => props.theme.colors.black};
+    fill: ${props => props.theme.colors.coffee};
     margin: 0 0 0 0.25rem;
     transition: 0.3s all;
   }

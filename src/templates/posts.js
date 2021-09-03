@@ -8,54 +8,121 @@ import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import { startCase } from 'lodash'
 import HomeHero from '../components/HomeHero'
-import HomeSection from '../components/HomeSection'
-import CustomCarousel2 from '../components/Carousel2'
+import CustomHomeButton from '../components/CustomHomeButton'
+import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import HeaderText from '../components/HeaderText'
 
 
 
+const GridItem = styled.div`
+height: 20em;
+.notThumb {
+    opacity: 100%;
+}
+.thumb {
+    filter: contrast(.2);
+}
+margin-bottom: .5em;
+overflow: hidden;
+box-shadow: 0px 0px 4px 0px rgba(74, 143, 0, .4);
+border-right: .4em solid ${props => props.theme.colors.chartreuse};
+border-left: .4em solid ${props => props.theme.colors.chartreuse};
+border-bottom: .4em solid ${props => props.theme.colors.chartreuse};
+border-radius: 0em 0em .5em .5em;
+transition: all .05s ease-in;
+  &:hover {
+    background: ${props => props.theme.colors.middleGreen};
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px rgba(74, 143, 0, .6);
+        transition: all .1s ease-in;
+  }
+`
 
+const FlexBox = styled.div`
+display: flex;
+flex-flow: column nowrap;
+justify-content: space-evenly;
+align-items: center;
+padding: 1em;
+min-width: 20em;
+max-width: 30em;
+flex: 1 1 0%;
+`
 
+const FlexiestBox = styled.div`
+display: flex;
+flex-flow: row wrap;
+justify-content: space-evenly;
+`
+
+const GridItemPhoto = styled.img`
+max-width: 200%;
+height: 100%;
+object-fit: cover;
+transition: all .05s ease-in;
+  &:hover {
+    height: 102%;
+    transition: all .1s ease-in;
+  }
+`
 
 const Posts = ({ data, pageContext }) => {
-  const posts = data.allContentfulPost.edges
+
   const { humanPageNumber, basePath } = pageContext
-  const heroDescription = data.contentfulHeroDescription.description.internal.content
+  const heroDescription = data.contentfulHeroDescriptionPhoto.description.internal.content
   let featuredPost
   let ogImage
   let sections = data.allContentfulHomeSection.edges
-  
-  try {
-    featuredPost = posts[0].node
-  } catch (error) {
-    featuredPost = null
-  }
-  try {
-    ogImage = posts[0].node.heroImage.ogimg.src
-  } catch (error) {
-    ogImage = null
-  }
+  let productSource = data.productPhoto.photos
+  let eventSource = data.eventPhoto.photos
   
   return (
     <Layout>
     <SEO title={startCase(basePath)} image={ogImage} />
     <Container>
+    
     <HomeHero 
-    imgLeft={data.contentfulHeroImageLeft.image.file.url}
-    imgRight={data.contentfulHeroImageRight.image.file.url}
+    imgLeft={data.contentfulHeroImageLeftPhoto.image.file.url}
+    imgRight={data.contentfulHeroImageRightPhoto.image.file.url}
     heroDescription={heroDescription}
     />
+    <HeaderText><h2>Examples of my work</h2></HeaderText>
+  <FlexiestBox>
+    <FlexBox>
+      <CustomHomeButton linkPath={'/product-photos'} label='Products, Food, & Beverages'></CustomHomeButton>
+    <Link to={'/product-photos'}>
+    <GridItem>
+    <GridItemPhoto src={productSource[0].file.url} alt={productSource[0].description}/>   
+    </GridItem>
+    </Link>
+   
+   </FlexBox>
 
+    <FlexBox>
+      <CustomHomeButton linkPath={'/events-and-spaces'}label='Events & Spaces'></CustomHomeButton>
 
+    <Link to={'/events-and-spaces'}>
+    <GridItem>
+    <GridItemPhoto src={eventSource[0].file.url} alt={eventSource[0].description}/>   
+    </GridItem>
+    </Link>
 
+   
+   </FlexBox>
+ 
 
-     <CustomCarousel2 
-    alias1={data.digitalMarketingPhoto}
-    alias2={data.webDesignPhoto}
-    />
+    <FlexBox>
+       <CustomHomeButton linkPath={'/product-photos'} label='Products, Food, & Beverages'></CustomHomeButton>
+    <Link to={'/product-photos'}>
+    <GridItem>
+    <GridItemPhoto src={productSource[0].file.url} alt={productSource[0].description}/>   
+    </GridItem>
+    </Link>
+  
+   </FlexBox>
 
-    <HomeSection
-    sections={sections}
-    />
+  </FlexiestBox>
     </Container>
     <Pagination context={pageContext} />
     </Layout>
@@ -63,37 +130,7 @@ const Posts = ({ data, pageContext }) => {
   }
 
 export const query = graphql`
-  query($skip: Int!, $limit: Int!) {
-    allContentfulPost(
-      sort: { fields: [publishDate], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          title
-          id
-          slug
-          publishDate(formatString: "MMMM DD, YYYY")
-          heroImage {
-            title
-            fluid(maxWidth: 1800) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
-            }
-            ogimg: resize(width: 1800) {
-              src
-            }
-          }
-          body {
-            childMarkdownRemark {
-              timeToRead
-              html
-              excerpt(pruneLength: 80)
-            }
-          }
-        }
-      }
-    }
+  query HomeQuery {
     allContentfulPiece(sort: {fields: publishDate, order: DESC}) {
         edges {
           node {
@@ -118,7 +155,7 @@ export const query = graphql`
           }
         }
       }
-    contentfulHeroDescription {
+    contentfulHeroDescriptionPhoto {
       description {
         internal {
           content
@@ -137,21 +174,21 @@ export const query = graphql`
           }
         }
       }
-    contentfulHeroImageLeft {
+    contentfulHeroImageLeftPhoto {
         image {
           file {
             url
           }
         }
       }
-      contentfulHeroImageRight {
+      contentfulHeroImageRightPhoto {
         image {
           file {
             url
           }
         }
       }
-      productPhoto: contentfulPhotoAlbum(contentful_id: {eq: "34C1e43oFbfXO76Be0HdA9"}) {
+      productPhoto: contentfulPhotoAlbum(contentful_id: {eq: "55rZZpiXLLdvBgDjnQhixA"}) {
     title
     description {
       childMarkdownRemark {
@@ -161,6 +198,31 @@ export const query = graphql`
     photos {
       file {
         url
+      }
+      description
+      fixed(height: 800, width: 800) {
+        src
+        width
+        height
+      }
+    }
+  }
+      eventPhoto: contentfulPhotoAlbum(contentful_id: {eq: "2V2KTSpNg1NZcc2wv8Z3v9"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+      description
+      fixed(height: 800, width: 800) {
+        src
+        width
+        height
       }
     }
   }
@@ -190,7 +252,7 @@ export const query = graphql`
       }
     }
   }
-    digitalMarketingPhoto: contentfulPhotoAlbum(contentful_id: {eq: "1poRdq8WvybMvGi64kJSrq"}) {
+    digitalMarketingPhoto: contentfulPhotoAlbum(contentful_id: {eq: "55rZZpiXLLdvBgDjnQhixA"}) {
     title
     description {
       childMarkdownRemark {

@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 const Post = styled.li`
   box-shadow: 0px 0px 12px 0px rgba(30, 30, 42, .05);
-  border: 1px solid ${props => props.theme.colors.highlight25}; 
+  border: 1px solid ${props => props.theme.colors.chartreuse25}; 
   position: relative;
   border-radius: .2em;
   margin: 0 0 1em 0;
@@ -20,7 +20,7 @@ const Post = styled.li`
   }
   &:hover {
     background: ${props => props.theme.colors.white};
-    border: 1px solid ${props => props.theme.colors.highlight};
+    border: 1px solid ${props => props.theme.colors.chartreuse};
     transition: all .2s ease-in;
     transform: scale(1.01);
     box-shadow: 0px 0px 20px 0px rgba(30, 30, 42, .2);
@@ -30,7 +30,7 @@ const Post = styled.li`
     flex-flow: column;
     height: 100%;
     width: 100%;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     text-decoration: none;
     .gatsby-image-wrapper {
       height: 0;

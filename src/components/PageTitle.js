@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import HeaderText from '../components/HeaderText'
 
 const HeaderText = styled.h1`
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.coffee};
   h1 {
       font-size: 2em;
       @media (min-width: ${props => props.theme.responsive.small}) {
@@ -33,9 +33,9 @@ const HeaderText = styled.h1`
   }
   a {
     transition: all 0.2s;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 `

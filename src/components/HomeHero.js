@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import HeaderText from './HeaderText';
 import Collapsible from 'react-collapsible';
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
@@ -151,11 +152,13 @@ const Text = styled.div`
   }
   }
 
+
+
   a {
     transition: 0.2s;
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.coffee};
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.chartreuse};
     }
   }
 
@@ -240,7 +243,7 @@ const HomeHero = ({ imgLeft, imgRight, heroDescription }) => {
       <Grid>
         <Text>
             <BgPic src={ imgLeft } alt="background image"/>
-            <h1>{heroDescription}</h1>
+            <h2>{heroDescription}</h2>
         </Text>
         <Me>
           <MyPic src={ imgRight } alt="My Profile Picture" />
