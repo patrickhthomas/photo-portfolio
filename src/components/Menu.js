@@ -101,7 +101,7 @@ div {
 
 .large {
   display: none;
-  @media (min-width: ${props => props.theme.responsive.small}) {
+  @media (min-width: ${props => props.theme.responsive.medium}) {
   display: flex;
   justify-content: flex-end;
   visibility: visible;

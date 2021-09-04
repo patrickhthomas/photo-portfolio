@@ -11,7 +11,7 @@ import CustomCarousel2 from '../components/Carousel2'
 
 
 
-const ProductPhotosPage = ({ data, pageContext }) => {
+const NaturePhotosPage = ({ data, pageContext }) => {
   const { basePath } = pageContext
     let ogImage
   return (
@@ -23,7 +23,7 @@ const ProductPhotosPage = ({ data, pageContext }) => {
 
 
      <CustomCarousel2 
-    alias={data.productPhoto}
+    alias={data.naturePhoto}
     />
 
     </Container>
@@ -32,7 +32,7 @@ const ProductPhotosPage = ({ data, pageContext }) => {
   }
 
 export const query = graphql`
-  query ProductPhotoQuery {
+  query NaturePhotoQuery {
     contentfulHeroImageLeftPhoto {
         image {
           file {
@@ -47,7 +47,7 @@ export const query = graphql`
           }
         }
       }
-      productPhoto: contentfulPhotoAlbum(contentful_id: {eq: "55rZZpiXLLdvBgDjnQhixA"}) {
+      portraitPhoto: contentfulPhotoAlbum(contentful_id: {eq: "2b4UcGBr9vIsX2lxh8sI6W"}) {
     title
     description {
       childMarkdownRemark {
@@ -66,7 +66,7 @@ export const query = graphql`
       }
     }
   }
-      eventPhoto: contentfulPhotoAlbum(contentful_id: {eq: "2V2KTSpNg1NZcc2wv8Z3v9"}) {
+      naturePhoto: contentfulPhotoAlbum(contentful_id: {eq: "6W40heBzhLtqCpNJvmyFE5"}) {
     title
     description {
       childMarkdownRemark {
@@ -140,6 +140,6 @@ export const query = graphql`
   }
 `
 
-export default ProductPhotosPage
+export default NaturePhotosPage
 
 

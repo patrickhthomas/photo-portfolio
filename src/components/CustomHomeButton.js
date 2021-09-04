@@ -26,7 +26,7 @@ border-radius: 0em 2em 0em 0em;
 
 `
 const ButtonHolder = styled.div`
-z-index: 1000;
+z-index: 0;
 width: 100%;
 `
 

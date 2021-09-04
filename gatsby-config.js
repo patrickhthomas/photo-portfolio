@@ -28,17 +28,30 @@ module.exports = {
         slug: '/',
       },
       {
-        name: 'Products, Food, & Bev',
+        name: 'Products',
         slug: '/product-photos/',
+      },
+      {
+        name: 'Portraits',
+        slug: '/portrait/',
       },
       {
         name: 'Events',
         slug: '/events-and-spaces/',
       },
       {
+        name: 'Nature',
+        slug: '/nature/',
+      },
+      {
+        name: 'Everyday Life',
+        slug: '/everyday-life/',
+      },
+      {
         name: 'Hire me',
         slug: '/hire-me/',
       },
+
     ],
     postsPerFirstPage: 7,
     postsPerPage: 6,

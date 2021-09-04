@@ -1,11 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import HeaderText from './HeaderText';
-import Collapsible from 'react-collapsible';
-import { Link } from 'gatsby'
-import { StaticQuery, graphql } from "gatsby"
 import CustomButton from './CustomButton';
-import { render } from 'ink';
 
 
 const Container = styled.div`

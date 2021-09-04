@@ -17,12 +17,7 @@ import HeaderText from '../components/HeaderText'
 
 const GridItem = styled.div`
 height: 20em;
-.notThumb {
-    opacity: 100%;
-}
-.thumb {
-    filter: contrast(.2);
-}
+width: 100%;
 margin-bottom: .5em;
 overflow: hidden;
 box-shadow: 0px 0px 4px 0px rgba(74, 143, 0, .4);
@@ -48,6 +43,9 @@ padding: 1em;
 min-width: 20em;
 max-width: 30em;
 flex: 1 1 0%;
+a {
+  width: 100%;
+}
 `
 
 const FlexiestBox = styled.div`
@@ -76,6 +74,9 @@ const Posts = ({ data, pageContext }) => {
   let sections = data.allContentfulHomeSection.edges
   let productSource = data.productPhoto.photos
   let eventSource = data.eventPhoto.photos
+  let everydaySource = data.everydayPhoto.photos
+    let portraitSource = data.portraitPhoto.photos
+      let natureSource = data.naturePhoto.photos
   
   return (
     <Layout>
@@ -113,10 +114,30 @@ const Posts = ({ data, pageContext }) => {
  
 
     <FlexBox>
-       <CustomHomeButton linkPath={'/product-photos'} label='Products, Food, & Beverages'></CustomHomeButton>
-    <Link to={'/product-photos'}>
+       <CustomHomeButton linkPath={'/everyday-life'} label='Everyday Life'></CustomHomeButton>
+    <Link to={'/everyday-life'}>
     <GridItem>
-    <GridItemPhoto src={productSource[0].file.url} alt={productSource[0].description}/>   
+    <GridItemPhoto src={everydaySource[0].file.url} alt={everydaySource[0].description}/>   
+    </GridItem>
+    </Link>
+  
+   </FlexBox>
+
+    <FlexBox>
+       <CustomHomeButton linkPath={'/portrait'} label='Portraits'></CustomHomeButton>
+    <Link to={'/portrait'}>
+    <GridItem>
+    <GridItemPhoto src={portraitSource[0].file.url} alt={portraitSource[0].description}/>   
+    </GridItem>
+    </Link>
+  
+   </FlexBox>
+
+    <FlexBox>
+       <CustomHomeButton linkPath={'/nature'} label='Nature'></CustomHomeButton>
+    <Link to={'/nature'}>
+    <GridItem>
+    <GridItemPhoto src={natureSource[0].file.url} alt={natureSource[0].description}/>   
     </GridItem>
     </Link>
   
@@ -239,6 +260,19 @@ export const query = graphql`
       }
     }
   }
+  everydayPhoto: contentfulPhotoAlbum(contentful_id: {eq: "3ssw97inT5js85zc1pgxWG"}) {
+    title
+    description {
+      childMarkdownRemark {
+        html
+      }
+    }
+    photos {
+      file {
+        url
+      }
+    }
+  }
   logoPhoto: contentfulPhotoAlbum(contentful_id: {eq: "3tL5xSUWYJudLGkThC6DaW"}) {
     title
     description {
@@ -252,7 +286,7 @@ export const query = graphql`
       }
     }
   }
-    digitalMarketingPhoto: contentfulPhotoAlbum(contentful_id: {eq: "55rZZpiXLLdvBgDjnQhixA"}) {
+    naturePhoto: contentfulPhotoAlbum(contentful_id: {eq: "6W40heBzhLtqCpNJvmyFE5"}) {
     title
     description {
       childMarkdownRemark {
@@ -265,7 +299,7 @@ export const query = graphql`
       }
     }
   }
-    webDesignPhoto: contentfulPhotoAlbum(contentful_id: {eq: "3rcYZgnGEROqo6TtHlD4Sb"}) {
+    portraitPhoto: contentfulPhotoAlbum(contentful_id: {eq: "2b4UcGBr9vIsX2lxh8sI6W"}) {
     title
     description {
       childMarkdownRemark {
