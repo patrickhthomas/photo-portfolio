@@ -101,7 +101,7 @@ div {
 
 .large {
   display: none;
-  @media (min-width: ${props => props.theme.responsive.medium}) {
+  @media (min-width: ${props => props.theme.responsive.large}) {
   display: flex;
   justify-content: flex-end;
   visibility: visible;
@@ -133,7 +133,7 @@ div {
 }
 
 .openUL, .closeUL {
-@media (min-width: ${props => props.theme.responsive.small}) {
+@media (min-width: ${props => props.theme.responsive.large}) {
   display: none;
 }
 }
@@ -196,6 +196,13 @@ const Menu = props => {
               </Link>
             </li>
           ))}
+                            <a
+  href="https://patrickthomas.design"
+  rel="nofollow noopener noreferrer"
+  target="_blank"
+  >
+          patrickthomas.design
+          </a>
         </ul>
         <Collapsible className="closeUL" openedClassName="openUL" trigger={<Trigger><img src={menu}></img></Trigger>} easing='ease-in' triggerClassName='closed' triggerOpenedClassName='opened'>
                 <ul className="smallUL">
@@ -206,6 +213,13 @@ const Menu = props => {
               </Link>
             </li>
           ))}
+                        <a
+  href="https://patrickthomas.design"
+  rel="nofollow noopener noreferrer"
+  target="_blank"
+  >
+          patrickthomas.design
+          </a>
         </ul>
         </Collapsible>
       </Nav>

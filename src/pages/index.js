@@ -21,9 +21,9 @@ width: 100%;
 margin-bottom: .5em;
 overflow: hidden;
 box-shadow: 0px 0px 4px 0px rgba(74, 143, 0, .4);
-border-right: .4em solid ${props => props.theme.colors.chartreuse};
-border-left: .4em solid ${props => props.theme.colors.chartreuse};
-border-bottom: .4em solid ${props => props.theme.colors.chartreuse};
+border-right: .1em solid ${props => props.theme.colors.chartreuse};
+border-left: .1em solid ${props => props.theme.colors.chartreuse};
+border-bottom: .1em solid ${props => props.theme.colors.chartreuse};
 border-radius: 0em 0em .5em .5em;
 transition: all .05s ease-in;
   &:hover {
@@ -46,6 +46,14 @@ flex: 1 1 0%;
 a {
   width: 100%;
 }
+  &:hover {
+    button{
+    background: ${props => props.theme.colors.middleGreen};
+    transition: all .2s ease-in;
+    cursor: pointer;
+    color: ${props => props.theme.colors.white};
+    }
+  }
 `
 
 const FlexiestBox = styled.div`
@@ -65,11 +73,10 @@ transition: all .05s ease-in;
   }
 `
 
-const Posts = ({ data, pageContext }) => {
+const Index = ({ data, pageContext }) => {
 
   const { humanPageNumber, basePath } = pageContext
   const heroDescription = data.contentfulHeroDescriptionPhoto.description.internal.content
-  let featuredPost
   let ogImage
   let sections = data.allContentfulHomeSection.edges
   let productSource = data.productPhoto.photos
@@ -151,7 +158,7 @@ const Posts = ({ data, pageContext }) => {
   }
 
 export const query = graphql`
-  query HomeQuery {
+  query IndexQuery {
     allContentfulPiece(sort: {fields: publishDate, order: DESC}) {
         edges {
           node {
@@ -315,6 +322,6 @@ export const query = graphql`
   }
 `
 
-export default Posts
+export default Index
 
 

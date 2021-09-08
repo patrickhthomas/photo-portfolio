@@ -19,7 +19,7 @@ const GridItem = styled.div`
     filter: contrast(.2);
 }
 height: 16em;
-width: 12em;
+width: 16em;
 display: block;
 margin-bottom: 2em;
 overflow: hidden;
